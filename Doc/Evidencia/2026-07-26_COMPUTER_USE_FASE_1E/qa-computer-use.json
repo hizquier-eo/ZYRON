@@ -1,0 +1,131 @@
+{
+  "screens": [
+    {
+      "n": "escritorio",
+      "w": 1440,
+      "h": 900,
+      "overflow": false,
+      "duplicateIds": []
+    },
+    {
+      "n": "tableta",
+      "w": 768,
+      "h": 1024,
+      "overflow": false,
+      "duplicateIds": []
+    },
+    {
+      "n": "movil",
+      "w": 390,
+      "h": 844,
+      "overflow": false,
+      "duplicateIds": []
+    }
+  ],
+  "downloads": [
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/plantilla-planificacion-computer-use.docx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size": 37594
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/plantilla-planificacion-computer-use.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 239635
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/lista-verificacion-permisos-acciones-sensibles.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 5731
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/lista-verificacion-permisos-acciones-sensibles.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3305
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/rubrica-laboratorio-computer-use.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 5645
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/rubrica-laboratorio-computer-use.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 2733
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/guia-seguridad-supervision-computer-use.docx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size": 37884
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/guia-seguridad-supervision-computer-use.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 264437
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/registro-acciones-computer-use.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 6676
+    },
+    {
+      "url": "http://127.0.0.1:8767/recursos/laboratorio-computer-use/registro-acciones-computer-use.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3127
+    }
+  ],
+  "official": [
+    {
+      "url": "https://help.openai.com/en/articles/11752874-chatgpt-agent",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/20001280-using-cloud-browser-in-chatgpt",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/20001277-using-the-built-in-browser-in-the-chatgpt-desktop-app",
+      "status": 200
+    },
+    {
+      "url": "https://openai.com/index/computer-using-agent/",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/11794368",
+      "status": 200
+    },
+    {
+      "url": "https://openai.com/policies/using-chatgpt-agent-in-line-with-our-policies/",
+      "status": 200
+    },
+    {
+      "url": "https://openai.com/policies/usage-policies/",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes",
+      "status": 200
+    }
+  ],
+  "checks": {
+    "h1": 1,
+    "modules": 8,
+    "faq": 16,
+    "downloads": 10,
+    "ids": 10,
+    "internalAnchors": 8,
+    "title": "Laboratorio Computer Use | ZYRON AI LAB",
+    "state": "FICHA DEL LABORATORIO\n\nCategoría: Automatización · Nivel: Intermedio · Duración: 4 horas · Estado: En desarrollo\n\nFuentes oficiales revisadas el 26 de julio de 2026."
+  }
+}

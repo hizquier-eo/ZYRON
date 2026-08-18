@@ -1,0 +1,189 @@
+{
+  "screens": [
+    {
+      "n": "escritorio",
+      "w": 1440,
+      "h": 900,
+      "overflow": false,
+      "duplicateIds": []
+    },
+    {
+      "n": "tableta",
+      "w": 768,
+      "h": 1024,
+      "overflow": false,
+      "duplicateIds": []
+    },
+    {
+      "n": "movil",
+      "w": 390,
+      "h": 844,
+      "overflow": false,
+      "duplicateIds": []
+    }
+  ],
+  "downloads": [
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/plantilla-planificacion-autorizacion-conectores.docx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size": 37624
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/plantilla-planificacion-autorizacion-conectores.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 2770
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/matriz-permisos-fuentes-acciones.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 5306
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/matriz-permisos-fuentes-acciones.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 2572
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/rubrica-laboratorio-conectores.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 5607
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/rubrica-laboratorio-conectores.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 2739
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/guia-seguridad-privacidad-revocacion.docx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size": 37684
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/guia-seguridad-privacidad-revocacion.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3098
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/registro-consultas-acciones-incidencias-resultados.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 6647
+    },
+    {
+      "url": "http://127.0.0.1:8768/recursos/laboratorio-conectores/registro-consultas-acciones-incidencias-resultados.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3137
+    }
+  ],
+  "official": [
+    {
+      "url": "https://help.openai.com/en/articles/11487775-connectors-in",
+      "status": "ERROR"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "status": "ERROR"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes",
+      "status": "ERROR"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/5722486-chatgpt-privacy-policies",
+      "status": "ERROR"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/7730893-chatgpt-privacy-practices",
+      "status": "ERROR"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/20001067",
+      "status": "ERROR"
+    },
+    {
+      "url": "https://openai.com/policies/usage-policies/",
+      "status": "ERROR"
+    }
+  ],
+  "checks": {
+    "h1": 1,
+    "modules": 8,
+    "faq": 18,
+    "downloads": 10,
+    "ids": 10,
+    "internalAnchors": 8,
+    "brokenInternal": [],
+    "title": "Laboratorio Conectores | ZYRON AI LAB",
+    "state": "FICHA DEL LABORATORIO\n\nCategoría: Integraciones · Nivel: Intermedio · Duración: 4 horas · Estado: En desarrollo\n\nFuentes oficiales revisadas el 28 de julio de 2026.",
+    "headings": [
+      "H1",
+      "H2",
+      "H3",
+      "H3",
+      "H3",
+      "H2",
+      "H2",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H2",
+      "H3",
+      "H3",
+      "H3",
+      "H2",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H2",
+      "H3",
+      "H3",
+      "H3",
+      "H2",
+      "H2",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H2",
+      "H2",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H3",
+      "H2",
+      "H2"
+    ]
+  }
+}

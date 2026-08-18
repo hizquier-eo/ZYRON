@@ -1,0 +1,216 @@
+{
+  "screens": [
+    {
+      "name": "escritorio",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "offenders": [],
+      "links": 32,
+      "headings": 52,
+      "duplicateIds": []
+    },
+    {
+      "name": "tableta",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "offenders": [],
+      "links": 32,
+      "headings": 52,
+      "duplicateIds": []
+    },
+    {
+      "name": "movil",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "offenders": [
+        {
+          "tag": "TABLE",
+          "cls": "",
+          "text": "ModalidadCómo funcionaCuándo usarlaLímite clave\n        Voic",
+          "right": 550
+        },
+        {
+          "tag": "THEAD",
+          "cls": "",
+          "text": "ModalidadCómo funcionaCuándo usarlaLímite clave",
+          "right": 548
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "ModalidadCómo funcionaCuándo usarlaLímite clave",
+          "right": 548
+        },
+        {
+          "tag": "TH",
+          "cls": "",
+          "text": "Cuándo usarla",
+          "right": 401
+        },
+        {
+          "tag": "TH",
+          "cls": "",
+          "text": "Límite clave",
+          "right": 548
+        },
+        {
+          "tag": "TBODY",
+          "cls": "",
+          "text": "VoiceCategoría general: permite hablar, escuchar respuestas,",
+          "right": 548
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "VoiceCategoría general: permite hablar, escuchar respuestas,",
+          "right": 548
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Conversación hablada dentro de un chat.",
+          "right": 401
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Opciones y límites dependen de plan, cuenta, región, aplicac",
+          "right": 548
+        },
+        {
+          "tag": "TR",
+          "cls": "",
+          "text": "LivePuede escuchar y hablar simultáneamente, admite interrup",
+          "right": 548
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "Diálogo fluido, práctica oral, lluvia de ideas y coordinació",
+          "right": 401
+        },
+        {
+          "tag": "TD",
+          "cls": "",
+          "text": "No incluye universalmente video, pantalla, apps conectadas, ",
+          "right": 548
+        }
+      ],
+      "links": 32,
+      "headings": 52,
+      "duplicateIds": []
+    }
+  ],
+  "downloads": [
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/guia-preparacion-voice-live.docx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size": 38627
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/guia-preparacion-voice-live.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3549
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/lista-verificacion-audio-privacidad-permisos.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 5849
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/lista-verificacion-audio-privacidad-permisos.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3430
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/rubrica-laboratorio-live.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 5906
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/rubrica-laboratorio-live.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3115
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/guia-seguridad-voz-camara-pantalla.docx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size": 37853
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/guia-seguridad-voz-camara-pantalla.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3802
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/registro-sesiones-live.xlsx",
+      "status": 200,
+      "contentType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 6782
+    },
+    {
+      "url": "http://127.0.0.1:8766/recursos/laboratorio-live/registro-sesiones-live.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "size": 3585
+    }
+  ],
+  "official": [
+    {
+      "url": "https://help.openai.com/en/articles/20001274",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/8400625-voice-mode",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/12168547-voice-dictation-faq",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/collections/8472654-voice-mode",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/7730893-data-controls-faq",
+      "status": 200
+    },
+    {
+      "url": "https://openai.com/policies/usage-policies/",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex",
+      "status": 200
+    },
+    {
+      "url": "https://help.openai.com/en/articles/11487532-chatgpt-record",
+      "status": 200
+    }
+  ],
+  "checks": {
+    "h1": 1,
+    "faq": 16,
+    "modules": 8,
+    "downloads": 10,
+    "focusVisible": true,
+    "title": "Laboratorio ChatGPT Voice — experiencia Live | ZYRON AI LAB",
+    "state": "FICHA DEL LABORATORIO\n\nCategoría: Tiempo real · Nivel: Básico · Duración: 3 horas · Estado: En desarrollo\n\nFuentes oficiales revisadas el 26 de julio de 2026."
+  }
+}

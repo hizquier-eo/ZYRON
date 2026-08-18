@@ -1,0 +1,590 @@
+[
+  {
+    "profile": {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "httpStatus": 200,
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "horizontalOverflow": false,
+    "duplicateIds": [],
+    "emptyLinks": 0,
+    "missingAlt": 0,
+    "headingJumps": [],
+    "hasMain": true,
+    "language": "es",
+    "title": "Laboratorio Sites | ZYRON AI LAB",
+    "overflowElements": [],
+    "localIndex": {
+      "display": "flex",
+      "whiteSpace": "normal",
+      "width": 1320,
+      "links": [
+        {
+          "text": "Presentación",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 110
+        },
+        {
+          "text": "Qué es",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 68
+        },
+        {
+          "text": "Público y requisitos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 153
+        },
+        {
+          "text": "Objetivos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 85
+        },
+        {
+          "text": "Programa",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 88
+        },
+        {
+          "text": "Herramientas",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 112
+        },
+        {
+          "text": "Tutorial",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 73
+        },
+        {
+          "text": "Ejercicio",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 79
+        },
+        {
+          "text": "Caso ZYRON",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 105
+        },
+        {
+          "text": "Evaluación",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 95
+        },
+        {
+          "text": "Riesgos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 74
+        },
+        {
+          "text": "Recursos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 83
+        },
+        {
+          "text": "Fuentes",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 75
+        },
+        {
+          "text": "FAQ",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 50
+        }
+      ]
+    },
+    "keyboardFocus": [
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "href": "../../index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Mapa ZYRON",
+        "href": "../../index.html#mapa-zyron",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "href": "../../index.html#zyron-ai-lab",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistemas",
+        "href": "../../centros/ecosistemas-inteligentes/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Índice",
+        "href": "#indice-sites",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Recursos",
+        "href": "#recursos-sites",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Volver al mapa de laboratorios",
+        "href": "../../centro-investigacion-openai.html#centros-laboratorio",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "href": "../../index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "href": "../../index.html#zyron-ai-lab",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro de Ecosistemas Inteligentes",
+        "href": "../../centros/ecosistemas-inteligentes/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistema Inteligente OpenAI",
+        "href": "../../centros/ecosistemas-inteligentes/openai/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro OpenAI",
+        "href": "../../centro-investigacion-openai.html",
+        "visible": true,
+        "focusIndicator": true
+      }
+    ]
+  },
+  {
+    "profile": {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    "httpStatus": 200,
+    "documentWidth": 768,
+    "viewportWidth": 768,
+    "horizontalOverflow": false,
+    "duplicateIds": [],
+    "emptyLinks": 0,
+    "missingAlt": 0,
+    "headingJumps": [],
+    "hasMain": true,
+    "language": "es",
+    "title": "Laboratorio Sites | ZYRON AI LAB",
+    "overflowElements": [],
+    "localIndex": {
+      "display": "flex",
+      "whiteSpace": "normal",
+      "width": 736,
+      "links": [
+        {
+          "text": "Presentación",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 110
+        },
+        {
+          "text": "Qué es",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 68
+        },
+        {
+          "text": "Público y requisitos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 153
+        },
+        {
+          "text": "Objetivos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 85
+        },
+        {
+          "text": "Programa",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 88
+        },
+        {
+          "text": "Herramientas",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 112
+        },
+        {
+          "text": "Tutorial",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 73
+        },
+        {
+          "text": "Ejercicio",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 79
+        },
+        {
+          "text": "Caso ZYRON",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 105
+        },
+        {
+          "text": "Evaluación",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 95
+        },
+        {
+          "text": "Riesgos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 74
+        },
+        {
+          "text": "Recursos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 83
+        },
+        {
+          "text": "Fuentes",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 75
+        },
+        {
+          "text": "FAQ",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 50
+        }
+      ]
+    },
+    "keyboardFocus": [
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "href": "../../index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Mapa ZYRON",
+        "href": "../../index.html#mapa-zyron",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "href": "../../index.html#zyron-ai-lab",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistemas",
+        "href": "../../centros/ecosistemas-inteligentes/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Índice",
+        "href": "#indice-sites",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Recursos",
+        "href": "#recursos-sites",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Volver al mapa de laboratorios",
+        "href": "../../centro-investigacion-openai.html#centros-laboratorio",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "href": "../../index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "href": "../../index.html#zyron-ai-lab",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro de Ecosistemas Inteligentes",
+        "href": "../../centros/ecosistemas-inteligentes/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistema Inteligente OpenAI",
+        "href": "../../centros/ecosistemas-inteligentes/openai/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro OpenAI",
+        "href": "../../centro-investigacion-openai.html",
+        "visible": true,
+        "focusIndicator": true
+      }
+    ]
+  },
+  {
+    "profile": {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    },
+    "httpStatus": 200,
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": false,
+    "duplicateIds": [],
+    "emptyLinks": 0,
+    "missingAlt": 0,
+    "headingJumps": [],
+    "hasMain": true,
+    "language": "es",
+    "title": "Laboratorio Sites | ZYRON AI LAB",
+    "overflowElements": [],
+    "localIndex": {
+      "display": "flex",
+      "whiteSpace": "normal",
+      "width": 370,
+      "links": [
+        {
+          "text": "Presentación",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 110
+        },
+        {
+          "text": "Qué es",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 68
+        },
+        {
+          "text": "Público y requisitos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 153
+        },
+        {
+          "text": "Objetivos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 85
+        },
+        {
+          "text": "Programa",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 88
+        },
+        {
+          "text": "Herramientas",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 112
+        },
+        {
+          "text": "Tutorial",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 73
+        },
+        {
+          "text": "Ejercicio",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 79
+        },
+        {
+          "text": "Caso ZYRON",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 105
+        },
+        {
+          "text": "Evaluación",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 95
+        },
+        {
+          "text": "Riesgos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 74
+        },
+        {
+          "text": "Recursos",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 83
+        },
+        {
+          "text": "Fuentes",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 75
+        },
+        {
+          "text": "FAQ",
+          "display": "flex",
+          "whiteSpace": "normal",
+          "width": 50
+        }
+      ]
+    },
+    "keyboardFocus": [
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "href": "../../index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Mapa ZYRON",
+        "href": "../../index.html#mapa-zyron",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "href": "../../index.html#zyron-ai-lab",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistemas",
+        "href": "../../centros/ecosistemas-inteligentes/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Índice",
+        "href": "#indice-sites",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Recursos",
+        "href": "#recursos-sites",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Volver al mapa de laboratorios",
+        "href": "../../centro-investigacion-openai.html#centros-laboratorio",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "href": "../../index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "href": "../../index.html#zyron-ai-lab",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro de Ecosistemas Inteligentes",
+        "href": "../../centros/ecosistemas-inteligentes/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistema Inteligente OpenAI",
+        "href": "../../centros/ecosistemas-inteligentes/openai/index.html",
+        "visible": true,
+        "focusIndicator": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro OpenAI",
+        "href": "../../centro-investigacion-openai.html",
+        "visible": true,
+        "focusIndicator": true
+      }
+    ]
+  }
+]

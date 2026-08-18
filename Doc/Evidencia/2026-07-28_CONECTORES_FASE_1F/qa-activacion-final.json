@@ -1,0 +1,36 @@
+{
+  "pages": {
+    "laboratorio": {
+      "status": 200,
+      "active": true,
+      "overflow": false,
+      "externalSecure": true
+    },
+    "centroOpenAI": {
+      "status": 200,
+      "active": true,
+      "overflow": false
+    },
+    "mapaZYRON": {
+      "status": 200,
+      "active": true,
+      "overflow": false
+    }
+  },
+  "documents": {
+    "docs/PROJECT_STATUS.md": true,
+    "docs/ROADMAP.md": true,
+    "docs/CHANGELOG.md": true,
+    "docs/SESSION_LOG.md": true,
+    "docs/NEXT_TASK.md": true,
+    "docs/KNOWN_ISSUES.md": true,
+    "docs/VERSION_HISTORY.md": true,
+    "docs/PLAN_COMPLETADO_CONTENIDOS_ZYRON.md": true,
+    "docs/HANDOVER.md": true,
+    "Doc/Memoria/00_MEMORIA_MAESTRA_ZYRON.md": true
+  },
+  "files": {
+    "resources": 10,
+    "expectedTen": true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "documents": {
+    "docs/PROJECT_STATUS.md": true,
+    "docs/ROADMAP.md": true,
+    "docs/CHANGELOG.md": true,
+    "docs/SESSION_LOG.md": true,
+    "docs/NEXT_TASK.md": true,
+    "docs/KNOWN_ISSUES.md": true,
+    "docs/VERSION_HISTORY.md": true,
+    "docs/PLAN_COMPLETADO_CONTENIDOS_ZYRON.md": true,
+    "docs/HANDOVER.md": true,
+    "Doc/Memoria/00_MEMORIA_MAESTRA_ZYRON.md": true
+  },
+  "nextPhase": true,
+  "version": true,
+  "agentsUnchanged": true,
+  "pdfsPending": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ]
+}

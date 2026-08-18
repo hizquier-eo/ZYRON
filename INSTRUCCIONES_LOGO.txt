@@ -1,0 +1,19 @@
+INSTRUCCIONES PARA REEMPLAZAR EL LOGOTIPO OFICIAL ZYRON
+
+1. Abra la carpeta:
+   assets
+
+2. Reemplace el archivo:
+   zyron-logo.png
+
+3. Mantenga exactamente el mismo nombre:
+   zyron-logo.png
+
+4. Formatos recomendados:
+   PNG transparente, SVG o WebP de alta calidad.
+
+5. Si usa un archivo con otro nombre, actualice estas dos referencias:
+   index.html -> assets/zyron-logo.png
+
+El diseño actual usa un logotipo temporal tomado de los recursos de marca ZYRON
+para mantener la paleta y presencia visual aprobada.
