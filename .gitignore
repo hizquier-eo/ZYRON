@@ -1,4 +1,6 @@
 **/node_modules/
+.agents/
+tmp/
 assets/videos/zyron-construccion-del-cerebro-virtual.mp4
 assets/videos/zyron-construccion-del-cerebro-con-ia.mp4
 assets/videos/zyron-ugma-conferencia-video-project.mp4
