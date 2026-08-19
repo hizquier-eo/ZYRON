@@ -1,0 +1,22 @@
+﻿[
+    {
+        "Url":  "http://127.0.0.1:8125/index.html",
+        "Status":  200,
+        "Bytes":  104917
+    },
+    {
+        "Url":  "http://127.0.0.1:8125/centros/ecosistemas-inteligentes/index.html",
+        "Status":  200,
+        "Bytes":  14975
+    },
+    {
+        "Url":  "http://127.0.0.1:8125/centro-investigacion-openai.html",
+        "Status":  200,
+        "Bytes":  34223
+    },
+    {
+        "Url":  "http://127.0.0.1:8125/centros/ecosistemas-inteligentes/openai/index.html",
+        "Status":  200,
+        "Bytes":  6633
+    }
+]

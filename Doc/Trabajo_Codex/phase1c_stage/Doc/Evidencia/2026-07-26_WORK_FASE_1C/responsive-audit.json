@@ -1,0 +1,278 @@
+[
+  {
+    "profile": {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    "httpStatus": 200,
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "horizontalOverflow": false,
+    "duplicateIds": [],
+    "emptyLinks": 0,
+    "missingAlt": 0,
+    "headingJumps": [],
+    "lang": "es",
+    "hasMain": true,
+    "statusDeveloping": false,
+    "keyboard": [
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Mapa ZYRON",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistemas",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Índice",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Recursos",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Volver al mapa de laboratorios",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro OpenAI",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Work",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Presentación",
+        "visible": true,
+        "focus": true
+      }
+    ]
+  },
+  {
+    "profile": {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024
+    },
+    "httpStatus": 200,
+    "documentWidth": 768,
+    "viewportWidth": 768,
+    "horizontalOverflow": false,
+    "duplicateIds": [],
+    "emptyLinks": 0,
+    "missingAlt": 0,
+    "headingJumps": [],
+    "lang": "es",
+    "hasMain": true,
+    "statusDeveloping": false,
+    "keyboard": [
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Mapa ZYRON",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistemas",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Índice",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Recursos",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Volver al mapa de laboratorios",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro OpenAI",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Work",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Presentación",
+        "visible": true,
+        "focus": true
+      }
+    ]
+  },
+  {
+    "profile": {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    },
+    "httpStatus": 200,
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": false,
+    "duplicateIds": [],
+    "emptyLinks": 0,
+    "missingAlt": 0,
+    "headingJumps": [],
+    "lang": "es",
+    "hasMain": true,
+    "statusDeveloping": false,
+    "keyboard": [
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Mapa ZYRON",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Ecosistemas",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Índice",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Recursos",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Volver al mapa de laboratorios",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Inicio",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "AI LAB",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Centro OpenAI",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Work",
+        "visible": true,
+        "focus": true
+      },
+      {
+        "tag": "a",
+        "text": "Presentación",
+        "visible": true,
+        "focus": true
+      }
+    ]
+  }
+]

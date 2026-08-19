@@ -1,0 +1,107 @@
+:root {
+  --manual-bg: #030a1b;
+  --manual-panel: rgba(8, 20, 43, .92);
+  --manual-line: rgba(0, 212, 255, .22);
+  --manual-cyan: #52dcff;
+  --manual-gold: #eba03d;
+  --manual-text: #eaf6ff;
+  --manual-muted: #a9bfd0;
+}
+
+html { scroll-behavior: smooth; }
+
+body.manual-lora-page {
+  margin: 0;
+  color: var(--manual-text);
+  background: radial-gradient(circle at 10% 0, rgba(0, 153, 255, .16), transparent 34rem), var(--manual-bg);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.72;
+}
+
+.manual-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px clamp(18px, 4vw, 60px);
+  border-bottom: 1px solid var(--manual-line);
+  background: rgba(3, 10, 27, .92);
+  backdrop-filter: blur(16px);
+}
+
+.manual-brand { color: var(--manual-gold); font-weight: 900; letter-spacing: .12em; text-decoration: none; }
+.manual-topbar nav, .manual-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.manual-topbar nav a, .manual-hero-actions a {
+  padding: 9px 14px;
+  border: 1px solid var(--manual-line);
+  border-radius: 999px;
+  color: var(--manual-text);
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 800;
+}
+.manual-topbar nav a:hover, .manual-topbar nav a:focus-visible, .manual-hero-actions a:hover, .manual-hero-actions a:focus-visible { border-color: var(--manual-gold); color: var(--manual-gold); }
+.manual-topbar .manual-download, .manual-hero-actions a:last-child { background: var(--manual-gold); border-color: var(--manual-gold); color: #07101e; }
+
+.manual-hero {
+  padding: clamp(64px, 10vw, 120px) clamp(22px, 8vw, 120px);
+  border-bottom: 1px solid var(--manual-line);
+  background: linear-gradient(130deg, rgba(3, 10, 27, .55), rgba(0, 116, 153, .18));
+}
+.manual-hero p { margin: 0 0 12px; color: var(--manual-gold); font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.manual-hero h1 { max-width: 980px; margin: 0 0 28px; color: #fff; font-size: clamp(2.1rem, 5vw, 4.8rem); line-height: 1.03; }
+
+.manual-layout { width: min(1380px, calc(100% - 32px)); margin: 34px auto 80px; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 32px; align-items: start; }
+.manual-toc { position: sticky; top: 86px; max-height: calc(100vh - 110px); overflow: auto; padding: 20px; border: 1px solid var(--manual-line); border-radius: 18px; background: var(--manual-panel); }
+.manual-toc strong { display: block; margin-bottom: 12px; color: var(--manual-gold); font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; }
+.manual-toc a { display: block; padding: 7px 9px; border-left: 2px solid transparent; color: var(--manual-muted); text-decoration: none; font-size: .82rem; line-height: 1.35; }
+.manual-toc a:hover, .manual-toc a:focus-visible { border-left-color: var(--manual-cyan); color: var(--manual-cyan); }
+.manual-toc .toc-level-1 { margin-top: 8px; color: #fff; font-weight: 800; }
+.manual-toc .toc-level-2 { padding-left: 16px; }
+.manual-toc .toc-return { margin-top: 16px; border-top: 1px solid var(--manual-line); color: var(--manual-gold); }
+
+.manual-content { min-width: 0; padding: clamp(24px, 5vw, 64px); border: 1px solid var(--manual-line); border-radius: 24px; background: rgba(5, 15, 34, .86); box-shadow: 0 28px 90px rgba(0, 0, 0, .35); }
+.manual-content h1, .manual-content h2, .manual-content h3 { position: relative; scroll-margin-top: 90px; color: #fff; line-height: 1.2; }
+.manual-content h1 { margin: 3.5rem 0 1.2rem; padding-top: 1.2rem; border-top: 1px solid var(--manual-line); font-size: clamp(1.9rem, 4vw, 3rem); }
+.manual-content h1:first-child { margin-top: 0; padding-top: 0; border-top: 0; color: var(--manual-gold); }
+.manual-content h2 { margin: 2.6rem 0 1rem; color: var(--manual-cyan); font-size: clamp(1.35rem, 2.5vw, 2rem); }
+.manual-content h3 { margin: 2rem 0 .7rem; font-size: 1.2rem; }
+.heading-anchor { margin-left: .5em; color: transparent; text-decoration: none; }
+.manual-content h1:hover .heading-anchor, .manual-content h2:hover .heading-anchor, .manual-content h3:hover .heading-anchor, .heading-anchor:focus { color: var(--manual-gold); }
+.manual-content p, .manual-content li { color: #d7e7f2; }
+.manual-content strong { color: #fff; }
+.manual-content a { color: var(--manual-cyan); }
+.manual-content hr { margin: 2.2rem 0; border: 0; border-top: 1px solid var(--manual-line); }
+.manual-content blockquote { margin: 1.5rem 0; padding: 12px 18px; border-left: 4px solid var(--manual-gold); background: rgba(235, 160, 61, .08); }
+.manual-content code { padding: .15em .4em; border-radius: 5px; color: #9bf2ff; background: rgba(0, 212, 255, .1); }
+.manual-content pre { overflow: auto; padding: 18px; border: 1px solid var(--manual-line); border-radius: 12px; background: #020713; }
+.manual-content table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+.manual-content th, .manual-content td { padding: 10px 12px; border: 1px solid rgba(255,255,255,.12); text-align: left; vertical-align: top; }
+.manual-content th { color: var(--manual-gold); background: rgba(0, 212, 255, .08); }
+
+.manual-footer { display: flex; justify-content: space-between; gap: 16px; padding: 26px clamp(18px, 4vw, 60px); border-top: 1px solid var(--manual-line); color: var(--manual-muted); }
+.manual-footer a { color: var(--manual-gold); }
+
+@media (max-width: 900px) {
+  .manual-topbar { position: static; align-items: flex-start; flex-direction: column; }
+  .manual-layout { grid-template-columns: 1fr; }
+  .manual-toc { position: static; max-height: 360px; }
+  .manual-content { padding: 24px 18px; }
+}
+
+@media (max-width: 560px) {
+  .manual-topbar nav a { flex: 1 1 140px; text-align: center; }
+  .manual-hero { padding-top: 48px; }
+  .manual-footer { flex-direction: column; }
+}
+
+@media print {
+  .manual-topbar, .manual-toc, .manual-hero-actions, .manual-footer { display: none; }
+  body.manual-lora-page { color: #111; background: #fff; }
+  .manual-layout { display: block; width: auto; margin: 0; }
+  .manual-content { padding: 0; border: 0; box-shadow: none; background: #fff; }
+  .manual-content h1, .manual-content h2, .manual-content h3, .manual-content p, .manual-content li { color: #111; }
+}

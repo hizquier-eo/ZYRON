@@ -1,0 +1,72 @@
+﻿[
+    {
+        "File":  "brief-estructurado-sites.docx",
+        "Status":  200,
+        "ContentType":  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "Bytes":  37416,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "brief-estructurado-sites.pdf",
+        "Status":  200,
+        "ContentType":  "application/pdf",
+        "Bytes":  2768,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "guia-publicacion-segura-sites.docx",
+        "Status":  200,
+        "ContentType":  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "Bytes":  37832,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "guia-publicacion-segura-sites.pdf",
+        "Status":  200,
+        "ContentType":  "application/pdf",
+        "Bytes":  3242,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "lista-verificacion-publicacion-sites.pdf",
+        "Status":  200,
+        "ContentType":  "application/pdf",
+        "Bytes":  3190,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "lista-verificacion-publicacion-sites.xlsx",
+        "Status":  200,
+        "ContentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Bytes":  5585,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "registro-versiones-sites.pdf",
+        "Status":  200,
+        "ContentType":  "application/pdf",
+        "Bytes":  2695,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "registro-versiones-sites.xlsx",
+        "Status":  200,
+        "ContentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Bytes":  6666,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "rubrica-laboratorio-sites.pdf",
+        "Status":  200,
+        "ContentType":  "application/pdf",
+        "Bytes":  2802,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "rubrica-laboratorio-sites.xlsx",
+        "Status":  200,
+        "ContentType":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Bytes":  5684,
+        "MatchesDisk":  true
+    }
+]

@@ -1,0 +1,38 @@
+# === ZYRON PRIMUS .gitignore ===
+
+# Agentes y temporales
+.agents/
+tmp/
+
+# Node (si se agrega server.js más adelante)
+node_modules/
+
+# Entorno y credenciales
+.env
+.env.*
+*.key
+*.pem
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Inspecciones y metadata de herramientas
+*.inspect.ndjson
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build (no aplica actualmente, por precaución)
+dist/
+build/
+.cache/

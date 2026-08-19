@@ -1,0 +1,288 @@
+{
+  "searched_root": "C:\\Users\\ASUS\\Desktop\\Empresa Zyron\\ZYRON PRIMUS",
+  "required_titles": [
+    "Manual Maestro de Inteligencia Artificial",
+    "Ingeniería Profesional de Prompts",
+    "Biblioteca Profesional de Prompts ZYRON",
+    "Cuaderno del Participante",
+    "Manual Maestro del Laboratorio de Inteligencia Artificial",
+    "Casos Prácticos Profesionales con Inteligencia Artificial"
+  ],
+  "pdfs_checked": 39,
+  "matches": [],
+  "all_files": [
+    {
+      "path": "assets/biblioteca-zyron.pdf",
+      "size": 1976,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "assets/brochure-zyron.pdf",
+      "size": 1992,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "assets/diploma-zyron.pdf",
+      "size": 482552,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "assets/documento-tecnico-clientes-zyron.pdf",
+      "size": 2021,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "assets/papers-institucionales-zyron.pdf",
+      "size": 1964,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "assets/Sintesis-Curricular-Henry-Izquierdo-2025.pdf",
+      "size": 36727,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "tmp/manual-maestro-lora-zyron-ai-lab-sync.pdf",
+      "size": 560222,
+      "pages": 30,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "tmp/manual-maestro-lora-zyron-ai-lab-v0.5.pdf",
+      "size": 597843,
+      "pages": 37,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "assets/documentos/manual-lora/manual-maestro-lora-zyron-ai-lab.pdf",
+      "size": 597843,
+      "pages": 37,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-chatgpt/guia-seguridad-chatgpt.pdf",
+      "size": 3157,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-chatgpt/lista-verificacion-chatgpt.pdf",
+      "size": 2844,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-chatgpt/plantilla-prompt-estructurado-chatgpt.pdf",
+      "size": 2885,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-chatgpt/registro-iteraciones-chatgpt.pdf",
+      "size": 2708,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-chatgpt/rubrica-laboratorio-chatgpt.pdf",
+      "size": 2725,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-computer-use/guia-seguridad-supervision-computer-use.pdf",
+      "size": 264437,
+      "pages": 2,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-computer-use/lista-verificacion-permisos-acciones-sensibles.pdf",
+      "size": 3305,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-computer-use/plantilla-planificacion-computer-use.pdf",
+      "size": 239635,
+      "pages": 2,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-computer-use/registro-acciones-computer-use.pdf",
+      "size": 3127,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-computer-use/rubrica-laboratorio-computer-use.pdf",
+      "size": 2733,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-conectores/guia-seguridad-privacidad-revocacion.pdf",
+      "size": 3098,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-conectores/matriz-permisos-fuentes-acciones.pdf",
+      "size": 2572,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-conectores/plantilla-planificacion-autorizacion-conectores.pdf",
+      "size": 2770,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-conectores/registro-consultas-acciones-incidencias-resultados.pdf",
+      "size": 3137,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-conectores/rubrica-laboratorio-conectores.pdf",
+      "size": 2739,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-live/guia-preparacion-voice-live.pdf",
+      "size": 196433,
+      "pages": 2,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-live/guia-seguridad-voz-camara-pantalla.pdf",
+      "size": 3802,
+      "pages": 2,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-live/lista-verificacion-audio-privacidad-permisos.pdf",
+      "size": 3430,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-live/registro-sesiones-live.pdf",
+      "size": 3585,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-live/rubrica-laboratorio-live.pdf",
+      "size": 3115,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-sites/brief-estructurado-sites.pdf",
+      "size": 2768,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-sites/guia-publicacion-segura-sites.pdf",
+      "size": 3242,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-sites/lista-verificacion-publicacion-sites.pdf",
+      "size": 3190,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-sites/registro-versiones-sites.pdf",
+      "size": 2695,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-sites/rubrica-laboratorio-sites.pdf",
+      "size": 2802,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-work/guia-seguridad-informacion-work.pdf",
+      "size": 3228,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-work/lista-verificacion-work.pdf",
+      "size": 3522,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-work/plantilla-planificacion-work.pdf",
+      "size": 3127,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-work/registro-tareas-entregables-work.pdf",
+      "size": 2813,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    },
+    {
+      "path": "recursos/laboratorio-work/rubrica-laboratorio-work.pdf",
+      "size": 2862,
+      "pages": 1,
+      "matches": [],
+      "error": null
+    }
+  ]
+}

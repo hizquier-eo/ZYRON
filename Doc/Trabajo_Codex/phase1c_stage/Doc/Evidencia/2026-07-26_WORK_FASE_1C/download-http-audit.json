@@ -1,0 +1,72 @@
+﻿[
+    {
+        "File":  "guia-seguridad-informacion-work.docx",
+        "Status":  200,
+        "Type":  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "Bytes":  37804,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "guia-seguridad-informacion-work.pdf",
+        "Status":  200,
+        "Type":  "application/pdf",
+        "Bytes":  3228,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "lista-verificacion-work.pdf",
+        "Status":  200,
+        "Type":  "application/pdf",
+        "Bytes":  3522,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "lista-verificacion-work.xlsx",
+        "Status":  200,
+        "Type":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Bytes":  5825,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "plantilla-planificacion-work.docx",
+        "Status":  200,
+        "Type":  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "Bytes":  37509,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "plantilla-planificacion-work.pdf",
+        "Status":  200,
+        "Type":  "application/pdf",
+        "Bytes":  3127,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "registro-tareas-entregables-work.pdf",
+        "Status":  200,
+        "Type":  "application/pdf",
+        "Bytes":  2813,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "registro-tareas-entregables-work.xlsx",
+        "Status":  200,
+        "Type":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Bytes":  6671,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "rubrica-laboratorio-work.pdf",
+        "Status":  200,
+        "Type":  "application/pdf",
+        "Bytes":  2862,
+        "MatchesDisk":  true
+    },
+    {
+        "File":  "rubrica-laboratorio-work.xlsx",
+        "Status":  200,
+        "Type":  "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "Bytes":  5703,
+        "MatchesDisk":  true
+    }
+]

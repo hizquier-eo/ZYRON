@@ -1,0 +1,158 @@
+{
+  "responsive": [
+    {
+      "name": "escritorio",
+      "width": 1440,
+      "height": 900,
+      "status": 200,
+      "overflow": false,
+      "cards": 6,
+      "h1": 1,
+      "duplicateIds": []
+    },
+    {
+      "name": "tableta",
+      "width": 768,
+      "height": 1024,
+      "status": 200,
+      "overflow": false,
+      "cards": 6,
+      "h1": 1,
+      "duplicateIds": []
+    },
+    {
+      "name": "movil",
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "overflow": false,
+      "cards": 6,
+      "h1": 1,
+      "duplicateIds": []
+    }
+  ],
+  "pages": [
+    {
+      "route": "/coleccion-academica-zyron-ai/volumen-01/index.html",
+      "status": 200,
+      "h1": 1,
+      "pending": 1,
+      "overflowDesktop": false,
+      "order": 1,
+      "coverType": "componente editorial HTML; PDF pendiente",
+      "overflowMobile": false
+    },
+    {
+      "route": "/coleccion-academica-zyron-ai/volumen-02/index.html",
+      "status": 200,
+      "h1": 1,
+      "pending": 1,
+      "overflowDesktop": false,
+      "order": 2,
+      "coverType": "componente editorial HTML; PDF pendiente",
+      "overflowMobile": false
+    },
+    {
+      "route": "/coleccion-academica-zyron-ai/volumen-03/index.html",
+      "status": 200,
+      "h1": 1,
+      "pending": 1,
+      "overflowDesktop": false,
+      "order": 3,
+      "coverType": "componente editorial HTML; PDF pendiente",
+      "overflowMobile": false
+    },
+    {
+      "route": "/coleccion-academica-zyron-ai/volumen-04/index.html",
+      "status": 200,
+      "h1": 1,
+      "pending": 1,
+      "overflowDesktop": false,
+      "order": 4,
+      "coverType": "componente editorial HTML; PDF pendiente",
+      "overflowMobile": false
+    },
+    {
+      "route": "/coleccion-academica-zyron-ai/volumen-05/index.html",
+      "status": 200,
+      "h1": 1,
+      "pending": 1,
+      "overflowDesktop": false,
+      "order": 5,
+      "coverType": "componente editorial HTML; PDF pendiente",
+      "overflowMobile": false
+    },
+    {
+      "route": "/coleccion-academica-zyron-ai/volumen-06/index.html",
+      "status": 200,
+      "h1": 1,
+      "pending": 1,
+      "overflowDesktop": false,
+      "order": 6,
+      "coverType": "componente editorial HTML; PDF pendiente",
+      "overflowMobile": false
+    }
+  ],
+  "integration": {
+    "inicio": 1,
+    "aiLab": 2,
+    "mapa": 7
+  },
+  "links": [
+    {
+      "file": "index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": true
+    },
+    {
+      "file": "centro-investigacion-openai.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    },
+    {
+      "file": "recursos/libros/index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    },
+    {
+      "file": "coleccion-academica-zyron-ai/index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    },
+    {
+      "file": "coleccion-academica-zyron-ai/volumen-01/index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    },
+    {
+      "file": "coleccion-academica-zyron-ai/volumen-02/index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    },
+    {
+      "file": "coleccion-academica-zyron-ai/volumen-03/index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    },
+    {
+      "file": "coleccion-academica-zyron-ai/volumen-04/index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    },
+    {
+      "file": "coleccion-academica-zyron-ai/volumen-05/index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    },
+    {
+      "file": "coleccion-academica-zyron-ai/volumen-06/index.html",
+      "windowsAbsolute": false,
+      "pdfDownload": false
+    }
+  ],
+  "console": [],
+  "pdfs": {
+    "available": 0,
+    "pending": 6
+  }
+}

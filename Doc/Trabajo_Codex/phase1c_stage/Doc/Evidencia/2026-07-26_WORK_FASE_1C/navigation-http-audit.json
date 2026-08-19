@@ -1,0 +1,22 @@
+﻿[
+    {
+        "Url":  "index.html",
+        "Status":  200,
+        "Bytes":  104881
+    },
+    {
+        "Url":  "centro-investigacion-openai.html",
+        "Status":  200,
+        "Bytes":  34151
+    },
+    {
+        "Url":  "laboratorios/sites/index.html",
+        "Status":  200,
+        "Bytes":  19366
+    },
+    {
+        "Url":  "laboratorios/live/index.html",
+        "Status":  200,
+        "Bytes":  1336
+    }
+]

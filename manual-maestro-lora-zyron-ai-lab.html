@@ -1,0 +1,1645 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Manual Maestro del Programa de Entrenamiento LoRA de ZYRON AI LAB." />
+  <title>Manual Maestro LoRA — ZYRON AI LAB</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/manual-lora.css" />
+</head>
+<body class="manual-lora-page">
+  <header class="manual-topbar">
+    <a class="manual-brand" href="index.html#zyron-ai-lab">ZYRON AI LAB</a>
+    <nav aria-label="Acciones del manual">
+      <a href="index.html#zyron-ai-lab">Volver al laboratorio</a>
+      <a href="assets/documentos/manual-lora/manual-maestro-lora-zyron-ai-lab.pdf" target="_blank" rel="noopener">Ver PDF</a>
+      <a class="manual-download" href="assets/documentos/manual-lora/manual-maestro-lora-zyron-ai-lab.pdf" download>Descargar PDF</a>
+    </nav>
+  </header>
+  <section class="manual-hero" aria-labelledby="manual-web-title">
+    <p>Documento oficial · ZYRON AI LAB</p>
+    <h1 id="manual-web-title">Manual Maestro del Programa de Entrenamiento LoRA — ZYRON AI LAB</h1>
+    <div class="manual-hero-actions">
+      <a href="#contenido">Leer en línea</a>
+      <a href="assets/documentos/manual-lora/manual-maestro-lora-zyron-ai-lab.pdf" download>Descargar manual en PDF</a>
+    </div>
+  </section>
+  <div class="manual-layout">
+    <aside class="manual-toc" aria-label="Índice del manual">
+      <strong>Contenido</strong>
+      <a class="toc-level-1" href="#zyron-ai-lab">ZYRON AI LAB</a>
+<a class="toc-level-2" href="#manual-maestro-del-programa-de-entrenamiento-lora">Manual Maestro del Programa de Entrenamiento LoRA</a>
+<a class="toc-level-2" href="#proposito-del-manual">Propósito del manual</a>
+<a class="toc-level-2" href="#alcance-inicial">Alcance inicial</a>
+<a class="toc-level-2" href="#principios-rectores">Principios rectores</a>
+<a class="toc-level-2" href="#flujo-maestro">Flujo maestro</a>
+<a class="toc-level-2" href="#criterio-general-de-finalizacion">Criterio general de finalización</a>
+<a class="toc-level-2" href="#indice-maestro-aprobado">Índice maestro aprobado</a>
+<a class="toc-level-1" href="#capitulo-1-presentacion-del-programa-zyron-lora">CAPÍTULO 1. PRESENTACIÓN DEL PROGRAMA ZYRON LoRA</a>
+<a class="toc-level-2" href="#1-1-identidad-del-programa">1.1 Identidad del programa</a>
+<a class="toc-level-2" href="#1-2-necesidad-que-atiende">1.2 Necesidad que atiende</a>
+<a class="toc-level-2" href="#1-3-que-es-un-lora-explicado-de-forma-sencilla">1.3 Qué es un LoRA, explicado de forma sencilla</a>
+<a class="toc-level-2" href="#1-4-resultados-que-producira-el-programa">1.4 Resultados que producirá el programa</a>
+<a class="toc-level-2" href="#1-5-lineas-iniciales-de-entrenamiento">1.5 Líneas iniciales de entrenamiento</a>
+<a class="toc-level-2" href="#1-6-ciclo-de-vida-del-proyecto">1.6 Ciclo de vida del proyecto</a>
+<a class="toc-level-2" href="#1-7-gobierno-y-responsabilidades">1.7 Gobierno y responsabilidades</a>
+<a class="toc-level-2" href="#1-8-reglas-operativas-del-programa">1.8 Reglas operativas del programa</a>
+<a class="toc-level-2" href="#1-9-lista-de-verificacion-puerta-de-control-1">1.9 Lista de verificación — Puerta de control 1</a>
+<a class="toc-level-2" href="#1-10-plantilla-reutilizable-acta-de-inicio">1.10 Plantilla reutilizable — Acta de inicio</a>
+<a class="toc-level-1" href="#capitulo-2-objetivos-alcance-y-perfiles-de-usuario">CAPÍTULO 2. OBJETIVOS, ALCANCE Y PERFILES DE USUARIO</a>
+<a class="toc-level-2" href="#2-1-objetivo-general">2.1 Objetivo general</a>
+<a class="toc-level-2" href="#2-2-objetivos-especificos">2.2 Objetivos específicos</a>
+<a class="toc-level-2" href="#2-3-alcance-incluido">2.3 Alcance incluido</a>
+<a class="toc-level-2" href="#2-4-fuera-de-alcance">2.4 Fuera de alcance</a>
+<a class="toc-level-2" href="#2-5-perfiles-de-usuario">2.5 Perfiles de usuario</a>
+<a class="toc-level-2" href="#2-6-ruta-de-competencia">2.6 Ruta de competencia</a>
+<a class="toc-level-2" href="#2-7-resultados-de-aprendizaje">2.7 Resultados de aprendizaje</a>
+<a class="toc-level-2" href="#2-8-casos-de-uso-iniciales">2.8 Casos de uso iniciales</a>
+<a class="toc-level-2" href="#2-9-indicadores-del-programa">2.9 Indicadores del programa</a>
+<a class="toc-level-2" href="#2-10-condiciones-operativas-locales">2.10 Condiciones operativas locales</a>
+<a class="toc-level-2" href="#2-11-puertas-de-control-del-programa">2.11 Puertas de control del programa</a>
+<a class="toc-level-2" href="#2-12-lista-de-verificacion-puerta-de-control-2">2.12 Lista de verificación — Puerta de control 2</a>
+<a class="toc-level-2" href="#2-13-registro-de-decisiones-de-esta-version">2.13 Registro de decisiones de esta versión</a>
+<a class="toc-level-1" href="#capitulo-3-fundamentos-de-lora-explicados-sin-tecnicismos-innecesarios">CAPÍTULO 3. FUNDAMENTOS DE LoRA EXPLICADOS SIN TECNICISMOS INNECESARIOS</a>
+<a class="toc-level-2" href="#3-1-la-idea-central">3.1 La idea central</a>
+<a class="toc-level-2" href="#3-2-relacion-entre-los-componentes">3.2 Relación entre los componentes</a>
+<a class="toc-level-2" href="#3-3-como-aprende-un-modelo-de-imagenes">3.3 Cómo aprende un modelo de imágenes</a>
+<a class="toc-level-2" href="#3-4-que-aprende-realmente-un-lora">3.4 Qué aprende realmente un LoRA</a>
+<a class="toc-level-2" href="#3-5-entrenamiento-e-inferencia">3.5 Entrenamiento e inferencia</a>
+<a class="toc-level-2" href="#3-6-compatibilidad-con-el-modelo-base">3.6 Compatibilidad con el modelo base</a>
+<a class="toc-level-2" href="#3-7-parametros-fundamentales">3.7 Parámetros fundamentales</a>
+<a class="toc-level-2" href="#3-8-rank-y-alpha-sin-formulas-complicadas">3.8 Rank y alpha sin fórmulas complicadas</a>
+<a class="toc-level-2" href="#3-9-subentrenamiento-equilibrio-y-sobreentrenamiento">3.9 Subentrenamiento, equilibrio y sobreentrenamiento</a>
+<a class="toc-level-2" href="#3-10-intensidad-durante-el-uso">3.10 Intensidad durante el uso</a>
+<a class="toc-level-2" href="#3-11-errores-de-interpretacion-frecuentes">3.11 Errores de interpretación frecuentes</a>
+<a class="toc-level-2" href="#3-12-lista-de-verificacion-de-comprension">3.12 Lista de verificación de comprensión</a>
+<a class="toc-level-1" href="#capitulo-4-glosario-completo">CAPÍTULO 4. GLOSARIO COMPLETO</a>
+<a class="toc-level-2" href="#a">A</a>
+<a class="toc-level-2" href="#b">B</a>
+<a class="toc-level-2" href="#c">C</a>
+<a class="toc-level-2" href="#d">D</a>
+<a class="toc-level-2" href="#e">E</a>
+<a class="toc-level-2" href="#f">F</a>
+<a class="toc-level-2" href="#g">G</a>
+<a class="toc-level-2" href="#h">H</a>
+<a class="toc-level-2" href="#i">I</a>
+<a class="toc-level-2" href="#l">L</a>
+<a class="toc-level-2" href="#m">M</a>
+<a class="toc-level-2" href="#o">O</a>
+<a class="toc-level-2" href="#p">P</a>
+<a class="toc-level-2" href="#r">R</a>
+<a class="toc-level-2" href="#s">S</a>
+<a class="toc-level-2" href="#t">T</a>
+<a class="toc-level-2" href="#u">U</a>
+<a class="toc-level-2" href="#v">V</a>
+<a class="toc-level-2" href="#4-1-referencia-rapida-para-usuarios-nuevos">4.1 Referencia rápida para usuarios nuevos</a>
+<a class="toc-level-2" href="#4-2-lista-de-verificacion-del-glosario">4.2 Lista de verificación del glosario</a>
+<a class="toc-level-1" href="#capitulo-5-requisitos-de-hardware-y-software-local">CAPÍTULO 5. REQUISITOS DE HARDWARE Y SOFTWARE LOCAL</a>
+<a class="toc-level-2" href="#5-1-proposito-del-capitulo">5.1 Propósito del capítulo</a>
+<a class="toc-level-2" href="#5-2-perfil-real-del-asus-de-zyron">5.2 Perfil real del ASUS de ZYRON</a>
+<a class="toc-level-2" href="#5-3-lo-que-este-asus-puede-realizar-correctamente">5.3 Lo que este ASUS puede realizar correctamente</a>
+<a class="toc-level-2" href="#5-4-lo-que-este-asus-puede-intentar-con-limitaciones">5.4 Lo que este ASUS puede intentar con limitaciones</a>
+<a class="toc-level-2" href="#5-5-lo-que-requiere-una-gpu-dedicada">5.5 Lo que requiere una GPU dedicada</a>
+<a class="toc-level-2" href="#5-6-perfiles-de-estacion-de-trabajo">5.6 Perfiles de estación de trabajo</a>
+<a class="toc-level-2" href="#5-7-almacenamiento-y-capacidad-libre">5.7 Almacenamiento y capacidad libre</a>
+<a class="toc-level-2" href="#5-8-software-base-aprobado">5.8 Software base aprobado</a>
+<a class="toc-level-2" href="#5-9-matriz-de-decision-local-gpu-dedicada-o-remota">5.9 Matriz de decisión local, GPU dedicada o remota</a>
+<a class="toc-level-2" href="#5-10-lista-de-verificacion-puerta-de-hardware">5.10 Lista de verificación — Puerta de hardware</a>
+<a class="toc-level-1" href="#capitulo-6-instalacion-y-validacion-del-entorno-en-windows">CAPÍTULO 6. INSTALACIÓN Y VALIDACIÓN DEL ENTORNO EN WINDOWS</a>
+<a class="toc-level-2" href="#6-1-objetivo-y-criterio-de-aprobacion">6.1 Objetivo y criterio de aprobación</a>
+<a class="toc-level-2" href="#6-2-preparacion-previa-de-windows">6.2 Preparación previa de Windows</a>
+<a class="toc-level-2" href="#6-3-instalar-y-validar-git">6.3 Instalar y validar Git</a>
+<a class="toc-level-2" href="#6-4-instalar-la-version-de-python-compatible">6.4 Instalar la versión de Python compatible</a>
+<a class="toc-level-2" href="#6-5-crear-un-entorno-virtual-aislado">6.5 Crear un entorno virtual aislado</a>
+<a class="toc-level-2" href="#6-6-ruta-a-validacion-del-asus-sin-cuda">6.6 Ruta A — Validación del ASUS sin CUDA</a>
+<a class="toc-level-2" href="#6-7-ruta-b-validacion-de-una-estacion-nvidia">6.7 Ruta B — Validación de una estación NVIDIA</a>
+<a class="toc-level-2" href="#6-8-instalar-sd-scripts-de-forma-reproducible">6.8 Instalar sd-scripts de forma reproducible</a>
+<a class="toc-level-2" href="#6-9-alternativa-con-interfaz-kohya-ss">6.9 Alternativa con interfaz Kohya_ss</a>
+<a class="toc-level-2" href="#6-10-pruebas-de-validacion-por-niveles">6.10 Pruebas de validación por niveles</a>
+<a class="toc-level-2" href="#6-11-registro-de-validacion">6.11 Registro de validación</a>
+<a class="toc-level-2" href="#6-12-solucion-de-fallas-frecuentes">6.12 Solución de fallas frecuentes</a>
+<a class="toc-level-2" href="#6-13-lista-de-verificacion-puerta-de-instalacion">6.13 Lista de verificación — Puerta de instalación</a>
+<a class="toc-level-2" href="#6-14-fuentes-tecnicas-oficiales-de-esta-version">6.14 Fuentes técnicas oficiales de esta versión</a>
+<a class="toc-level-1" href="#apendice-a-glosario-general-del-ecosistema-zyron">APÉNDICE A. GLOSARIO GENERAL DEL ECOSISTEMA ZYRON</a>
+<a class="toc-level-2" href="#a-1-proposito-y-alcance">A.1 Propósito y alcance</a>
+<a class="toc-level-2" href="#a-2">A</a>
+<a class="toc-level-2" href="#b-2">B</a>
+<a class="toc-level-2" href="#c-2">C</a>
+<a class="toc-level-2" href="#d-2">D</a>
+<a class="toc-level-2" href="#e-2">E</a>
+<a class="toc-level-2" href="#f-2">F</a>
+<a class="toc-level-2" href="#g-2">G</a>
+<a class="toc-level-2" href="#i-2">I</a>
+<a class="toc-level-2" href="#l-2">L</a>
+<a class="toc-level-2" href="#m-2">M</a>
+<a class="toc-level-2" href="#o-2">O</a>
+<a class="toc-level-2" href="#p-2">P</a>
+<a class="toc-level-2" href="#r-2">R</a>
+<a class="toc-level-2" href="#s-2">S</a>
+<a class="toc-level-2" href="#t-2">T</a>
+<a class="toc-level-2" href="#v-2">V</a>
+<a class="toc-level-2" href="#w">W</a>
+<a class="toc-level-2" href="#z">Z</a>
+<a class="toc-level-2" href="#a-2-reglas-de-mantenimiento-del-glosario-general">A.2 Reglas de mantenimiento del glosario general</a>
+<a class="toc-level-2" href="#control-de-construccion">Control de construcción</a>
+      <a class="toc-return" href="#manual-web-title">Volver arriba</a>
+    </aside>
+    <main id="contenido" class="manual-content"><h1 id="zyron-ai-lab">ZYRON AI LAB<a class="heading-anchor" href="#zyron-ai-lab" aria-label="Enlace a ZYRON AI LAB">#</a></h1><h2 id="manual-maestro-del-programa-de-entrenamiento-lora">Manual Maestro del Programa de Entrenamiento LoRA<a class="heading-anchor" href="#manual-maestro-del-programa-de-entrenamiento-lora" aria-label="Enlace a Manual Maestro del Programa de Entrenamiento LoRA">#</a></h2><p><strong>Código documental:</strong> ZYL-MAN-LORA-001<br><strong>Versión:</strong> 0.5 — Capítulos 1 al 6 y Glosario General ZYRON<br><strong>Estado:</strong> Desarrollo validable<br><strong>Responsable:</strong> ZYRON AI LAB<br><strong>Lema:</strong> <em>Inteligencia para transformar el futuro</em><br><strong>Fecha de actualización:</strong> 15 de julio de 2026</p>
+<hr>
+<h2 id="proposito-del-manual">Propósito del manual<a class="heading-anchor" href="#proposito-del-manual" aria-label="Enlace a Propósito del manual">#</a></h2><p>Este Manual Maestro establece un sistema ordenado y reutilizable para planificar, preparar, entrenar, evaluar, documentar y publicar adaptadores LoRA dentro de ZYRON AI LAB. Su diseño es <strong>local-first</strong>: una vez instaladas las dependencias, los datos, configuraciones, registros y resultados pueden permanecer bajo control directo de ZYRON, sin depender de plataformas externas de entrenamiento, almacenamiento o seguimiento.</p>
+<p>El contenido está escrito para personas con distintos niveles técnicos. Cada término se explicará antes de utilizarse y cada fase incluirá criterios de entrada, acciones, evidencias, listas de verificación y condiciones de aprobación.</p>
+<h2 id="alcance-inicial">Alcance inicial<a class="heading-anchor" href="#alcance-inicial" aria-label="Enlace a Alcance inicial">#</a></h2><p>El programa comprende tres líneas de entrenamiento:</p>
+<ol>
+<li><strong>LoRA de personaje:</strong> identidad visual y consistencia del robot ZYRON.</li>
+<li><strong>LoRA de identidad personal:</strong> representación autorizada del rostro de Henry Izquierdo.</li>
+<li><strong>LoRA de estilo:</strong> lenguaje visual corporativo de ZYRON.</li>
+</ol>
+<h2 id="principios-rectores">Principios rectores<a class="heading-anchor" href="#principios-rectores" aria-label="Enlace a Principios rectores">#</a></h2><ul>
+<li><strong>Autonomía local:</strong> los activos permanecen bajo control de ZYRON.</li>
+<li><strong>Reproducibilidad:</strong> todo resultado debe poder repetirse desde su ficha de experimento.</li>
+<li><strong>Trazabilidad:</strong> cada LoRA se relaciona con versiones concretas del dataset y de la configuración.</li>
+<li><strong>Trabajo por etapas:</strong> ninguna fase se aprueba sin su evidencia y lista de verificación.</li>
+<li><strong>Privacidad y autorización:</strong> las imágenes personales requieren consentimiento, finalidad definida y almacenamiento controlado.</li>
+<li><strong>Calidad medible:</strong> la evaluación utiliza pruebas repetibles y comparaciones entre versiones.</li>
+<li><strong>Aprendizaje acumulativo:</strong> decisiones, problemas y mejoras se convierten en conocimiento reutilizable.</li>
+</ul>
+<h2 id="flujo-maestro">Flujo maestro<a class="heading-anchor" href="#flujo-maestro" aria-label="Enlace a Flujo maestro">#</a></h2><p><strong>Definir → Preparar entorno → Diseñar dataset → Depurar → Crear captions → Configurar → Entrenar → Evaluar → Corregir → Publicar → Documentar</strong></p>
+<h2 id="criterio-general-de-finalizacion">Criterio general de finalización<a class="heading-anchor" href="#criterio-general-de-finalizacion" aria-label="Enlace a Criterio general de finalización">#</a></h2><p>Un proyecto LoRA se considera terminado cuando posee dataset autorizado y versionado; captions revisados; palabra de activación documentada; configuración registrada; archivos de salida identificados; evaluación completada; limitaciones descritas; respaldo validado; ficha del modelo; registro de entrenamiento y notas de versión.</p>
+<hr>
+<h2 id="indice-maestro-aprobado">Índice maestro aprobado<a class="heading-anchor" href="#indice-maestro-aprobado" aria-label="Enlace a Índice maestro aprobado">#</a></h2><ol>
+<li>Presentación del programa ZYRON LoRA</li>
+<li>Objetivos, alcance y perfiles de usuario</li>
+<li>Fundamentos de LoRA explicados sin tecnicismos innecesarios</li>
+<li>Glosario completo</li>
+<li>Requisitos de hardware y software local</li>
+<li>Instalación y validación del entorno</li>
+<li>Estructura de carpetas y control de versiones</li>
+<li>Planificación de cada proyecto LoRA</li>
+<li>Derechos de imagen, privacidad y seguridad</li>
+<li>Creación, selección y depuración del dataset</li>
+<li>Captions, etiquetas y palabras de activación</li>
+<li>Configuración de parámetros de entrenamiento</li>
+<li>Ejecución y monitoreo local del entrenamiento</li>
+<li>Evaluación objetiva y visual</li>
+<li>Corrección de errores y reentrenamiento</li>
+<li>Exportación, respaldo y reutilización del LoRA</li>
+<li>Flujo específico: personaje robot ZYRON</li>
+<li>Flujo específico: rostro de Henry Izquierdo</li>
+<li>Flujo específico: estilo corporativo ZYRON</li>
+<li>Buenas prácticas y errores frecuentes</li>
+<li>Listas de verificación por etapa</li>
+<li>Solución de problemas</li>
+<li>Registro de evidencias y lecciones aprendidas</li>
+<li>Plantillas reutilizables del programa</li>
+<li>Integración documental con ZYRON AI LAB y su Academia web</li>
+</ol>
+<hr>
+<h1 id="capitulo-1-presentacion-del-programa-zyron-lora">CAPÍTULO 1. PRESENTACIÓN DEL PROGRAMA ZYRON LoRA<a class="heading-anchor" href="#capitulo-1-presentacion-del-programa-zyron-lora" aria-label="Enlace a CAPÍTULO 1. PRESENTACIÓN DEL PROGRAMA ZYRON LoRA">#</a></h1><h2 id="1-1-identidad-del-programa">1.1 Identidad del programa<a class="heading-anchor" href="#1-1-identidad-del-programa" aria-label="Enlace a 1.1 Identidad del programa">#</a></h2><p>El Programa de Entrenamiento LoRA de ZYRON AI LAB es un sistema institucional para desarrollar adaptaciones especializadas de modelos generativos de imágenes. No se limita a ejecutar entrenamientos: organiza todo el ciclo de trabajo, desde la definición del objetivo hasta la publicación de una versión evaluada, respaldada y documentada.</p>
+<p>Su finalidad es que ZYRON pueda construir capacidades propias de entrenamiento, evitar la improvisación y conservar el conocimiento obtenido en cada experimento. El programa transforma actividades aisladas —reunir imágenes, redactar captions, ajustar parámetros o comparar resultados— en un proceso controlado con responsables, evidencias y criterios de aprobación.</p>
+<h2 id="1-2-necesidad-que-atiende">1.2 Necesidad que atiende<a class="heading-anchor" href="#1-2-necesidad-que-atiende" aria-label="Enlace a 1.2 Necesidad que atiende">#</a></h2><p>Un LoRA puede producir resultados visualmente atractivos y, aun así, ser difícil de repetir o utilizar. Esto ocurre cuando no existe control sobre el origen de las imágenes, las versiones del dataset, los parámetros, los prompts de evaluación o las decisiones tomadas durante el proceso.</p>
+<p>El programa responde a cinco problemas frecuentes:</p>
+<ol>
+<li>datasets formados sin criterios uniformes;</li>
+<li>configuraciones modificadas sin registro;</li>
+<li>resultados evaluados únicamente por impresión personal;</li>
+<li>archivos guardados con nombres ambiguos;</li>
+<li>aprendizajes que se pierden al terminar el experimento.</li>
+</ol>
+<p>ZYRON AI LAB abordará estos riesgos mediante un flujo único, plantillas normalizadas y puntos de control obligatorios.</p>
+<h2 id="1-3-que-es-un-lora-explicado-de-forma-sencilla">1.3 Qué es un LoRA, explicado de forma sencilla<a class="heading-anchor" href="#1-3-que-es-un-lora-explicado-de-forma-sencilla" aria-label="Enlace a 1.3 Qué es un LoRA, explicado de forma sencilla">#</a></h2><p>Un <strong>modelo base</strong> ya sabe generar una gran variedad de imágenes. Entrenarlo nuevamente desde cero sería costoso y exigiría grandes cantidades de datos y capacidad de cómputo. Un <strong>LoRA</strong> aprende solamente una adaptación relativamente pequeña: por ejemplo, cómo representar con consistencia un personaje, un rostro autorizado o un estilo visual.</p>
+<p>El resultado no sustituye al modelo base. Se utiliza junto con él y modifica su comportamiento según una intensidad ajustable. Por eso, un LoRA puede entenderse como una <strong>capa especializada de aprendizaje</strong> que se conecta al conocimiento general del modelo.</p>
+<p>Esta solución ofrece cuatro ventajas para ZYRON:</p>
+<ul>
+<li>archivos más pequeños que un modelo completo;</li>
+<li>menor tiempo y demanda de entrenamiento;</li>
+<li>posibilidad de mantener distintas especializaciones separadas;</li>
+<li>facilidad para comparar, actualizar o retirar una versión.</li>
+</ul>
+<p>Un LoRA no es una copia exacta garantizada ni corrige por sí solo un dataset deficiente. Su calidad depende de la selección de imágenes, los captions, la configuración, la evaluación y la compatibilidad con el modelo base.</p>
+<h2 id="1-4-resultados-que-producira-el-programa">1.4 Resultados que producirá el programa<a class="heading-anchor" href="#1-4-resultados-que-producira-el-programa" aria-label="Enlace a 1.4 Resultados que producirá el programa">#</a></h2><p>Cada proyecto deberá entregar como mínimo:</p>
+<table>
+<thead>
+<tr>
+<th>Entregable</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ficha de proyecto</td>
+<td>Define objetivo, alcance, responsables y restricciones.</td>
+</tr>
+<tr>
+<td>Dataset versionado</td>
+<td>Conserva imágenes, exclusiones y autorización de uso.</td>
+</tr>
+<tr>
+<td>Archivo de captions</td>
+<td>Describe cada imagen con un criterio uniforme.</td>
+</tr>
+<tr>
+<td>Configuración de entrenamiento</td>
+<td>Registra parámetros, semilla, modelo base y rutas.</td>
+</tr>
+<tr>
+<td>LoRA entrenado</td>
+<td>Archivo resultante claramente identificado.</td>
+</tr>
+<tr>
+<td>Matriz de evaluación</td>
+<td>Compara prompts, versiones, fortalezas y fallas.</td>
+</tr>
+<tr>
+<td>Ficha del modelo</td>
+<td>Explica uso, activación, intensidad, limitaciones y compatibilidad.</td>
+</tr>
+<tr>
+<td>Registro de evidencias</td>
+<td>Permite reconstruir qué se hizo y por qué.</td>
+</tr>
+<tr>
+<td>Notas de versión</td>
+<td>Resume cambios, decisión de publicación y estado.</td>
+</tr>
+</tbody></table>
+<h2 id="1-5-lineas-iniciales-de-entrenamiento">1.5 Líneas iniciales de entrenamiento<a class="heading-anchor" href="#1-5-lineas-iniciales-de-entrenamiento" aria-label="Enlace a 1.5 Líneas iniciales de entrenamiento">#</a></h2><h3 id="linea-a-personaje-robot-zyron">Línea A. Personaje robot ZYRON<a class="heading-anchor" href="#linea-a-personaje-robot-zyron" aria-label="Enlace a Línea A. Personaje robot ZYRON">#</a></h3><p>Busca reproducir de manera consistente su silueta, rostro, colores, materiales, proporciones y rasgos distintivos. Requiere imágenes variadas, pero fieles a una identidad visual única.</p>
+<h3 id="linea-b-identidad-personal-de-henry-izquierdo">Línea B. Identidad personal de Henry Izquierdo<a class="heading-anchor" href="#linea-b-identidad-personal-de-henry-izquierdo" aria-label="Enlace a Línea B. Identidad personal de Henry Izquierdo">#</a></h3><p>Busca representar un rostro autorizado en diferentes encuadres, expresiones e iluminaciones sin perder identidad. Requiere protección reforzada de los archivos, consentimiento documentado y criterios estrictos contra resultados degradantes, engañosos o no autorizados.</p>
+<h3 id="linea-c-estilo-corporativo-zyron">Línea C. Estilo corporativo ZYRON<a class="heading-anchor" href="#linea-c-estilo-corporativo-zyron" aria-label="Enlace a Línea C. Estilo corporativo ZYRON">#</a></h3><p>Busca aprender una dirección artística: paleta, iluminación, atmósfera, composición, materiales y lenguaje futurista corporativo. No pretende memorizar una sola imagen ni introducir el logotipo como texto; busca una identidad visual generalizable.</p>
+<h2 id="1-6-ciclo-de-vida-del-proyecto">1.6 Ciclo de vida del proyecto<a class="heading-anchor" href="#1-6-ciclo-de-vida-del-proyecto" aria-label="Enlace a 1.6 Ciclo de vida del proyecto">#</a></h2><table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Pregunta de control</th>
+<th>Evidencia principal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Definición</td>
+<td>¿Qué debe aprender y qué no debe aprender?</td>
+<td>Ficha del proyecto aprobada.</td>
+</tr>
+<tr>
+<td>2. Preparación</td>
+<td>¿El entorno puede ejecutar y registrar el proceso?</td>
+<td>Validación técnica.</td>
+</tr>
+<tr>
+<td>3. Dataset</td>
+<td>¿Las imágenes son suficientes, útiles y autorizadas?</td>
+<td>Inventario y versión del dataset.</td>
+</tr>
+<tr>
+<td>4. Captions</td>
+<td>¿Las descripciones enseñan correctamente el concepto?</td>
+<td>Informe de revisión.</td>
+</tr>
+<tr>
+<td>5. Configuración</td>
+<td>¿Los parámetros responden al objetivo?</td>
+<td>Configuración congelada.</td>
+</tr>
+<tr>
+<td>6. Entrenamiento</td>
+<td>¿La ejecución quedó registrada y respaldada?</td>
+<td>Log y archivos de salida.</td>
+</tr>
+<tr>
+<td>7. Evaluación</td>
+<td>¿El resultado funciona fuera de las imágenes aprendidas?</td>
+<td>Matriz de pruebas.</td>
+</tr>
+<tr>
+<td>8. Decisión</td>
+<td>¿Se publica, corrige o descarta?</td>
+<td>Acta de decisión.</td>
+</tr>
+<tr>
+<td>9. Cierre</td>
+<td>¿Otra persona podría reutilizarlo?</td>
+<td>Ficha del modelo y lecciones.</td>
+</tr>
+</tbody></table>
+<h2 id="1-7-gobierno-y-responsabilidades">1.7 Gobierno y responsabilidades<a class="heading-anchor" href="#1-7-gobierno-y-responsabilidades" aria-label="Enlace a 1.7 Gobierno y responsabilidades">#</a></h2><p>Una misma persona puede desempeñar varios roles en proyectos pequeños, pero las responsabilidades deben registrarse por separado.</p>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Responsabilidad principal</th>
+<th>No debe omitir</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Responsable del programa</td>
+<td>Autoriza alcance, prioridades y publicación.</td>
+<td>Revisar riesgos y criterios de éxito.</td>
+</tr>
+<tr>
+<td>Curador del dataset</td>
+<td>Selecciona, clasifica y depura imágenes.</td>
+<td>Derechos, duplicados y calidad técnica.</td>
+</tr>
+<tr>
+<td>Preparador de captions</td>
+<td>Redacta y normaliza las descripciones.</td>
+<td>Consistencia y palabra de activación.</td>
+</tr>
+<tr>
+<td>Operador de entrenamiento</td>
+<td>Configura, ejecuta y conserva registros.</td>
+<td>Versión del entorno y parámetros.</td>
+</tr>
+<tr>
+<td>Evaluador</td>
+<td>Aplica prompts y criterios comparables.</td>
+<td>Casos difíciles y fallas, no solo aciertos.</td>
+</tr>
+<tr>
+<td>Responsable documental</td>
+<td>Consolida evidencias y versiones.</td>
+<td>Correspondencia entre archivos y decisiones.</td>
+</tr>
+</tbody></table>
+<h2 id="1-8-reglas-operativas-del-programa">1.8 Reglas operativas del programa<a class="heading-anchor" href="#1-8-reglas-operativas-del-programa" aria-label="Enlace a 1.8 Reglas operativas del programa">#</a></h2><ol>
+<li>No se entrena con imágenes sin procedencia y autorización verificables.</li>
+<li>No se modifica un dataset aprobado sin crear una nueva versión.</li>
+<li>No se sobrescribe una configuración utilizada en un entrenamiento.</li>
+<li>No se publican resultados seleccionando únicamente los mejores ejemplos.</li>
+<li>No se declara éxito sin ejecutar la matriz de evaluación definida.</li>
+<li>No se elimina una versión fallida antes de registrar su causa y aprendizaje.</li>
+<li>No se emplea un LoRA de identidad personal fuera de su finalidad autorizada.</li>
+</ol>
+<h2 id="1-9-lista-de-verificacion-puerta-de-control-1">1.9 Lista de verificación — Puerta de control 1<a class="heading-anchor" href="#1-9-lista-de-verificacion-puerta-de-control-1" aria-label="Enlace a 1.9 Lista de verificación — Puerta de control 1">#</a></h2><p>Antes de iniciar la preparación técnica, confirmar:</p>
+<ul>
+<li><input disabled="" type="checkbox"> El concepto que debe aprender el LoRA está descrito en una frase concreta.</li>
+<li><input disabled="" type="checkbox"> Se definió qué rasgos deben permanecer y cuáles deben variar.</li>
+<li><input disabled="" type="checkbox"> La línea del proyecto está identificada: personaje, identidad o estilo.</li>
+<li><input disabled="" type="checkbox"> Existe una persona responsable de aprobar el resultado.</li>
+<li><input disabled="" type="checkbox"> La procedencia y autorización de las imágenes pueden demostrarse.</li>
+<li><input disabled="" type="checkbox"> Se definieron usos permitidos y usos prohibidos.</li>
+<li><input disabled="" type="checkbox"> Se conoce el modelo base objetivo o se registró como decisión pendiente.</li>
+<li><input disabled="" type="checkbox"> Se acordaron criterios preliminares de éxito.</li>
+<li><input disabled="" type="checkbox"> Se creó la carpeta oficial del proyecto.</li>
+<li><input disabled="" type="checkbox"> Se asignó un código único al proyecto.</li>
+</ul>
+<p><strong>Criterio de aprobación:</strong> todos los puntos deben estar completos o acompañados por una excepción escrita y aprobada.</p>
+<h2 id="1-10-plantilla-reutilizable-acta-de-inicio">1.10 Plantilla reutilizable — Acta de inicio<a class="heading-anchor" href="#1-10-plantilla-reutilizable-acta-de-inicio" aria-label="Enlace a 1.10 Plantilla reutilizable — Acta de inicio">#</a></h2><pre><code class="language-text">CÓDIGO DEL PROYECTO:
+NOMBRE DEL LoRA:
+LÍNEA: Personaje / Identidad / Estilo
+RESPONSABLE:
+FECHA DE INICIO:
+
+CONCEPTO QUE DEBE APRENDER:
+RASGOS QUE DEBEN PERMANECER:
+RASGOS QUE PUEDEN VARIAR:
+ELEMENTOS QUE NO DEBE APRENDER:
+
+USOS PERMITIDOS:
+USOS PROHIBIDOS:
+ORIGEN Y AUTORIZACIÓN DE LAS IMÁGENES:
+
+MODELO BASE PREVISTO:
+CRITERIOS PRELIMINARES DE ÉXITO:
+RIESGOS IDENTIFICADOS:
+DECISIONES PENDIENTES:
+
+APROBADO POR:
+FECHA DE APROBACIÓN:
+</code></pre>
+<hr>
+<h1 id="capitulo-2-objetivos-alcance-y-perfiles-de-usuario">CAPÍTULO 2. OBJETIVOS, ALCANCE Y PERFILES DE USUARIO<a class="heading-anchor" href="#capitulo-2-objetivos-alcance-y-perfiles-de-usuario" aria-label="Enlace a CAPÍTULO 2. OBJETIVOS, ALCANCE Y PERFILES DE USUARIO">#</a></h1><h2 id="2-1-objetivo-general">2.1 Objetivo general<a class="heading-anchor" href="#2-1-objetivo-general" aria-label="Enlace a 2.1 Objetivo general">#</a></h2><p>Desarrollar en ZYRON AI LAB una capacidad autónoma, reproducible y documentada para crear adaptadores LoRA de personaje, identidad y estilo, mediante un flujo local controlado que proteja los datos, permita evaluar resultados objetivamente y convierta cada experimento en conocimiento reutilizable.</p>
+<h2 id="2-2-objetivos-especificos">2.2 Objetivos específicos<a class="heading-anchor" href="#2-2-objetivos-especificos" aria-label="Enlace a 2.2 Objetivos específicos">#</a></h2><ol>
+<li>Estandarizar la planificación de proyectos LoRA.</li>
+<li>Definir criterios verificables para crear y aprobar datasets.</li>
+<li>Normalizar captions, palabras de activación y metadatos.</li>
+<li>Registrar las configuraciones y condiciones de cada entrenamiento.</li>
+<li>Evaluar fidelidad, flexibilidad, calidad y sobreentrenamiento con pruebas comparables.</li>
+<li>Proteger imágenes personales, activos de marca y resultados internos.</li>
+<li>Mantener versiones, respaldos y evidencias de cada proyecto.</li>
+<li>Desarrollar material formativo reutilizable en la Academia web de ZYRON.</li>
+<li>Reducir la repetición de errores mediante lecciones aprendidas.</li>
+<li>Facilitar la incorporación progresiva de nuevos operadores y evaluadores.</li>
+</ol>
+<h2 id="2-3-alcance-incluido">2.3 Alcance incluido<a class="heading-anchor" href="#2-3-alcance-incluido" aria-label="Enlace a 2.3 Alcance incluido">#</a></h2><p>El manual cubrirá:</p>
+<ul>
+<li>preparación y validación de un entorno local;</li>
+<li>organización de proyectos, rutas y nombres de archivos;</li>
+<li>selección, autorización, depuración y versionado de imágenes;</li>
+<li>creación y revisión de captions;</li>
+<li>configuración y ejecución de entrenamientos;</li>
+<li>monitoreo de archivos, registros y uso de recursos;</li>
+<li>evaluación cualitativa y cuantitativa básica;</li>
+<li>diagnóstico, corrección y reentrenamiento;</li>
+<li>exportación, respaldo y publicación interna;</li>
+<li>documentación técnica, operativa y formativa;</li>
+<li>tres flujos específicos para las líneas iniciales de ZYRON.</li>
+</ul>
+<h2 id="2-4-fuera-de-alcance">2.4 Fuera de alcance<a class="heading-anchor" href="#2-4-fuera-de-alcance" aria-label="Enlace a 2.4 Fuera de alcance">#</a></h2><p>Esta primera versión no pretende:</p>
+<ul>
+<li>entrenar un modelo fundacional completo desde cero;</li>
+<li>depender de plataformas externas como requisito del flujo;</li>
+<li>convertir material sin autorización en datos de entrenamiento;</li>
+<li>garantizar identidad perfecta en todas las poses, estilos o composiciones;</li>
+<li>sustituir la revisión humana por una puntuación automática;</li>
+<li>enseñar edición avanzada de imágenes o video;</li>
+<li>autorizar usos comerciales, legales o comunicacionales no definidos;</li>
+<li>publicar modelos personales o corporativos de forma automática.</li>
+</ul>
+<h2 id="2-5-perfiles-de-usuario">2.5 Perfiles de usuario<a class="heading-anchor" href="#2-5-perfiles-de-usuario" aria-label="Enlace a 2.5 Perfiles de usuario">#</a></h2><table>
+<thead>
+<tr>
+<th>Perfil</th>
+<th>Necesidad</th>
+<th>Capacidad esperada</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Principiante guiado</td>
+<td>Comprender el proceso sin dominar programación.</td>
+<td>Seguir instrucciones, reconocer términos y completar listas.</td>
+</tr>
+<tr>
+<td>Curador de datos</td>
+<td>Preparar imágenes confiables y coherentes.</td>
+<td>Clasificar, depurar, documentar y versionar datasets.</td>
+</tr>
+<tr>
+<td>Operador LoRA</td>
+<td>Ejecutar entrenamientos reproducibles.</td>
+<td>Validar entorno, configurar, monitorear y registrar.</td>
+</tr>
+<tr>
+<td>Evaluador visual</td>
+<td>Determinar utilidad y límites del resultado.</td>
+<td>Aplicar prompts controlados y comparar versiones.</td>
+</tr>
+<tr>
+<td>Responsable del programa</td>
+<td>Gobernar riesgos, prioridades y publicación.</td>
+<td>Aprobar puertas de control y decidir continuidad.</td>
+</tr>
+<tr>
+<td>Responsable documental</td>
+<td>Mantener evidencia y conocimiento institucional.</td>
+<td>Consolidar fichas, registros, incidencias y versiones.</td>
+</tr>
+</tbody></table>
+<h2 id="2-6-ruta-de-competencia">2.6 Ruta de competencia<a class="heading-anchor" href="#2-6-ruta-de-competencia" aria-label="Enlace a 2.6 Ruta de competencia">#</a></h2><h3 id="nivel-1-usuario-informado">Nivel 1. Usuario informado<a class="heading-anchor" href="#nivel-1-usuario-informado" aria-label="Enlace a Nivel 1. Usuario informado">#</a></h3><p>Comprende qué es un LoRA, identifica sus componentes, interpreta una ficha del modelo y reconoce riesgos básicos.</p>
+<h3 id="nivel-2-preparador">Nivel 2. Preparador<a class="heading-anchor" href="#nivel-2-preparador" aria-label="Enlace a Nivel 2. Preparador">#</a></h3><p>Puede crear la estructura de un proyecto, organizar imágenes, aplicar criterios de exclusión, redactar captions y completar las listas previas al entrenamiento.</p>
+<h3 id="nivel-3-operador">Nivel 3. Operador<a class="heading-anchor" href="#nivel-3-operador" aria-label="Enlace a Nivel 3. Operador">#</a></h3><p>Puede validar el entorno, seleccionar una configuración controlada, ejecutar el entrenamiento, conservar registros y detectar fallas operativas.</p>
+<h3 id="nivel-4-evaluador">Nivel 4. Evaluador<a class="heading-anchor" href="#nivel-4-evaluador" aria-label="Enlace a Nivel 4. Evaluador">#</a></h3><p>Puede diseñar pruebas comparables, interpretar fidelidad y flexibilidad, identificar sobreentrenamiento o aprendizaje insuficiente y recomendar ajustes.</p>
+<h3 id="nivel-5-responsable-de-version">Nivel 5. Responsable de versión<a class="heading-anchor" href="#nivel-5-responsable-de-version" aria-label="Enlace a Nivel 5. Responsable de versión">#</a></h3><p>Puede aprobar, rechazar o devolver una versión; consolidar evidencias; definir usos permitidos y publicar documentación interna.</p>
+<h2 id="2-7-resultados-de-aprendizaje">2.7 Resultados de aprendizaje<a class="heading-anchor" href="#2-7-resultados-de-aprendizaje" aria-label="Enlace a 2.7 Resultados de aprendizaje">#</a></h2><p>Al completar el programa, el participante podrá:</p>
+<ul>
+<li>explicar un LoRA en lenguaje sencillo;</li>
+<li>diferenciar modelo base, LoRA, dataset, caption, palabra de activación y checkpoint;</li>
+<li>preparar un proyecto con estructura y nombres normalizados;</li>
+<li>construir un dataset alineado con su objetivo;</li>
+<li>documentar parámetros y condiciones de ejecución;</li>
+<li>evaluar el resultado con una matriz de prompts repetibles;</li>
+<li>reconocer subentrenamiento, sobreentrenamiento y contaminación del concepto;</li>
+<li>proteger información personal y activos corporativos;</li>
+<li>respaldar, versionar y describir un LoRA para su reutilización;</li>
+<li>registrar una lección aprendida útil para futuros proyectos.</li>
+</ul>
+<h2 id="2-8-casos-de-uso-iniciales">2.8 Casos de uso iniciales<a class="heading-anchor" href="#2-8-casos-de-uso-iniciales" aria-label="Enlace a 2.8 Casos de uso iniciales">#</a></h2><h3 id="caso-1-comunicacion-visual-de-zyron">Caso 1. Comunicación visual de ZYRON<a class="heading-anchor" href="#caso-1-comunicacion-visual-de-zyron" aria-label="Enlace a Caso 1. Comunicación visual de ZYRON">#</a></h3><p>Generar al robot ZYRON en laboratorios, aulas, entornos corporativos y escenas de innovación conservando su identidad.</p>
+<h3 id="caso-2-representacion-autorizada-del-fundador">Caso 2. Representación autorizada del fundador<a class="heading-anchor" href="#caso-2-representacion-autorizada-del-fundador" aria-label="Enlace a Caso 2. Representación autorizada del fundador">#</a></h3><p>Crear imágenes institucionales de Henry Izquierdo para usos expresamente definidos, manteniendo control de privacidad, contexto y aprobación final.</p>
+<h3 id="caso-3-identidad-visual-de-campanas">Caso 3. Identidad visual de campañas<a class="heading-anchor" href="#caso-3-identidad-visual-de-campanas" aria-label="Enlace a Caso 3. Identidad visual de campañas">#</a></h3><p>Aplicar el estilo corporativo de ZYRON a piezas temáticas sin depender de una única composición ni memorizar imágenes del dataset.</p>
+<h3 id="caso-4-formacion-en-la-academia-zyron">Caso 4. Formación en la Academia ZYRON<a class="heading-anchor" href="#caso-4-formacion-en-la-academia-zyron" aria-label="Enlace a Caso 4. Formación en la Academia ZYRON">#</a></h3><p>Utilizar experimentos documentados como casos de estudio para explicar datasets, captions, parámetros, evaluación y mejora continua.</p>
+<h2 id="2-9-indicadores-del-programa">2.9 Indicadores del programa<a class="heading-anchor" href="#2-9-indicadores-del-programa" aria-label="Enlace a 2.9 Indicadores del programa">#</a></h2><table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Fórmula o criterio</th>
+<th>Meta inicial</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Trazabilidad documental</td>
+<td>Evidencias completas ÷ evidencias requeridas × 100</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Reproducibilidad operativa</td>
+<td>Ejecuciones repetibles ÷ ejecuciones verificadas × 100</td>
+<td>≥ 90 %</td>
+</tr>
+<tr>
+<td>Aprobación del dataset</td>
+<td>Imágenes aceptadas ÷ imágenes revisadas × 100</td>
+<td>Se registra; no se fuerza una cifra.</td>
+</tr>
+<tr>
+<td>Cumplimiento de evaluación</td>
+<td>Pruebas ejecutadas ÷ pruebas planificadas × 100</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Aceptación de versión</td>
+<td>Prompts aprobados ÷ prompts evaluados × 100</td>
+<td>Definida por proyecto.</td>
+</tr>
+<tr>
+<td>Incidencias documentadas</td>
+<td>Incidencias registradas ÷ incidencias detectadas × 100</td>
+<td>100 %</td>
+</tr>
+<tr>
+<td>Cierre documental</td>
+<td>Proyectos con ficha final ÷ proyectos cerrados × 100</td>
+<td>100 %</td>
+</tr>
+</tbody></table>
+<p>Las metas visuales específicas no deben ser idénticas para personaje, identidad y estilo. Cada acta de inicio fijará sus criterios antes del entrenamiento.</p>
+<h2 id="2-10-condiciones-operativas-locales">2.10 Condiciones operativas locales<a class="heading-anchor" href="#2-10-condiciones-operativas-locales" aria-label="Enlace a 2.10 Condiciones operativas locales">#</a></h2><p>El enfoque local-first separa las tareas según su demanda:</p>
+<ul>
+<li><strong>Equipo de trabajo general:</strong> documentación, clasificación de imágenes, captions, control de versiones, revisión de resultados y preparación de prompts.</li>
+<li><strong>Estación local de entrenamiento:</strong> ejecución intensiva con una GPU dedicada compatible y almacenamiento suficiente.</li>
+<li><strong>Respaldo controlado:</strong> copia local secundaria o unidad externa administrada por ZYRON.</li>
+</ul>
+<p>El portátil ASUS sin GPU dedicada puede utilizarse para la gestión documental, la preparación del dataset y gran parte de la evaluación. No se considerará el equipo principal para entrenamientos intensivos. La compatibilidad teórica con CPU no equivale a viabilidad operativa.</p>
+<h2 id="2-11-puertas-de-control-del-programa">2.11 Puertas de control del programa<a class="heading-anchor" href="#2-11-puertas-de-control-del-programa" aria-label="Enlace a 2.11 Puertas de control del programa">#</a></h2><table>
+<thead>
+<tr>
+<th>Puerta</th>
+<th>Autoriza avanzar hacia</th>
+<th>Condición mínima</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G1 — Proyecto</td>
+<td>Preparación</td>
+<td>Acta de inicio y autorización.</td>
+</tr>
+<tr>
+<td>G2 — Entorno</td>
+<td>Dataset final</td>
+<td>Validaciones técnicas completadas.</td>
+</tr>
+<tr>
+<td>G3 — Datos</td>
+<td>Configuración</td>
+<td>Dataset y captions aprobados.</td>
+</tr>
+<tr>
+<td>G4 — Entrenamiento</td>
+<td>Evaluación</td>
+<td>Configuración congelada y registro activo.</td>
+</tr>
+<tr>
+<td>G5 — Evaluación</td>
+<td>Publicación o retrabajo</td>
+<td>Matriz completa y decisión documentada.</td>
+</tr>
+<tr>
+<td>G6 — Cierre</td>
+<td>Archivo y reutilización</td>
+<td>Modelo, respaldo, ficha y lecciones cerrados.</td>
+</tr>
+</tbody></table>
+<h2 id="2-12-lista-de-verificacion-puerta-de-control-2">2.12 Lista de verificación — Puerta de control 2<a class="heading-anchor" href="#2-12-lista-de-verificacion-puerta-de-control-2" aria-label="Enlace a 2.12 Lista de verificación — Puerta de control 2">#</a></h2><p>Antes de cerrar la definición del proyecto, confirmar:</p>
+<ul>
+<li><input disabled="" type="checkbox"> El objetivo general del proyecto está alineado con el programa.</li>
+<li><input disabled="" type="checkbox"> El alcance incluido está escrito.</li>
+<li><input disabled="" type="checkbox"> Los elementos fuera de alcance están escritos.</li>
+<li><input disabled="" type="checkbox"> Se identificaron los perfiles que participarán.</li>
+<li><input disabled="" type="checkbox"> Cada responsabilidad tiene una persona asignada.</li>
+<li><input disabled="" type="checkbox"> Los entregables obligatorios están incluidos en el plan.</li>
+<li><input disabled="" type="checkbox"> Los indicadores aplicables fueron seleccionados.</li>
+<li><input disabled="" type="checkbox"> Se definió quién aprueba el dataset.</li>
+<li><input disabled="" type="checkbox"> Se definió quién aprueba la versión final.</li>
+<li><input disabled="" type="checkbox"> Las limitaciones del hardware fueron consideradas.</li>
+<li><input disabled="" type="checkbox"> El proyecto no depende de un servicio externo para completar su flujo esencial.</li>
+<li><input disabled="" type="checkbox"> Existe una ruta prevista de respaldo y recuperación.</li>
+</ul>
+<p><strong>Criterio de aprobación:</strong> alcance, responsables, indicadores y restricciones deben quedar registrados antes de comenzar el capítulo técnico del proyecto.</p>
+<h2 id="2-13-registro-de-decisiones-de-esta-version">2.13 Registro de decisiones de esta versión<a class="heading-anchor" href="#2-13-registro-de-decisiones-de-esta-version" aria-label="Enlace a 2.13 Registro de decisiones de esta versión">#</a></h2><table>
+<thead>
+<tr>
+<th>Decisión</th>
+<th>Justificación</th>
+<th>Aplicación</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Manual en Word y Markdown</td>
+<td>Facilita edición formal e integración web.</td>
+<td>Todo el contenido tendrá ambas versiones.</td>
+</tr>
+<tr>
+<td>Enfoque local-first</td>
+<td>Protege activos y evita dependencia operativa.</td>
+<td>Datos, configuración, logs y modelos se conservan localmente.</td>
+</tr>
+<tr>
+<td>Tres líneas iniciales</td>
+<td>Responden a necesidades concretas de ZYRON.</td>
+<td>Robot, identidad autorizada y estilo corporativo.</td>
+</tr>
+<tr>
+<td>Formación por niveles</td>
+<td>Permite incorporar usuarios no técnicos.</td>
+<td>Conceptos sencillos antes de tareas avanzadas.</td>
+</tr>
+<tr>
+<td>Puertas de control</td>
+<td>Evita avanzar con evidencias incompletas.</td>
+<td>Cada etapa exige checklist y aprobación.</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="capitulo-3-fundamentos-de-lora-explicados-sin-tecnicismos-innecesarios">CAPÍTULO 3. FUNDAMENTOS DE LoRA EXPLICADOS SIN TECNICISMOS INNECESARIOS<a class="heading-anchor" href="#capitulo-3-fundamentos-de-lora-explicados-sin-tecnicismos-innecesarios" aria-label="Enlace a CAPÍTULO 3. FUNDAMENTOS DE LoRA EXPLICADOS SIN TECNICISMOS INNECESARIOS">#</a></h1><h2 id="3-1-la-idea-central">3.1 La idea central<a class="heading-anchor" href="#3-1-la-idea-central" aria-label="Enlace a 3.1 La idea central">#</a></h2><p>Un modelo generativo de imágenes puede compararse con una persona que ya aprendió a dibujar miles de temas. Si ZYRON necesita que esa persona aprenda un personaje particular, un rostro autorizado o una estética corporativa, no es necesario enseñarle nuevamente todo lo que sabe. Se le proporciona una enseñanza adicional, pequeña y especializada.</p>
+<p>Esa enseñanza adicional es el LoRA. Aprende cambios concretos y los guarda separados del modelo base. Cuando se desea utilizar la especialización, se carga el modelo base y se conecta el LoRA; cuando no se necesita, se desconecta.</p>
+<h2 id="3-2-relacion-entre-los-componentes">3.2 Relación entre los componentes<a class="heading-anchor" href="#3-2-relacion-entre-los-componentes" aria-label="Enlace a 3.2 Relación entre los componentes">#</a></h2><table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Explicación sencilla</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Modelo base</td>
+<td>El conocimiento general que ya sabe generar imágenes.</td>
+<td>Proporciona anatomía, objetos, iluminación, estilos y composición general.</td>
+</tr>
+<tr>
+<td>Dataset</td>
+<td>El conjunto de ejemplos seleccionados para enseñar.</td>
+<td>Muestra el concepto, sus rasgos constantes y sus variaciones.</td>
+</tr>
+<tr>
+<td>Caption</td>
+<td>La descripción escrita de cada imagen.</td>
+<td>Indica qué aparece y ayuda a separar el concepto del contexto.</td>
+</tr>
+<tr>
+<td>Palabra de activación</td>
+<td>Término poco común asociado al concepto.</td>
+<td>Permite invocar la especialización en un prompt.</td>
+</tr>
+<tr>
+<td>Configuración</td>
+<td>Las decisiones técnicas del entrenamiento.</td>
+<td>Controla cuánto, cómo y durante cuánto tiempo aprende.</td>
+</tr>
+<tr>
+<td>LoRA</td>
+<td>El archivo pequeño que contiene la adaptación.</td>
+<td>Modifica temporalmente el comportamiento del modelo base.</td>
+</tr>
+<tr>
+<td>Prompt de evaluación</td>
+<td>Instrucción repetible utilizada para probar.</td>
+<td>Permite comparar versiones bajo condiciones similares.</td>
+</tr>
+</tbody></table>
+<p>La calidad final no depende de un único componente. Un buen dataset con captions deficientes puede enseñar relaciones incorrectas; una configuración razonable no compensa imágenes contradictorias; una evaluación improvisada puede ocultar fallas importantes.</p>
+<h2 id="3-3-como-aprende-un-modelo-de-imagenes">3.3 Cómo aprende un modelo de imágenes<a class="heading-anchor" href="#3-3-como-aprende-un-modelo-de-imagenes" aria-label="Enlace a 3.3 Cómo aprende un modelo de imágenes">#</a></h2><p>Durante el entrenamiento, el sistema recibe una imagen, su caption y una versión alterada de esa imagen. Intenta reconstruir la información visual de acuerdo con la descripción. Luego mide la diferencia entre lo esperado y lo obtenido, y ajusta gradualmente los parámetros entrenables del LoRA.</p>
+<p>Este ciclo se repite muchas veces:</p>
+<ol>
+<li>leer un ejemplo y su caption;</li>
+<li>realizar una predicción;</li>
+<li>medir el error;</li>
+<li>calcular un pequeño ajuste;</li>
+<li>repetir con otros ejemplos;</li>
+<li>guardar puntos de control para evaluarlos.</li>
+</ol>
+<p>La palabra <strong>error</strong> no significa que el entrenamiento haya fallado. Es una medida matemática que orienta el aprendizaje. Una pérdida menor puede ser positiva, pero no garantiza por sí sola una imagen mejor ni mayor capacidad de generalización.</p>
+<h2 id="3-4-que-aprende-realmente-un-lora">3.4 Qué aprende realmente un LoRA<a class="heading-anchor" href="#3-4-que-aprende-realmente-un-lora" aria-label="Enlace a 3.4 Qué aprende realmente un LoRA">#</a></h2><p>Un LoRA aprende patrones repetidos en los datos. Por eso es fundamental decidir cuáles repeticiones son deseadas y cuáles son accidentales.</p>
+<h3 id="en-un-personaje">En un personaje<a class="heading-anchor" href="#en-un-personaje" aria-label="Enlace a En un personaje">#</a></h3><p>Debe aprender identidad, proporciones, colores y rasgos distintivos. No debería aprender que el personaje siempre aparece en el mismo fondo, pose o encuadre.</p>
+<h3 id="en-una-identidad-personal">En una identidad personal<a class="heading-anchor" href="#en-una-identidad-personal" aria-label="Enlace a En una identidad personal">#</a></h3><p>Debe aprender rasgos faciales y relaciones que preservan identidad. No debería asociar a la persona con una sola ropa, expresión, iluminación o edad aparente si esas condiciones no forman parte del objetivo.</p>
+<h3 id="en-un-estilo">En un estilo<a class="heading-anchor" href="#en-un-estilo" aria-label="Enlace a En un estilo">#</a></h3><p>Debe aprender paleta, textura, iluminación, atmósfera y composición. No debería memorizar sujetos, textos, logotipos o escenas específicas que se repiten por accidente.</p>
+<h2 id="3-5-entrenamiento-e-inferencia">3.5 Entrenamiento e inferencia<a class="heading-anchor" href="#3-5-entrenamiento-e-inferencia" aria-label="Enlace a 3.5 Entrenamiento e inferencia">#</a></h2><p>Son dos momentos distintos:</p>
+<ul>
+<li><strong>Entrenamiento:</strong> el LoRA aprende a partir del dataset. Consume más recursos, produce registros y genera archivos de salida.</li>
+<li><strong>Inferencia:</strong> el LoRA ya entrenado se utiliza para crear imágenes. Se combina con el modelo base, un prompt, una semilla y una intensidad.</li>
+</ul>
+<p>Modificar la intensidad durante la inferencia no vuelve a entrenar el LoRA. Solamente cambia cuánto influye la adaptación sobre la imagen generada.</p>
+<h2 id="3-6-compatibilidad-con-el-modelo-base">3.6 Compatibilidad con el modelo base<a class="heading-anchor" href="#3-6-compatibilidad-con-el-modelo-base" aria-label="Enlace a 3.6 Compatibilidad con el modelo base">#</a></h2><p>Un LoRA se construye para una familia o arquitectura concreta. Aunque dos modelos generen imágenes, sus estructuras internas pueden ser incompatibles. Por eso la ficha del LoRA debe registrar:</p>
+<ul>
+<li>familia y versión del modelo base;</li>
+<li>resolución de trabajo prevista;</li>
+<li>componentes entrenados;</li>
+<li>formato del archivo;</li>
+<li>condiciones bajo las cuales fue evaluado.</li>
+</ul>
+<p>La similitud del nombre comercial no demuestra compatibilidad. ZYRON verificará siempre el modelo base exacto utilizado.</p>
+<h2 id="3-7-parametros-fundamentales">3.7 Parámetros fundamentales<a class="heading-anchor" href="#3-7-parametros-fundamentales" aria-label="Enlace a 3.7 Parámetros fundamentales">#</a></h2><table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Qué controla</th>
+<th>Si es demasiado bajo</th>
+<th>Si es demasiado alto</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tasa de aprendizaje</td>
+<td>Tamaño de cada ajuste.</td>
+<td>Aprende muy lentamente o no converge.</td>
+<td>Cambios inestables, pérdida de calidad o aprendizaje brusco.</td>
+</tr>
+<tr>
+<td>Pasos</td>
+<td>Cantidad total de actualizaciones.</td>
+<td>Concepto débil o incompleto.</td>
+<td>Memorización y pérdida de flexibilidad.</td>
+</tr>
+<tr>
+<td>Épocas</td>
+<td>Veces que el sistema recorre el dataset.</td>
+<td>Exposición insuficiente.</td>
+<td>Repetición excesiva del mismo material.</td>
+</tr>
+<tr>
+<td>Repeticiones</td>
+<td>Frecuencia adicional asignada a imágenes o grupos.</td>
+<td>Algunos conceptos reciben poca atención.</td>
+<td>Desequilibrio y sobreexposición.</td>
+</tr>
+<tr>
+<td>Batch</td>
+<td>Ejemplos procesados antes de un ajuste.</td>
+<td>Mayor variación entre ajustes; no siempre es malo.</td>
+<td>Más consumo de memoria y posible suavizado excesivo.</td>
+</tr>
+<tr>
+<td>Rank o dimensión</td>
+<td>Capacidad disponible para guardar la adaptación.</td>
+<td>No representa suficiente detalle.</td>
+<td>Archivo mayor y más posibilidad de memorizar.</td>
+</tr>
+<tr>
+<td>Alpha</td>
+<td>Escala interna relacionada con el rank.</td>
+<td>Influencia limitada según la configuración.</td>
+<td>Puede aumentar demasiado la fuerza efectiva.</td>
+</tr>
+<tr>
+<td>Resolución</td>
+<td>Tamaño visual utilizado durante el aprendizaje.</td>
+<td>Se pierden detalles finos.</td>
+<td>Mayor consumo y entrenamiento más lento.</td>
+</tr>
+<tr>
+<td>Dropout</td>
+<td>Omite parte de la adaptación durante entrenamiento.</td>
+<td>Menor regularización.</td>
+<td>Dificulta que el concepto se aprenda.</td>
+</tr>
+<tr>
+<td>Semilla</td>
+<td>Estado inicial de aleatoriedad.</td>
+<td>No aplica como cantidad.</td>
+<td>No aplica como cantidad.</td>
+</tr>
+</tbody></table>
+<p>Los parámetros interactúan. No debe analizarse uno de forma aislada. Por ejemplo, aumentar las épocas, las repeticiones y la tasa de aprendizaje al mismo tiempo multiplica la exposición efectiva y eleva el riesgo de sobreentrenamiento.</p>
+<h2 id="3-8-rank-y-alpha-sin-formulas-complicadas">3.8 Rank y alpha sin fórmulas complicadas<a class="heading-anchor" href="#3-8-rank-y-alpha-sin-formulas-complicadas" aria-label="Enlace a 3.8 Rank y alpha sin fórmulas complicadas">#</a></h2><p>El <strong>rank</strong> determina cuánta capacidad tiene el LoRA para representar cambios. Un rank mayor puede capturar relaciones más complejas, pero no convierte automáticamente el resultado en uno mejor. Si el concepto es simple o el dataset es pequeño, una capacidad excesiva puede memorizar detalles no deseados.</p>
+<p>El <strong>alpha</strong> ajusta la escala interna de esa capacidad. Para comparar experimentos, ZYRON registrará siempre rank y alpha juntos; nunca anotará uno sin el otro.</p>
+<h3 id="nota-tecnica-opcional">Nota técnica opcional<a class="heading-anchor" href="#nota-tecnica-opcional" aria-label="Enlace a Nota técnica opcional">#</a></h3><p>La adaptación puede representarse de forma simplificada como:</p>
+<p><strong>Peso adaptado = Peso original + intensidad × escala × adaptación LoRA</strong></p>
+<p>En la formulación habitual, la adaptación se aproxima con dos matrices pequeñas. Esto permite aprender una modificación útil sin reentrenar todos los pesos del modelo.</p>
+<h2 id="3-9-subentrenamiento-equilibrio-y-sobreentrenamiento">3.9 Subentrenamiento, equilibrio y sobreentrenamiento<a class="heading-anchor" href="#3-9-subentrenamiento-equilibrio-y-sobreentrenamiento" aria-label="Enlace a 3.9 Subentrenamiento, equilibrio y sobreentrenamiento">#</a></h2><table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Señales habituales</th>
+<th>Acción inicial</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Subentrenamiento</td>
+<td>Identidad débil, rasgos inconsistentes, palabra de activación con poco efecto.</td>
+<td>Revisar captions, exposición, tasa de aprendizaje y calidad del dataset.</td>
+</tr>
+<tr>
+<td>Equilibrio útil</td>
+<td>Identidad reconocible, variaciones posibles, fondos y poses responden al prompt.</td>
+<td>Conservar checkpoint y ampliar pruebas difíciles.</td>
+</tr>
+<tr>
+<td>Sobreentrenamiento</td>
+<td>Repite poses o fondos, ignora el prompt, produce rasgos rígidos o artefactos.</td>
+<td>Evaluar un checkpoint anterior y reducir exposición o capacidad.</td>
+</tr>
+<tr>
+<td>Contaminación</td>
+<td>Aprende ropa, objetos, texto o escenario como parte inseparable del concepto.</td>
+<td>Diversificar datos y corregir captions o exclusiones.</td>
+</tr>
+</tbody></table>
+<p>La decisión no debe basarse solo en la curva de pérdida. Siempre se combinarán registros técnicos con pruebas visuales controladas.</p>
+<h2 id="3-10-intensidad-durante-el-uso">3.10 Intensidad durante el uso<a class="heading-anchor" href="#3-10-intensidad-durante-el-uso" aria-label="Enlace a 3.10 Intensidad durante el uso">#</a></h2><p>La intensidad define cuánto influye el LoRA en la generación. Una intensidad baja puede conservar mayor libertad del modelo base; una intensidad alta puede reforzar identidad o estilo, pero también introducir rigidez y artefactos.</p>
+<p>ZYRON evaluará varias intensidades con el mismo prompt y semilla. El rango recomendado se documentará en la ficha del modelo. No existe una intensidad universal válida para todos los modelos, LoRAs y prompts.</p>
+<h2 id="3-11-errores-de-interpretacion-frecuentes">3.11 Errores de interpretación frecuentes<a class="heading-anchor" href="#3-11-errores-de-interpretacion-frecuentes" aria-label="Enlace a 3.11 Errores de interpretación frecuentes">#</a></h2><table>
+<thead>
+<tr>
+<th>Creencia incorrecta</th>
+<th>Aclaración</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Más imágenes siempre producen un LoRA mejor.</td>
+<td>Importan calidad, diversidad y alineación con el objetivo.</td>
+</tr>
+<tr>
+<td>Más pasos siempre mejoran el resultado.</td>
+<td>Una exposición excesiva puede memorizar y rigidizar.</td>
+</tr>
+<tr>
+<td>Una pérdida menor garantiza mejor calidad.</td>
+<td>La pérdida no sustituye la evaluación visual.</td>
+</tr>
+<tr>
+<td>El LoRA contiene el modelo completo.</td>
+<td>Contiene una adaptación que necesita un modelo compatible.</td>
+</tr>
+<tr>
+<td>Un LoRA de estilo debe repetir las imágenes originales.</td>
+<td>Debe generalizar el estilo a sujetos y escenas nuevas.</td>
+</tr>
+<tr>
+<td>La palabra de activación es suficiente.</td>
+<td>También importan captions, modelo base e intensidad.</td>
+</tr>
+<tr>
+<td>Si una imagen luce bien, el LoRA está aprobado.</td>
+<td>Se requiere una matriz completa de pruebas.</td>
+</tr>
+</tbody></table>
+<h2 id="3-12-lista-de-verificacion-de-comprension">3.12 Lista de verificación de comprensión<a class="heading-anchor" href="#3-12-lista-de-verificacion-de-comprension" aria-label="Enlace a 3.12 Lista de verificación de comprensión">#</a></h2><ul>
+<li><input disabled="" type="checkbox"> Puedo explicar la diferencia entre modelo base y LoRA.</li>
+<li><input disabled="" type="checkbox"> Comprendo para qué sirven dataset y captions.</li>
+<li><input disabled="" type="checkbox"> Distingo entrenamiento de inferencia.</li>
+<li><input disabled="" type="checkbox"> Comprendo que rank representa capacidad, no calidad garantizada.</li>
+<li><input disabled="" type="checkbox"> Comprendo la función de pasos, épocas y tasa de aprendizaje.</li>
+<li><input disabled="" type="checkbox"> Puedo reconocer señales de subentrenamiento y sobreentrenamiento.</li>
+<li><input disabled="" type="checkbox"> Sé que la pérdida matemática no sustituye una evaluación visual.</li>
+<li><input disabled="" type="checkbox"> Comprendo que un LoRA necesita un modelo base compatible.</li>
+<li><input disabled="" type="checkbox"> Sé que la intensidad se ajusta durante el uso y debe evaluarse.</li>
+<li><input disabled="" type="checkbox"> Puedo describir qué debe aprender cada línea de ZYRON y qué debe evitar.</li>
+</ul>
+<p><strong>Criterio de aprobación:</strong> la persona debe poder explicar estos conceptos con sus propias palabras antes de modificar configuraciones de entrenamiento.</p>
+<hr>
+<h1 id="capitulo-4-glosario-completo">CAPÍTULO 4. GLOSARIO COMPLETO<a class="heading-anchor" href="#capitulo-4-glosario-completo" aria-label="Enlace a CAPÍTULO 4. GLOSARIO COMPLETO">#</a></h1><p>Este glosario utiliza definiciones operativas para ZYRON AI LAB. Cuando una herramienta muestre un término en inglés, se conservará entre paréntesis para facilitar su identificación.</p>
+<h2 id="a">A<a class="heading-anchor" href="#a" aria-label="Enlace a A">#</a></h2><h3 id="adaptador">Adaptador<a class="heading-anchor" href="#adaptador" aria-label="Enlace a Adaptador">#</a></h3><p>Archivo o conjunto de pesos que modifica el comportamiento de un modelo base sin reemplazarlo. Un LoRA es un tipo de adaptador.</p>
+<h3 id="alpha">Alpha<a class="heading-anchor" href="#alpha" aria-label="Enlace a Alpha">#</a></h3><p>Valor que escala internamente la contribución del LoRA en relación con su rank. Debe registrarse junto con el rank.</p>
+<h3 id="artefacto-visual">Artefacto visual<a class="heading-anchor" href="#artefacto-visual" aria-label="Enlace a Artefacto visual">#</a></h3><p>Defecto no deseado: deformaciones, texturas extrañas, duplicaciones, bordes rotos, manchas o detalles incoherentes.</p>
+<h2 id="b">B<a class="heading-anchor" href="#b" aria-label="Enlace a B">#</a></h2><h3 id="batch-o-tamano-de-lote">Batch o tamaño de lote<a class="heading-anchor" href="#batch-o-tamano-de-lote" aria-label="Enlace a Batch o tamaño de lote">#</a></h3><p>Cantidad de ejemplos procesados antes de realizar una actualización. Un lote mayor suele consumir más memoria.</p>
+<h3 id="bucket">Bucket<a class="heading-anchor" href="#bucket" aria-label="Enlace a Bucket">#</a></h3><p>Grupo de imágenes con dimensiones o proporciones semejantes. Permite entrenar con distintos formatos reduciendo recortes o deformaciones innecesarias.</p>
+<h2 id="c">C<a class="heading-anchor" href="#c" aria-label="Enlace a C">#</a></h2><h3 id="caption">Caption<a class="heading-anchor" href="#caption" aria-label="Enlace a Caption">#</a></h3><p>Descripción textual vinculada a una imagen del dataset. Ayuda al modelo a diferenciar el concepto principal de ropa, pose, fondo, iluminación y otros elementos.</p>
+<h3 id="checkpoint">Checkpoint<a class="heading-anchor" href="#checkpoint" aria-label="Enlace a Checkpoint">#</a></h3><p>Estado guardado del entrenamiento o modelo en un momento concreto. Permite evaluar versiones intermedias y retomar procesos cuando la configuración lo admite.</p>
+<h3 id="concepto">Concepto<a class="heading-anchor" href="#concepto" aria-label="Enlace a Concepto">#</a></h3><p>Aquello que el LoRA debe aprender: personaje, identidad, objeto, estilo u otra característica definida.</p>
+<h3 id="configuracion-congelada">Configuración congelada<a class="heading-anchor" href="#configuracion-congelada" aria-label="Enlace a Configuración congelada">#</a></h3><p>Copia de los parámetros que se utilizarán en una ejecución. No se modifica después de iniciar; cualquier cambio crea una configuración nueva.</p>
+<h3 id="curva-de-perdida">Curva de pérdida<a class="heading-anchor" href="#curva-de-perdida" aria-label="Enlace a Curva de pérdida">#</a></h3><p>Representación del valor de loss a lo largo del entrenamiento. Ayuda a detectar inestabilidad, pero no determina por sí sola la calidad visual.</p>
+<h2 id="d">D<a class="heading-anchor" href="#d" aria-label="Enlace a D">#</a></h2><h3 id="dataset">Dataset<a class="heading-anchor" href="#dataset" aria-label="Enlace a Dataset">#</a></h3><p>Conjunto organizado de imágenes, captions y metadatos utilizados para entrenar o evaluar.</p>
+<h3 id="dataset-de-validacion">Dataset de validación<a class="heading-anchor" href="#dataset-de-validacion" aria-label="Enlace a Dataset de validación">#</a></h3><p>Ejemplos o pruebas reservados para verificar generalización. No deben utilizarse de la misma manera que los datos de entrenamiento.</p>
+<h3 id="dimension-o-rank">Dimensión o rank<a class="heading-anchor" href="#dimension-o-rank" aria-label="Enlace a Dimensión o rank">#</a></h3><p>Capacidad interna asignada al LoRA para representar la adaptación. Más capacidad implica más recursos y no garantiza mejor resultado.</p>
+<h3 id="dropout">Dropout<a class="heading-anchor" href="#dropout" aria-label="Enlace a Dropout">#</a></h3><p>Técnica que omite aleatoriamente parte de la información entrenable para reducir dependencia excesiva de patrones concretos.</p>
+<h2 id="e">E<a class="heading-anchor" href="#e" aria-label="Enlace a E">#</a></h2><h3 id="epoca-epoch">Época (epoch)<a class="heading-anchor" href="#epoca-epoch" aria-label="Enlace a Época (epoch)">#</a></h3><p>Una pasada completa por el dataset según las repeticiones y la configuración definida.</p>
+<h3 id="entrenamiento">Entrenamiento<a class="heading-anchor" href="#entrenamiento" aria-label="Enlace a Entrenamiento">#</a></h3><p>Proceso mediante el cual el LoRA ajusta sus pesos usando imágenes, captions y una configuración.</p>
+<h3 id="escalador-de-gradiente">Escalador de gradiente<a class="heading-anchor" href="#escalador-de-gradiente" aria-label="Enlace a Escalador de gradiente">#</a></h3><p>Mecanismo utilizado con ciertas precisiones numéricas para evitar valores demasiado pequeños o inestables durante los cálculos.</p>
+<h3 id="evaluacion-ciega">Evaluación ciega<a class="heading-anchor" href="#evaluacion-ciega" aria-label="Enlace a Evaluación ciega">#</a></h3><p>Comparación en la que la persona evaluadora no sabe qué versión produjo cada resultado. Reduce sesgos de preferencia.</p>
+<h2 id="f">F<a class="heading-anchor" href="#f" aria-label="Enlace a F">#</a></h2><h3 id="fine-tuning-o-ajuste-fino">Fine-tuning o ajuste fino<a class="heading-anchor" href="#fine-tuning-o-ajuste-fino" aria-label="Enlace a Fine-tuning o ajuste fino">#</a></h3><p>Adaptación de un modelo existente para una tarea o concepto. LoRA es una técnica eficiente de ajuste fino.</p>
+<h3 id="formato-seguro-safetensors">Formato seguro (safetensors)<a class="heading-anchor" href="#formato-seguro-safetensors" aria-label="Enlace a Formato seguro (safetensors)">#</a></h3><p>Formato de almacenamiento de pesos diseñado para evitar la ejecución de código incluida en archivos de modelos. Sigue siendo necesario verificar procedencia y compatibilidad.</p>
+<h2 id="g">G<a class="heading-anchor" href="#g" aria-label="Enlace a G">#</a></h2><h3 id="generalizacion">Generalización<a class="heading-anchor" href="#generalizacion" aria-label="Enlace a Generalización">#</a></h3><p>Capacidad de aplicar lo aprendido en poses, fondos, iluminaciones, encuadres o sujetos que no son copias del dataset.</p>
+<h3 id="gpu">GPU<a class="heading-anchor" href="#gpu" aria-label="Enlace a GPU">#</a></h3><p>Procesador especializado en cálculos paralelos. Es el recurso principal para entrenamientos de imágenes viables en tiempo razonable.</p>
+<h3 id="gradiente">Gradiente<a class="heading-anchor" href="#gradiente" aria-label="Enlace a Gradiente">#</a></h3><p>Información matemática que indica en qué dirección deben ajustarse los parámetros para reducir el error.</p>
+<h2 id="h">H<a class="heading-anchor" href="#h" aria-label="Enlace a H">#</a></h2><h3 id="hiperparametro">Hiperparámetro<a class="heading-anchor" href="#hiperparametro" aria-label="Enlace a Hiperparámetro">#</a></h3><p>Valor decidido antes o durante la configuración, como tasa de aprendizaje, rank, batch, resolución o número de pasos.</p>
+<h2 id="i">I<a class="heading-anchor" href="#i" aria-label="Enlace a I">#</a></h2><h3 id="inferencia">Inferencia<a class="heading-anchor" href="#inferencia" aria-label="Enlace a Inferencia">#</a></h3><p>Uso de un modelo ya entrenado para generar resultados. No modifica el LoRA.</p>
+<h3 id="intensidad-o-peso-del-lora">Intensidad o peso del LoRA<a class="heading-anchor" href="#intensidad-o-peso-del-lora" aria-label="Enlace a Intensidad o peso del LoRA">#</a></h3><p>Valor aplicado durante la inferencia para controlar cuánto influye la adaptación.</p>
+<h2 id="l">L<a class="heading-anchor" href="#l" aria-label="Enlace a L">#</a></h2><h3 id="latente">Latente<a class="heading-anchor" href="#latente" aria-label="Enlace a Latente">#</a></h3><p>Representación comprimida en la que muchos modelos realizan parte de la generación. No es una imagen visible, aunque contiene información que luego se decodifica.</p>
+<h3 id="learning-rate-o-tasa-de-aprendizaje">Learning rate o tasa de aprendizaje<a class="heading-anchor" href="#learning-rate-o-tasa-de-aprendizaje" aria-label="Enlace a Learning rate o tasa de aprendizaje">#</a></h3><p>Tamaño de los ajustes realizados durante el entrenamiento. Es uno de los parámetros más sensibles.</p>
+<h3 id="loss-o-perdida">Loss o pérdida<a class="heading-anchor" href="#loss-o-perdida" aria-label="Enlace a Loss o pérdida">#</a></h3><p>Medida matemática de diferencia entre la predicción y el objetivo. Orienta el aprendizaje, pero no sustituye la evaluación visual.</p>
+<h3 id="lora">LoRA<a class="heading-anchor" href="#lora" aria-label="Enlace a LoRA">#</a></h3><p>Sigla de <em>Low-Rank Adaptation</em>. Técnica que aprende una adaptación mediante estructuras pequeñas en lugar de modificar todos los pesos del modelo.</p>
+<h2 id="m">M<a class="heading-anchor" href="#m" aria-label="Enlace a M">#</a></h2><h3 id="matriz-de-evaluacion">Matriz de evaluación<a class="heading-anchor" href="#matriz-de-evaluacion" aria-label="Enlace a Matriz de evaluación">#</a></h3><p>Registro de prompts, semillas, intensidades, resultados, criterios y decisiones utilizado para comparar versiones.</p>
+<h3 id="metadatos">Metadatos<a class="heading-anchor" href="#metadatos" aria-label="Enlace a Metadatos">#</a></h3><p>Información asociada a un archivo o experimento: origen, fecha, versión, parámetros, dimensiones, autorización o etiquetas.</p>
+<h3 id="modelo-base">Modelo base<a class="heading-anchor" href="#modelo-base" aria-label="Enlace a Modelo base">#</a></h3><p>Modelo general sobre el cual se aplica o entrena la adaptación. Determina arquitectura, capacidades y compatibilidad.</p>
+<h3 id="modelo-fundacional">Modelo fundacional<a class="heading-anchor" href="#modelo-fundacional" aria-label="Enlace a Modelo fundacional">#</a></h3><p>Modelo entrenado con grandes volúmenes de datos para adquirir capacidades generales. Un LoRA no equivale a entrenar uno desde cero.</p>
+<h2 id="o">O<a class="heading-anchor" href="#o" aria-label="Enlace a O">#</a></h2><h3 id="optimizador">Optimizador<a class="heading-anchor" href="#optimizador" aria-label="Enlace a Optimizador">#</a></h3><p>Algoritmo que utiliza los gradientes para actualizar los parámetros entrenables.</p>
+<h3 id="overfitting-o-sobreentrenamiento">Overfitting o sobreentrenamiento<a class="heading-anchor" href="#overfitting-o-sobreentrenamiento" aria-label="Enlace a Overfitting o sobreentrenamiento">#</a></h3><p>Situación en la que el LoRA memoriza demasiado el dataset, pierde flexibilidad o reproduce relaciones accidentales.</p>
+<h2 id="p">P<a class="heading-anchor" href="#p" aria-label="Enlace a P">#</a></h2><h3 id="palabra-de-activacion-trigger-word">Palabra de activación (trigger word)<a class="heading-anchor" href="#palabra-de-activacion-trigger-word" aria-label="Enlace a Palabra de activación (trigger word)">#</a></h3><p>Token o término distintivo utilizado para invocar el concepto aprendido. Debe ser estable, documentado y poco ambiguo.</p>
+<h3 id="parametro">Parámetro<a class="heading-anchor" href="#parametro" aria-label="Enlace a Parámetro">#</a></h3><p>Valor interno que el sistema utiliza o aprende. En uso común también se emplea para referirse a opciones de configuración.</p>
+<h3 id="paso-de-entrenamiento-step">Paso de entrenamiento (step)<a class="heading-anchor" href="#paso-de-entrenamiento-step" aria-label="Enlace a Paso de entrenamiento (step)">#</a></h3><p>Una actualización de los parámetros entrenables. El total de pasos depende del dataset, repeticiones, épocas y batch.</p>
+<h3 id="peso">Peso<a class="heading-anchor" href="#peso" aria-label="Enlace a Peso">#</a></h3><p>Valor numérico interno de un modelo o intensidad aplicada a un componente. El contexto debe aclarar cuál significado se utiliza.</p>
+<h3 id="precision-numerica">Precisión numérica<a class="heading-anchor" href="#precision-numerica" aria-label="Enlace a Precisión numérica">#</a></h3><p>Forma de representar números durante los cálculos. Afecta memoria, velocidad, compatibilidad y estabilidad.</p>
+<h3 id="prompt">Prompt<a class="heading-anchor" href="#prompt" aria-label="Enlace a Prompt">#</a></h3><p>Instrucción textual utilizada para generar una imagen. En evaluación debe registrarse exactamente.</p>
+<h3 id="prompt-negativo">Prompt negativo<a class="heading-anchor" href="#prompt-negativo" aria-label="Enlace a Prompt negativo">#</a></h3><p>Instrucción que señala características que se desean evitar, cuando el flujo o modelo la admite.</p>
+<h2 id="r">R<a class="heading-anchor" href="#r" aria-label="Enlace a R">#</a></h2><h3 id="rank">Rank<a class="heading-anchor" href="#rank" aria-label="Enlace a Rank">#</a></h3><p>Véase <strong>Dimensión o rank</strong>.</p>
+<h3 id="regularizacion">Regularización<a class="heading-anchor" href="#regularizacion" aria-label="Enlace a Regularización">#</a></h3><p>Conjunto de técnicas destinadas a reducir memorización y mejorar generalización, mediante datos, captions, dropout u otras decisiones.</p>
+<h3 id="repeticiones">Repeticiones<a class="heading-anchor" href="#repeticiones" aria-label="Enlace a Repeticiones">#</a></h3><p>Cantidad de veces que un grupo de imágenes se presenta adicionalmente dentro de una época o cálculo equivalente.</p>
+<h3 id="reproducibilidad">Reproducibilidad<a class="heading-anchor" href="#reproducibilidad" aria-label="Enlace a Reproducibilidad">#</a></h3><p>Capacidad de repetir una ejecución o evaluación con suficiente información para obtener un comportamiento comparable.</p>
+<h3 id="resolucion">Resolución<a class="heading-anchor" href="#resolucion" aria-label="Enlace a Resolución">#</a></h3><p>Dimensiones en píxeles utilizadas para procesar las imágenes. Influye en detalle, memoria y tiempo.</p>
+<h2 id="s">S<a class="heading-anchor" href="#s" aria-label="Enlace a S">#</a></h2><h3 id="scheduler">Scheduler<a class="heading-anchor" href="#scheduler" aria-label="Enlace a Scheduler">#</a></h3><p>Regla que modifica la tasa de aprendizaje a lo largo del entrenamiento. No debe confundirse con el sampler de generación.</p>
+<h3 id="seed-o-semilla">Seed o semilla<a class="heading-anchor" href="#seed-o-semilla" aria-label="Enlace a Seed o semilla">#</a></h3><p>Número que controla el punto inicial de un proceso aleatorio. Reutilizarla ayuda a comparar cambios bajo condiciones semejantes.</p>
+<h3 id="sobreentrenamiento">Sobreentrenamiento<a class="heading-anchor" href="#sobreentrenamiento" aria-label="Enlace a Sobreentrenamiento">#</a></h3><p>Véase <strong>Overfitting</strong>.</p>
+<h3 id="subentrenamiento">Subentrenamiento<a class="heading-anchor" href="#subentrenamiento" aria-label="Enlace a Subentrenamiento">#</a></h3><p>Aprendizaje insuficiente: el concepto aparece débil, inconsistente o poco sensible a la palabra de activación.</p>
+<h2 id="t">T<a class="heading-anchor" href="#t" aria-label="Enlace a T">#</a></h2><h3 id="tasa-de-aprendizaje">Tasa de aprendizaje<a class="heading-anchor" href="#tasa-de-aprendizaje" aria-label="Enlace a Tasa de aprendizaje">#</a></h3><p>Véase <strong>Learning rate</strong>.</p>
+<h3 id="texto-codificado-o-text-encoder">Texto codificado o text encoder<a class="heading-anchor" href="#texto-codificado-o-text-encoder" aria-label="Enlace a Texto codificado o text encoder">#</a></h3><p>Componente que transforma el prompt en una representación que el generador puede utilizar. Algunas configuraciones permiten entrenarlo parcial o totalmente.</p>
+<h3 id="token">Token<a class="heading-anchor" href="#token" aria-label="Enlace a Token">#</a></h3><p>Unidad en la que el codificador divide el texto. Una palabra puede convertirse en uno o varios tokens.</p>
+<h3 id="trazabilidad">Trazabilidad<a class="heading-anchor" href="#trazabilidad" aria-label="Enlace a Trazabilidad">#</a></h3><p>Capacidad de relacionar objetivo, datos, configuración, ejecución, resultado, evaluación y decisión final.</p>
+<h3 id="trigger-word">Trigger word<a class="heading-anchor" href="#trigger-word" aria-label="Enlace a Trigger word">#</a></h3><p>Véase <strong>Palabra de activación</strong>.</p>
+<h2 id="u">U<a class="heading-anchor" href="#u" aria-label="Enlace a U">#</a></h2><h3 id="underfitting-o-subentrenamiento">Underfitting o subentrenamiento<a class="heading-anchor" href="#underfitting-o-subentrenamiento" aria-label="Enlace a Underfitting o subentrenamiento">#</a></h3><p>Véase <strong>Subentrenamiento</strong>.</p>
+<h2 id="v">V<a class="heading-anchor" href="#v" aria-label="Enlace a V">#</a></h2><h3 id="vae-o-decodificador-visual">VAE o decodificador visual<a class="heading-anchor" href="#vae-o-decodificador-visual" aria-label="Enlace a VAE o decodificador visual">#</a></h3><p>Componente que transforma representaciones latentes en imágenes visibles y, en algunos flujos, realiza el proceso inverso.</p>
+<h3 id="validacion">Validación<a class="heading-anchor" href="#validacion" aria-label="Enlace a Validación">#</a></h3><p>Comprobación técnica o visual realizada antes de aprobar una etapa.</p>
+<h3 id="version">Versión<a class="heading-anchor" href="#version" aria-label="Enlace a Versión">#</a></h3><p>Estado identificado y no ambiguo de un dataset, configuración, LoRA o documento.</p>
+<h3 id="vram">VRAM<a class="heading-anchor" href="#vram" aria-label="Enlace a VRAM">#</a></h3><p>Memoria disponible en la GPU. Limita resolución, batch, precisión y otros componentes que pueden cargarse simultáneamente.</p>
+<h2 id="4-1-referencia-rapida-para-usuarios-nuevos">4.1 Referencia rápida para usuarios nuevos<a class="heading-anchor" href="#4-1-referencia-rapida-para-usuarios-nuevos" aria-label="Enlace a 4.1 Referencia rápida para usuarios nuevos">#</a></h2><table>
+<thead>
+<tr>
+<th>Si encuentras este término</th>
+<th>Pregunta que debes hacerte</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Modelo base</td>
+<td>¿Cuál versión exacta y qué familia utiliza?</td>
+</tr>
+<tr>
+<td>Dataset</td>
+<td>¿Está autorizado, depurado y versionado?</td>
+</tr>
+<tr>
+<td>Caption</td>
+<td>¿Describe sin confundir identidad y contexto?</td>
+</tr>
+<tr>
+<td>Rank y alpha</td>
+<td>¿Están registrados juntos y por qué se eligieron?</td>
+</tr>
+<tr>
+<td>Pasos y épocas</td>
+<td>¿Cuánta exposición efectiva recibirá el dataset?</td>
+</tr>
+<tr>
+<td>Loss</td>
+<td>¿Qué muestran también las pruebas visuales?</td>
+</tr>
+<tr>
+<td>Checkpoint</td>
+<td>¿A qué momento y configuración pertenece?</td>
+</tr>
+<tr>
+<td>Seed</td>
+<td>¿Se conserva para comparar?</td>
+</tr>
+<tr>
+<td>Intensidad</td>
+<td>¿Cuál rango fue realmente evaluado?</td>
+</tr>
+<tr>
+<td>Versión</td>
+<td>¿Puede identificarse sin depender de la memoria de una persona?</td>
+</tr>
+</tbody></table>
+<h2 id="4-2-lista-de-verificacion-del-glosario">4.2 Lista de verificación del glosario<a class="heading-anchor" href="#4-2-lista-de-verificacion-del-glosario" aria-label="Enlace a 4.2 Lista de verificación del glosario">#</a></h2><ul>
+<li><input disabled="" type="checkbox"> Los términos utilizados en la ficha del proyecto aparecen en este glosario.</li>
+<li><input disabled="" type="checkbox"> Cualquier término nuevo se define antes de incorporarse al manual.</li>
+<li><input disabled="" type="checkbox"> Las siglas conservan su nombre completo la primera vez que aparecen.</li>
+<li><input disabled="" type="checkbox"> Los términos en inglés incluyen una equivalencia o explicación en español.</li>
+<li><input disabled="" type="checkbox"> Las definiciones describen cómo se utilizará el término en ZYRON AI LAB.</li>
+<li><input disabled="" type="checkbox"> No se emplean palabras distintas para referirse al mismo archivo o etapa sin aclararlo.</li>
+</ul>
+<hr>
+<h1 id="capitulo-5-requisitos-de-hardware-y-software-local">CAPÍTULO 5. REQUISITOS DE HARDWARE Y SOFTWARE LOCAL<a class="heading-anchor" href="#capitulo-5-requisitos-de-hardware-y-software-local" aria-label="Enlace a CAPÍTULO 5. REQUISITOS DE HARDWARE Y SOFTWARE LOCAL">#</a></h1><h2 id="5-1-proposito-del-capitulo">5.1 Propósito del capítulo<a class="heading-anchor" href="#5-1-proposito-del-capitulo" aria-label="Enlace a 5.1 Propósito del capítulo">#</a></h2><p>Este capítulo define qué recursos necesita ZYRON AI LAB para preparar, instalar, validar y ejecutar su programa LoRA. La regla central es separar <strong>preparación local</strong> de <strong>entrenamiento acelerado</strong>. Un equipo sin GPU NVIDIA puede organizar datos, captions, configuraciones, documentación y pruebas de CPU; no debe considerarse por ello una estación adecuada para entrenamiento productivo.</p>
+<p>Las recomendaciones se expresan como perfiles operativos. La compatibilidad final depende del modelo base, resolución, precisión, optimizer, batch, caché, versión de PyTorch y herramienta de entrenamiento.</p>
+<h2 id="5-2-perfil-real-del-asus-de-zyron">5.2 Perfil real del ASUS de ZYRON<a class="heading-anchor" href="#5-2-perfil-real-del-asus-de-zyron" aria-label="Enlace a 5.2 Perfil real del ASUS de ZYRON">#</a></h2><p>La inspección local realizada el 15 de julio de 2026 identifica este equipo:</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Configuración detectada</th>
+<th>Interpretación operativa</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Equipo</td>
+<td>ASUS VivoBook X415JA/F415JA</td>
+<td>Portátil de trabajo general</td>
+</tr>
+<tr>
+<td>Sistema</td>
+<td>Windows 11 Home de 64 bits</td>
+<td>Compatible con herramientas de preparación y desarrollo</td>
+</tr>
+<tr>
+<td>Procesador</td>
+<td>Intel Core i7-1065G7, 4 núcleos y 8 hilos</td>
+<td>Adecuado para documentación, scripts y preprocesamiento moderado</td>
+</tr>
+<tr>
+<td>Memoria</td>
+<td>20 GB de RAM</td>
+<td>Suficiente para preparación de datasets y multitarea controlada</td>
+</tr>
+<tr>
+<td>Gráficos</td>
+<td>Intel Iris Plus integrada</td>
+<td>No ofrece CUDA; no es la ruta principal para sd-scripts/Kohya</td>
+</tr>
+<tr>
+<td>Almacenamiento</td>
+<td>Unidad C: de aproximadamente 475 GB</td>
+<td>Capacidad total adecuada, sujeta al espacio libre</td>
+</tr>
+<tr>
+<td>Espacio libre observado</td>
+<td>Aproximadamente 107 GB</td>
+<td>Utilizable con control estricto de modelos, cachés y respaldos</td>
+</tr>
+</tbody></table>
+<p>Esta ficha describe el estado observado, no una garantía permanente. Antes de cada instalación debe repetirse la validación porque el espacio libre, los controladores y las versiones cambian.</p>
+<h2 id="5-3-lo-que-este-asus-puede-realizar-correctamente">5.3 Lo que este ASUS puede realizar correctamente<a class="heading-anchor" href="#5-3-lo-que-este-asus-puede-realizar-correctamente" aria-label="Enlace a 5.3 Lo que este ASUS puede realizar correctamente">#</a></h2><p>El ASUS queda aprobado para:</p>
+<ul>
+<li>redactar, revisar y versionar Word, Markdown, fichas y registros;</li>
+<li>crear la estructura de carpetas y controlar nombres de archivos;</li>
+<li>seleccionar, clasificar y depurar datasets pequeños o medianos;</li>
+<li>revisar dimensiones, duplicados, desenfoque, orientación y metadatos;</li>
+<li>redactar y normalizar captions y palabras de activación;</li>
+<li>preparar archivos TOML, YAML, JSON y comandos reproducibles;</li>
+<li>calcular pasos, repeticiones, épocas y matrices de evaluación;</li>
+<li>instalar Git, Python y entornos virtuales;</li>
+<li>clonar repositorios y descargar dependencias con espacio controlado;</li>
+<li>ejecutar pruebas de importación de Python y PyTorch en CPU;</li>
+<li>validar que scripts, rutas, configuraciones y permisos funcionen;</li>
+<li>preparar prompts de evaluación y comparar imágenes ya generadas;</li>
+<li>operar la documentación y la página web de ZYRON AI LAB;</li>
+<li>transferir paquetes de trabajo a una estación con GPU o servicio remoto.</li>
+</ul>
+<h2 id="5-4-lo-que-este-asus-puede-intentar-con-limitaciones">5.4 Lo que este ASUS puede intentar con limitaciones<a class="heading-anchor" href="#5-4-lo-que-este-asus-puede-intentar-con-limitaciones" aria-label="Enlace a 5.4 Lo que este ASUS puede intentar con limitaciones">#</a></h2><p>Las siguientes actividades son posibles solo como pruebas reducidas y no deben confundirse con producción:</p>
+<ul>
+<li>inferencia de modelos pequeños u optimizados para CPU;</li>
+<li>generación a baja resolución con tiempos prolongados;</li>
+<li>pruebas de carga de componentes que quepan en RAM;</li>
+<li>preprocesamiento intensivo por lotes pequeños;</li>
+<li>ejecución de una prueba mínima de entrenamiento exclusivamente para confirmar que un script inicia.</li>
+</ul>
+<p>Una prueba limitada debe tener tiempo máximo definido, monitoreo de temperatura y posibilidad de cancelación. Si el sistema usa memoria virtual de forma sostenida, se congela, se calienta excesivamente o tarda de forma desproporcionada, la prueba se detiene y se registra.</p>
+<h2 id="5-5-lo-que-requiere-una-gpu-dedicada">5.5 Lo que requiere una GPU dedicada<a class="heading-anchor" href="#5-5-lo-que-requiere-una-gpu-dedicada" aria-label="Enlace a 5.5 Lo que requiere una GPU dedicada">#</a></h2><p>Se considera trabajo para GPU NVIDIA dedicada:</p>
+<ul>
+<li>entrenamiento LoRA repetible y de duración razonable;</li>
+<li>SDXL, FLUX u otras familias con alta demanda de VRAM;</li>
+<li>entrenamiento a resoluciones elevadas;</li>
+<li>batch mayor que uno cuando la configuración lo requiera;</li>
+<li>entrenamiento parcial del text encoder;</li>
+<li>validaciones frecuentes durante el entrenamiento;</li>
+<li>comparaciones de muchos checkpoints;</li>
+<li>inferencia por lotes y producción sostenida;</li>
+<li>optimizaciones dependientes de CUDA.</li>
+</ul>
+<p>La Intel Iris Plus del ASUS comparte recursos con el sistema y no proporciona CUDA. Por tanto, no debe seleccionarse una instalación CUDA para este portátil ni interpretarse la RAM del sistema como VRAM dedicada.</p>
+<h2 id="5-6-perfiles-de-estacion-de-trabajo">5.6 Perfiles de estación de trabajo<a class="heading-anchor" href="#5-6-perfiles-de-estacion-de-trabajo" aria-label="Enlace a 5.6 Perfiles de estación de trabajo">#</a></h2><table>
+<thead>
+<tr>
+<th>Perfil</th>
+<th>Hardware orientativo</th>
+<th>Uso autorizado</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P0 — Preparación</td>
+<td>CPU moderna, 16–24 GB RAM, SSD, sin CUDA</td>
+<td>Datos, captions, configuración, documentación y pruebas CPU</td>
+<td>Perfil del ASUS actual</td>
+</tr>
+<tr>
+<td>P1 — Aprendizaje</td>
+<td>NVIDIA con 8 GB VRAM, 16–32 GB RAM</td>
+<td>Experimentos pequeños y configuraciones optimizadas</td>
+<td>Puede exigir resolución, batch y caché reducidos</td>
+</tr>
+<tr>
+<td>P2 — Operación</td>
+<td>NVIDIA con 12–16 GB VRAM, 32 GB RAM, SSD amplio</td>
+<td>Entrenamiento LoRA habitual y evaluación local</td>
+<td>Perfil recomendado para iniciar producción ZYRON</td>
+</tr>
+<tr>
+<td>P3 — Producción</td>
+<td>NVIDIA con 24 GB o más, 64 GB RAM, NVMe dedicado</td>
+<td>Modelos exigentes, lotes, validación y ciclos rápidos</td>
+<td>Reduce restricciones, no elimina la necesidad de optimizar</td>
+</tr>
+<tr>
+<td>P4 — GPU remota</td>
+<td>Instancia controlada con GPU y almacenamiento temporal</td>
+<td>Entrenamiento cuando no existe estación local adecuada</td>
+<td>Exige política de privacidad, costos y borrado verificado</td>
+</tr>
+</tbody></table>
+<p>Estos valores son perfiles de planificación, no promesas de compatibilidad. La prueba de memoria del proyecto decide la configuración real.</p>
+<h2 id="5-7-almacenamiento-y-capacidad-libre">5.7 Almacenamiento y capacidad libre<a class="heading-anchor" href="#5-7-almacenamiento-y-capacidad-libre" aria-label="Enlace a 5.7 Almacenamiento y capacidad libre">#</a></h2><p>El programa no debe instalar modelos y cachés sin presupuesto previo. Como referencia de control, se reservarán espacios separados para:</p>
+<table>
+<thead>
+<tr>
+<th>Área</th>
+<th>Contenido</th>
+<th>Regla</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>01_datasets</code></td>
+<td>originales, selección y versiones</td>
+<td>Nunca mezclar originales con derivados</td>
+</tr>
+<tr>
+<td><code>02_modelos_base</code></td>
+<td>checkpoints y componentes</td>
+<td>Mantener solo versiones autorizadas</td>
+</tr>
+<tr>
+<td><code>03_entornos</code></td>
+<td>repositorios y entornos virtuales</td>
+<td>Un entorno por herramienta o línea estable</td>
+</tr>
+<tr>
+<td><code>04_salidas</code></td>
+<td>LoRAs, muestras y logs</td>
+<td>Versionar y depurar según acta de cierre</td>
+</tr>
+<tr>
+<td><code>05_cache</code></td>
+<td>descargas regenerables</td>
+<td>Puede limpiarse con procedimiento documentado</td>
+</tr>
+<tr>
+<td><code>06_respaldos</code></td>
+<td>copias verificadas</td>
+<td>Preferiblemente en unidad externa administrada</td>
+</tr>
+</tbody></table>
+<p>Con aproximadamente 107 GB libres, el ASUS no debe alojar simultáneamente múltiples familias grandes de modelos. Antes de descargar se registrará tamaño esperado, espacio libre inicial y umbral mínimo de seguridad. ZYRON utilizará como regla operativa conservar al menos 30 GB libres o el 15 % de la unidad, el valor que resulte mayor.</p>
+<h2 id="5-8-software-base-aprobado">5.8 Software base aprobado<a class="heading-anchor" href="#5-8-software-base-aprobado" aria-label="Enlace a 5.8 Software base aprobado">#</a></h2><table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Función</th>
+<th>Política ZYRON</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Windows 11 de 64 bits</td>
+<td>Sistema anfitrión</td>
+<td>Mantener actualizado y con restauración disponible</td>
+</tr>
+<tr>
+<td>PowerShell o Terminal</td>
+<td>Ejecución controlada</td>
+<td>No copiar comandos sin revisión</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>Descarga y versionado</td>
+<td>Registrar repositorio, rama o etiqueta</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Ejecución de herramientas</td>
+<td>Usar la versión exigida por la herramienta</td>
+</tr>
+<tr>
+<td><code>venv</code></td>
+<td>Aislamiento de dependencias</td>
+<td>Un entorno por instalación estable</td>
+</tr>
+<tr>
+<td>PyTorch</td>
+<td>Cómputo del modelo</td>
+<td>Elegir CPU o CUDA según hardware real</td>
+</tr>
+<tr>
+<td>sd-scripts/Kohya</td>
+<td>Entrenamiento LoRA</td>
+<td>Fijar versión y conservar configuración</td>
+</tr>
+<tr>
+<td>Editor de texto/código</td>
+<td>Revisión de archivos</td>
+<td>UTF-8 y finales de línea consistentes</td>
+</tr>
+<tr>
+<td>Herramientas de imagen</td>
+<td>Inspección y conversión</td>
+<td>Preservar originales y metadatos necesarios</td>
+</tr>
+</tbody></table>
+<p>No se instalará CUDA en el ASUS actual como requisito de entrenamiento, porque no existe una GPU NVIDIA compatible. En una futura estación NVIDIA, la combinación PyTorch/CUDA se elegirá con el selector oficial de PyTorch y la documentación vigente de la herramienta.</p>
+<h2 id="5-9-matriz-de-decision-local-gpu-dedicada-o-remota">5.9 Matriz de decisión local, GPU dedicada o remota<a class="heading-anchor" href="#5-9-matriz-de-decision-local-gpu-dedicada-o-remota" aria-label="Enlace a 5.9 Matriz de decisión local, GPU dedicada o remota">#</a></h2><table>
+<thead>
+<tr>
+<th>Pregunta</th>
+<th>Si la respuesta es “sí”</th>
+<th>Decisión</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>¿La tarea es documental, de captions, datos o configuración?</td>
+<td>No necesita CUDA</td>
+<td>Ejecutar en ASUS</td>
+</tr>
+<tr>
+<td>¿Solo se valida Python, Git, rutas o importación de PyTorch?</td>
+<td>Puede hacerse en CPU</td>
+<td>Ejecutar en ASUS</td>
+</tr>
+<tr>
+<td>¿El entrenamiento debe finalizar en horas y ser repetible?</td>
+<td>Requiere aceleración práctica</td>
+<td>GPU dedicada o remota</td>
+</tr>
+<tr>
+<td>¿El modelo es SDXL, FLUX o equivalente exigente?</td>
+<td>Demanda mayor memoria</td>
+<td>Validar en GPU P2/P3</td>
+</tr>
+<tr>
+<td>¿Hay imágenes personales autorizadas?</td>
+<td>Existe riesgo de privacidad</td>
+<td>Preferir estación local controlada</td>
+</tr>
+<tr>
+<td>¿Se usará nube?</td>
+<td>Hay transferencia y costo</td>
+<td>Aprobar proveedor, región, cifrado y borrado</td>
+</tr>
+</tbody></table>
+<h2 id="5-10-lista-de-verificacion-puerta-de-hardware">5.10 Lista de verificación — Puerta de hardware<a class="heading-anchor" href="#5-10-lista-de-verificacion-puerta-de-hardware" aria-label="Enlace a 5.10 Lista de verificación — Puerta de hardware">#</a></h2><ul>
+<li><input disabled="" type="checkbox"> El equipo y el sistema operativo quedaron identificados.</li>
+<li><input disabled="" type="checkbox"> Se registraron CPU, RAM, GPU, VRAM real y espacio libre.</li>
+<li><input disabled="" type="checkbox"> Se confirmó si existe o no soporte CUDA.</li>
+<li><input disabled="" type="checkbox"> El modelo base y su demanda aproximada están definidos.</li>
+<li><input disabled="" type="checkbox"> La tarea fue clasificada como preparación, prueba, entrenamiento o producción.</li>
+<li><input disabled="" type="checkbox"> Se eligió perfil P0, P1, P2, P3 o P4.</li>
+<li><input disabled="" type="checkbox"> Existe espacio para modelos, caché, salidas y respaldo.</li>
+<li><input disabled="" type="checkbox"> Se definieron límites de temperatura, tiempo y almacenamiento.</li>
+<li><input disabled="" type="checkbox"> Los datos personales no se transferirán sin autorización.</li>
+<li><input disabled="" type="checkbox"> La decisión quedó registrada en la ficha del proyecto.</li>
+</ul>
+<hr>
+<h1 id="capitulo-6-instalacion-y-validacion-del-entorno-en-windows">CAPÍTULO 6. INSTALACIÓN Y VALIDACIÓN DEL ENTORNO EN WINDOWS<a class="heading-anchor" href="#capitulo-6-instalacion-y-validacion-del-entorno-en-windows" aria-label="Enlace a CAPÍTULO 6. INSTALACIÓN Y VALIDACIÓN DEL ENTORNO EN WINDOWS">#</a></h1><h2 id="6-1-objetivo-y-criterio-de-aprobacion">6.1 Objetivo y criterio de aprobación<a class="heading-anchor" href="#6-1-objetivo-y-criterio-de-aprobacion" aria-label="Enlace a 6.1 Objetivo y criterio de aprobación">#</a></h2><p>El objetivo no es “instalar todo”, sino crear un entorno identificable, aislado y verificable. La instalación se aprueba cuando Git y Python responden, el entorno virtual puede recrearse, PyTorch informa el modo de cómputo correcto, la herramienta abre sin errores críticos y una prueba controlada produce evidencia.</p>
+<p>El procedimiento se divide en dos rutas:</p>
+<ol>
+<li><strong>Ruta ASUS P0:</strong> preparación local y validación en CPU, sin CUDA.</li>
+<li><strong>Ruta NVIDIA P1–P3:</strong> entrenamiento con una GPU dedicada y PyTorch compatible con CUDA.</li>
+</ol>
+<h2 id="6-2-preparacion-previa-de-windows">6.2 Preparación previa de Windows<a class="heading-anchor" href="#6-2-preparacion-previa-de-windows" aria-label="Enlace a 6.2 Preparación previa de Windows">#</a></h2><p>Antes de instalar:</p>
+<ol>
+<li>aplicar las actualizaciones estables de Windows y reiniciar;</li>
+<li>crear un punto de restauración cuando corresponda;</li>
+<li>comprobar fecha, hora y zona horaria;</li>
+<li>verificar al menos 30 GB libres después de las descargas previstas;</li>
+<li>crear una carpeta sin sincronización automática ni nombres ambiguos;</li>
+<li>confirmar que no se trabajará dentro de <code>Descargas</code> o del Escritorio temporal;</li>
+<li>registrar antivirus, proxy o políticas que puedan bloquear scripts;</li>
+<li>evitar ejecutar terminales como administrador salvo que un paso lo exija.</li>
+</ol>
+<p>Ruta base recomendada:</p>
+<pre><code class="language-text">C:\ZYRON_AI_LAB\lora\
+├── repositorios\
+├── entornos\
+├── modelos\
+├── datasets\
+├── salidas\
+├── logs\
+└── respaldos\
+</code></pre>
+<h2 id="6-3-instalar-y-validar-git">6.3 Instalar y validar Git<a class="heading-anchor" href="#6-3-instalar-y-validar-git" aria-label="Enlace a 6.3 Instalar y validar Git">#</a></h2><p>Git para Windows debe obtenerse desde su sitio oficial. La instalación puede realizarse mediante instalador o <code>winget</code>. Después se abre una terminal nueva y se ejecuta:</p>
+<pre><code class="language-powershell">git --version
+git config --global core.longpaths true
+</code></pre>
+<p>El primer comando debe mostrar una versión. El segundo ayuda con rutas extensas de repositorios. No se configurarán credenciales ni publicación remota si el proyecto no lo necesita.</p>
+<h2 id="6-4-instalar-la-version-de-python-compatible">6.4 Instalar la versión de Python compatible<a class="heading-anchor" href="#6-4-instalar-la-version-de-python-compatible" aria-label="Enlace a 6.4 Instalar la versión de Python compatible">#</a></h2><p>Python mantiene instrucciones oficiales para Windows y recomienda entornos virtuales por proyecto. Para sd-scripts, su documentación de Windows especifica Python 3.10.x como versión probada; versiones posteriores pueden funcionar, pero no deben adoptarse en producción sin validación.</p>
+<p>Después de instalar Python se abre una terminal nueva:</p>
+<pre><code class="language-powershell">python --version
+python -m pip --version
+python -m venv --help
+</code></pre>
+<p>Si existen varias versiones, se utilizará el selector instalado en el sistema para invocar explícitamente Python 3.10. La ficha de instalación registrará el ejecutable real:</p>
+<pre><code class="language-powershell">where.exe python
+python -c &quot;import sys; print(sys.executable); print(sys.version)&quot;
+</code></pre>
+<h2 id="6-5-crear-un-entorno-virtual-aislado">6.5 Crear un entorno virtual aislado<a class="heading-anchor" href="#6-5-crear-un-entorno-virtual-aislado" aria-label="Enlace a 6.5 Crear un entorno virtual aislado">#</a></h2><p>Ejemplo para una instalación de prueba:</p>
+<pre><code class="language-powershell">New-Item -ItemType Directory -Force C:\ZYRON_AI_LAB\lora\repositorios
+Set-Location C:\ZYRON_AI_LAB\lora\repositorios
+python -m venv venv-lora
+.\venv-lora\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+</code></pre>
+<p>Si PowerShell bloquea la activación, no se recomienda reducir permanentemente la seguridad del sistema. Para una sesión controlada puede utilizarse una excepción limitada al proceso y luego cerrarse la terminal:</p>
+<pre><code class="language-powershell">Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\venv-lora\Scripts\Activate.ps1
+</code></pre>
+<p>Alternativamente se puede usar el activador <code>.bat</code> desde Símbolo del sistema. Toda excepción debe quedar documentada.</p>
+<h2 id="6-6-ruta-a-validacion-del-asus-sin-cuda">6.6 Ruta A — Validación del ASUS sin CUDA<a class="heading-anchor" href="#6-6-ruta-a-validacion-del-asus-sin-cuda" aria-label="Enlace a 6.6 Ruta A — Validación del ASUS sin CUDA">#</a></h2><p>En el ASUS se instalará PyTorch para CPU únicamente con el comando vigente obtenido del selector oficial de PyTorch. No se copiará un comando CUDA, porque <code>torch.cuda.is_available()</code> debe permanecer en <code>False</code> en este hardware.</p>
+<p>Prueba de identificación:</p>
+<pre><code class="language-powershell">python -c &quot;import torch; print(&#39;PyTorch:&#39;, torch.__version__); print(&#39;CUDA:&#39;, torch.cuda.is_available()); print(&#39;Dispositivo:&#39;, &#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)&quot;
+</code></pre>
+<p>Resultado esperado en el ASUS:</p>
+<pre><code class="language-text">CUDA: False
+Dispositivo: cpu
+</code></pre>
+<p>Esto no es un error. Confirma que el entorno de preparación local funciona sin atribuirle una GPU inexistente.</p>
+<h2 id="6-7-ruta-b-validacion-de-una-estacion-nvidia">6.7 Ruta B — Validación de una estación NVIDIA<a class="heading-anchor" href="#6-7-ruta-b-validacion-de-una-estacion-nvidia" aria-label="Enlace a 6.7 Ruta B — Validación de una estación NVIDIA">#</a></h2><p>Antes de instalar PyTorch CUDA:</p>
+<pre><code class="language-powershell">nvidia-smi
+</code></pre>
+<p>El comando debe mostrar la GPU, controlador y memoria. Luego se seleccionará en el sitio oficial de PyTorch la combinación Windows, Pip, Python y CUDA compatible. No se fijará en el manual un comando universal porque las versiones soportadas cambian.</p>
+<p>Después de instalar:</p>
+<pre><code class="language-powershell">python -c &quot;import torch; print(torch.__version__); print(torch.cuda.is_available()); print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else &#39;SIN CUDA&#39;)&quot;
+</code></pre>
+<p>La ruta NVIDIA se rechaza si:</p>
+<ul>
+<li><code>nvidia-smi</code> no funciona;</li>
+<li>PyTorch informa <code>CUDA: False</code>;</li>
+<li>el nombre de la GPU no coincide con la estación documentada;</li>
+<li>se producen errores de controlador o bibliotecas;</li>
+<li>la VRAM disponible no corresponde al perfil aprobado.</li>
+</ul>
+<h2 id="6-8-instalar-sd-scripts-de-forma-reproducible">6.8 Instalar sd-scripts de forma reproducible<a class="heading-anchor" href="#6-8-instalar-sd-scripts-de-forma-reproducible" aria-label="Enlace a 6.8 Instalar sd-scripts de forma reproducible">#</a></h2><p>La documentación oficial de sd-scripts debe revisarse antes de ejecutar comandos, porque las versiones mínimas de PyTorch y dependencias pueden cambiar.</p>
+<p>Flujo controlado:</p>
+<pre><code class="language-powershell">Set-Location C:\ZYRON_AI_LAB\lora\repositorios
+git clone https://github.com/kohya-ss/sd-scripts.git
+Set-Location .\sd-scripts
+git rev-parse HEAD
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+</code></pre>
+<p>Después se instala PyTorch según la ruta CPU o NVIDIA y, finalmente, las dependencias indicadas por la versión seleccionada de sd-scripts. El hash mostrado por <code>git rev-parse HEAD</code> se guarda en la ficha para poder reconstruir la instalación.</p>
+<h2 id="6-9-alternativa-con-interfaz-kohya-ss">6.9 Alternativa con interfaz Kohya_ss<a class="heading-anchor" href="#6-9-alternativa-con-interfaz-kohya-ss" aria-label="Enlace a 6.9 Alternativa con interfaz Kohya_ss">#</a></h2><p>Kohya_ss ofrece instalación local para Windows y puede simplificar la configuración visual. Su documentación actual distingue métodos <code>uv</code> y <code>pip</code>, y señala que la GPU NVIDIA es necesaria para entrenamiento en la ruta Windows documentada.</p>
+<p>Política ZYRON:</p>
+<ul>
+<li>usar sd-scripts directo cuando se requiera máxima trazabilidad de comandos;</li>
+<li>usar Kohya_ss cuando la interfaz reduzca errores de configuración;</li>
+<li>no mezclar dependencias de ambas instalaciones en el mismo entorno;</li>
+<li>registrar repositorio, commit, método, Python y PyTorch;</li>
+<li>probar primero con un proyecto mínimo sin datos sensibles.</li>
+</ul>
+<h2 id="6-10-pruebas-de-validacion-por-niveles">6.10 Pruebas de validación por niveles<a class="heading-anchor" href="#6-10-pruebas-de-validacion-por-niveles" aria-label="Enlace a 6.10 Pruebas de validación por niveles">#</a></h2><h3 id="nivel-v1-sistema">Nivel V1 — Sistema<a class="heading-anchor" href="#nivel-v1-sistema" aria-label="Enlace a Nivel V1 — Sistema">#</a></h3><pre><code class="language-powershell">git --version
+python --version
+Get-PSDrive C
+</code></pre>
+<p>Criterio: comandos disponibles y espacio suficiente.</p>
+<h3 id="nivel-v2-entorno-virtual">Nivel V2 — Entorno virtual<a class="heading-anchor" href="#nivel-v2-entorno-virtual" aria-label="Enlace a Nivel V2 — Entorno virtual">#</a></h3><pre><code class="language-powershell">python -c &quot;import sys; print(sys.executable)&quot;
+python -m pip check
+</code></pre>
+<p>Criterio: el ejecutable pertenece al entorno y no hay dependencias rotas.</p>
+<h3 id="nivel-v3-pytorch">Nivel V3 — PyTorch<a class="heading-anchor" href="#nivel-v3-pytorch" aria-label="Enlace a Nivel V3 — PyTorch">#</a></h3><pre><code class="language-powershell">python -c &quot;import torch; x=torch.tensor([1.0,2.0]); print(x.sum().item()); print(torch.cuda.is_available())&quot;
+</code></pre>
+<p>Criterio: resultado <code>3.0</code>; CUDA coincide con la ruta elegida.</p>
+<h3 id="nivel-v4-herramienta">Nivel V4 — Herramienta<a class="heading-anchor" href="#nivel-v4-herramienta" aria-label="Enlace a Nivel V4 — Herramienta">#</a></h3><p>Ejecutar la ayuda del script principal o abrir la interfaz en <code>127.0.0.1</code>, sin compartirla públicamente. Criterio: carga sin error crítico y registra versión.</p>
+<h3 id="nivel-v5-dataset-sintetico">Nivel V5 — Dataset sintético<a class="heading-anchor" href="#nivel-v5-dataset-sintetico" aria-label="Enlace a Nivel V5 — Dataset sintético">#</a></h3><p>Crear una carpeta de prueba sin imágenes personales, validar lectura de configuración, rutas, captions y permisos. Criterio: la herramienta reconoce entradas y salidas.</p>
+<h3 id="nivel-v6-prueba-minima-de-computo">Nivel V6 — Prueba mínima de cómputo<a class="heading-anchor" href="#nivel-v6-prueba-minima-de-computo" aria-label="Enlace a Nivel V6 — Prueba mínima de cómputo">#</a></h3><p>En ASUS: solo una prueba corta de CPU con límite de tiempo. En NVIDIA: prueba mínima de entrenamiento con pocas imágenes sintéticas y salida descartable. Criterio: log guardado, memoria observada y cierre limpio.</p>
+<h2 id="6-11-registro-de-validacion">6.11 Registro de validación<a class="heading-anchor" href="#6-11-registro-de-validacion" aria-label="Enlace a 6.11 Registro de validación">#</a></h2><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Evidencia obligatoria</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Fecha y responsable</td>
+<td>Momento de la validación y persona que la ejecutó</td>
+</tr>
+<tr>
+<td>Equipo</td>
+<td>Modelo, CPU, RAM, GPU y almacenamiento</td>
+</tr>
+<tr>
+<td>Sistema</td>
+<td>Edición y compilación de Windows</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>Versión y commit del repositorio</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Versión y ruta del ejecutable</td>
+</tr>
+<tr>
+<td>Entorno</td>
+<td>Nombre y ubicación del <code>venv</code></td>
+</tr>
+<tr>
+<td>PyTorch</td>
+<td>Versión, modo CPU/CUDA y dispositivo detectado</td>
+</tr>
+<tr>
+<td>Herramienta</td>
+<td>sd-scripts o Kohya_ss, versión o commit</td>
+</tr>
+<tr>
+<td>Pruebas</td>
+<td>V1 a V6 con resultado y captura o log</td>
+</tr>
+<tr>
+<td>Decisión</td>
+<td>Aprobado, aprobado con límites o rechazado</td>
+</tr>
+</tbody></table>
+<h2 id="6-12-solucion-de-fallas-frecuentes">6.12 Solución de fallas frecuentes<a class="heading-anchor" href="#6-12-solucion-de-fallas-frecuentes" aria-label="Enlace a 6.12 Solución de fallas frecuentes">#</a></h2><table>
+<thead>
+<tr>
+<th>Síntoma</th>
+<th>Causa probable</th>
+<th>Acción segura</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>python</code> no se reconoce</td>
+<td>Terminal antigua o PATH incompleto</td>
+<td>Abrir terminal nueva y localizar el ejecutable</td>
+</tr>
+<tr>
+<td>No activa el entorno</td>
+<td>Política de PowerShell</td>
+<td>Usar excepción por proceso o activador <code>.bat</code></td>
+</tr>
+<tr>
+<td><code>pip check</code> informa conflictos</td>
+<td>Dependencias mezcladas</td>
+<td>Recrear el entorno; no corregir paquetes al azar</td>
+</tr>
+<tr>
+<td><code>CUDA: False</code> en ASUS</td>
+<td>No existe GPU NVIDIA</td>
+<td>Resultado esperado; conservar ruta CPU</td>
+</tr>
+<tr>
+<td><code>CUDA: False</code> en estación NVIDIA</td>
+<td>Controlador o PyTorch incompatible</td>
+<td>Revisar <code>nvidia-smi</code> y selector oficial</td>
+</tr>
+<tr>
+<td>Memoria insuficiente</td>
+<td>Modelo o configuración excede VRAM/RAM</td>
+<td>Reducir demanda o cambiar de perfil de GPU</td>
+</tr>
+<tr>
+<td>Unidad casi llena</td>
+<td>Cachés y modelos duplicados</td>
+<td>Detener descargas, inventariar y limpiar caché controlada</td>
+</tr>
+<tr>
+<td>La interfaz abre a toda la red</td>
+<td>Parámetro de escucha inseguro</td>
+<td>Limitar a <code>127.0.0.1</code> y desactivar compartir</td>
+</tr>
+</tbody></table>
+<h2 id="6-13-lista-de-verificacion-puerta-de-instalacion">6.13 Lista de verificación — Puerta de instalación<a class="heading-anchor" href="#6-13-lista-de-verificacion-puerta-de-instalacion" aria-label="Enlace a 6.13 Lista de verificación — Puerta de instalación">#</a></h2><ul>
+<li><input disabled="" type="checkbox"> Windows fue actualizado y reiniciado.</li>
+<li><input disabled="" type="checkbox"> La ruta de instalación es estable y no temporal.</li>
+<li><input disabled="" type="checkbox"> Git y Python muestran versiones registradas.</li>
+<li><input disabled="" type="checkbox"> El entorno virtual está activo y aislado.</li>
+<li><input disabled="" type="checkbox"> PyTorch se instaló para CPU o CUDA según hardware real.</li>
+<li><input disabled="" type="checkbox"> La prueba de tensor produce el resultado esperado.</li>
+<li><input disabled="" type="checkbox"> CUDA es <code>False</code> en el ASUS y <code>True</code> en la estación NVIDIA aprobada.</li>
+<li><input disabled="" type="checkbox"> El commit de la herramienta quedó registrado.</li>
+<li><input disabled="" type="checkbox"> Las pruebas V1 a V6 tienen evidencia.</li>
+<li><input disabled="" type="checkbox"> No se expuso una interfaz a Internet.</li>
+<li><input disabled="" type="checkbox"> No se utilizaron datos personales en la prueba mínima.</li>
+<li><input disabled="" type="checkbox"> Existe procedimiento de respaldo y desinstalación.</li>
+<li><input disabled="" type="checkbox"> La instalación fue aprobada o rechazada formalmente.</li>
+</ul>
+<h2 id="6-14-fuentes-tecnicas-oficiales-de-esta-version">6.14 Fuentes técnicas oficiales de esta versión<a class="heading-anchor" href="#6-14-fuentes-tecnicas-oficiales-de-esta-version" aria-label="Enlace a 6.14 Fuentes técnicas oficiales de esta versión">#</a></h2><ul>
+<li>PyTorch — instalación local y selector de plataforma: <a href="https://pytorch.org/get-started/locally/">https://pytorch.org/get-started/locally/</a></li>
+<li>Python — uso e instalación en Windows: <a href="https://docs.python.org/3/using/windows.html">https://docs.python.org/3/using/windows.html</a></li>
+<li>Git para Windows — descarga oficial: <a href="https://git-scm.com/install/windows.html">https://git-scm.com/install/windows.html</a></li>
+<li>sd-scripts — repositorio y requisitos de Windows: <a href="https://github.com/kohya-ss/sd-scripts">https://github.com/kohya-ss/sd-scripts</a></li>
+<li>Kohya_ss — instalación local y métodos disponibles: <a href="https://github.com/bmaltais/kohya_ss">https://github.com/bmaltais/kohya_ss</a></li>
+</ul>
+<p>Estas fuentes deben revisarse nuevamente antes de instalar, porque las versiones, combinaciones CUDA/PyTorch y procedimientos cambian.</p>
+<hr>
+<h1 id="apendice-a-glosario-general-del-ecosistema-zyron">APÉNDICE A. GLOSARIO GENERAL DEL ECOSISTEMA ZYRON<a class="heading-anchor" href="#apendice-a-glosario-general-del-ecosistema-zyron" aria-label="Enlace a APÉNDICE A. GLOSARIO GENERAL DEL ECOSISTEMA ZYRON">#</a></h1><h2 id="a-1-proposito-y-alcance">A.1 Propósito y alcance<a class="heading-anchor" href="#a-1-proposito-y-alcance" aria-label="Enlace a A.1 Propósito y alcance">#</a></h2><p>Este glosario complementa el glosario técnico LoRA del capítulo 4. Reúne términos utilizados en la página completa de ZYRON PRIMUS: doctrina institucional, inteligencia organizacional, metodologías, academia, servicios, medición, automatización, investigación y ZYRON AI LAB.</p>
+<p>Cuando un término tenga una definición técnica específica dentro del programa LoRA, se conserva también su entrada en el capítulo 4. El contexto determina cuál definición corresponde.</p>
+<h2 id="a-2">A<a class="heading-anchor" href="#a-2" aria-label="Enlace a A">#</a></h2><h3 id="academia-zyron">Academia ZYRON<a class="heading-anchor" href="#academia-zyron" aria-label="Enlace a Academia ZYRON">#</a></h3><p>Área de formación y transferencia de conocimiento del ecosistema. Organiza conferencias, seminarios, cursos, talleres, entrenamientos, diplomados, programas ejecutivos, certificaciones y formación para empresas.</p>
+<h3 id="adaptacion-organizacional">Adaptación organizacional<a class="heading-anchor" href="#adaptacion-organizacional" aria-label="Enlace a Adaptación organizacional">#</a></h3><p>Capacidad de una organización para modificar decisiones, procesos, capacidades y comportamientos frente a cambios del entorno sin perder coherencia con su propósito.</p>
+<h3 id="agente-inteligente">Agente inteligente<a class="heading-anchor" href="#agente-inteligente" aria-label="Enlace a Agente inteligente">#</a></h3><p>Sistema de inteligencia artificial capaz de interpretar un objetivo, utilizar herramientas, ejecutar acciones controladas y devolver resultados verificables dentro de permisos definidos.</p>
+<h3 id="ai-lab">AI LAB<a class="heading-anchor" href="#ai-lab" aria-label="Enlace a AI LAB">#</a></h3><p>Véase <strong>ZYRON AI LAB</strong>.</p>
+<h3 id="analitica-aplicada">Analítica aplicada<a class="heading-anchor" href="#analitica-aplicada" aria-label="Enlace a Analítica aplicada">#</a></h3><p>Uso de datos, indicadores y métodos de análisis para comprender situaciones, apoyar decisiones y medir resultados concretos.</p>
+<h3 id="asesoria-zyron">Asesoría ZYRON<a class="heading-anchor" href="#asesoria-zyron" aria-label="Enlace a Asesoría ZYRON">#</a></h3><p>Orientación especializada destinada a aclarar necesidades, evaluar alternativas y recomendar una ruta de actuación para una persona u organización.</p>
+<h3 id="asistente-organizacional">Asistente organizacional<a class="heading-anchor" href="#asistente-organizacional" aria-label="Enlace a Asistente organizacional">#</a></h3><p>Aplicación de IA que apoya tareas internas como búsqueda de conocimiento, redacción, análisis, atención, documentación o seguimiento, bajo reglas institucionales.</p>
+<h3 id="auditoria-de-inteligencia-organizacional">Auditoría de Inteligencia Organizacional<a class="heading-anchor" href="#auditoria-de-inteligencia-organizacional" aria-label="Enlace a Auditoría de Inteligencia Organizacional">#</a></h3><p>Metodología ZYRON para examinar evidencias, capacidades, prácticas e indicadores relacionados con la inteligencia y evolución de una organización.</p>
+<h3 id="automatizacion-inteligente">Automatización inteligente<a class="heading-anchor" href="#automatizacion-inteligente" aria-label="Enlace a Automatización inteligente">#</a></h3><p>Integración de reglas, datos, software e inteligencia artificial para ejecutar procesos con supervisión, trazabilidad y capacidad de adaptación.</p>
+<h2 id="b-2">B<a class="heading-anchor" href="#b-2" aria-label="Enlace a B">#</a></h2><h3 id="benchmark">Benchmark<a class="heading-anchor" href="#benchmark" aria-label="Enlace a Benchmark">#</a></h3><p>Prueba o referencia comparativa utilizada para medir rendimiento, calidad, estabilidad o madurez bajo criterios comunes.</p>
+<h3 id="biblioteca-oficial-zyron">Biblioteca Oficial ZYRON<a class="heading-anchor" href="#biblioteca-oficial-zyron" aria-label="Enlace a Biblioteca Oficial ZYRON">#</a></h3><p>Repositorio organizado de documentos, fuentes técnicas, manuales, recursos y conocimiento validado para consulta y reutilización dentro del ecosistema.</p>
+<h3 id="bienestar">Bienestar<a class="heading-anchor" href="#bienestar" aria-label="Enlace a Bienestar">#</a></h3><p>Dimensión de impacto ZYRON relacionada con la mejora sostenible de las condiciones humanas, laborales y sociales producida por una transformación.</p>
+<h2 id="c-2">C<a class="heading-anchor" href="#c-2" aria-label="Enlace a C">#</a></h2><h3 id="capacidad-organizacional">Capacidad organizacional<a class="heading-anchor" href="#capacidad-organizacional" aria-label="Enlace a Capacidad organizacional">#</a></h3><p>Combinación de personas, conocimiento, procesos, tecnología, recursos y gobierno que permite producir un resultado de forma consistente.</p>
+<h3 id="centro-de-investigacion-openai">Centro de Investigación OpenAI<a class="heading-anchor" href="#centro-de-investigacion-openai" aria-label="Enlace a Centro de Investigación OpenAI">#</a></h3><p>Área de ZYRON AI LAB dedicada a estudiar y documentar ChatGPT, Codex, Sites, Work, Live, conectores, Computer Use, agentes, automatización y desarrollo web.</p>
+<h3 id="certificacion-internacional-zyron">Certificación Internacional ZYRON<a class="heading-anchor" href="#certificacion-internacional-zyron" aria-label="Enlace a Certificación Internacional ZYRON">#</a></h3><p>Metodología y reconocimiento institucional orientados a verificar el cumplimiento de criterios definidos por el ecosistema ZYRON.</p>
+<h3 id="ciclo-de-inteligencia">Ciclo de inteligencia<a class="heading-anchor" href="#ciclo-de-inteligencia" aria-label="Enlace a Ciclo de inteligencia">#</a></h3><p>Secuencia mediante la cual se obtiene información, se interpreta, se aprende, se decide, se actúa y se evalúan los resultados para mejorar decisiones futuras.</p>
+<h3 id="colaboracion">Colaboración<a class="heading-anchor" href="#colaboracion" aria-label="Enlace a Colaboración">#</a></h3><p>Principio ZYRON que promueve la construcción conjunta de soluciones, el intercambio de conocimiento y la coordinación responsable entre actores.</p>
+<h3 id="competitividad">Competitividad<a class="heading-anchor" href="#competitividad" aria-label="Enlace a Competitividad">#</a></h3><p>Capacidad de una organización para generar valor, responder al entorno, innovar y sostener resultados frente a alternativas comparables.</p>
+<h3 id="computer-use">Computer Use<a class="heading-anchor" href="#computer-use" aria-label="Enlace a Computer Use">#</a></h3><p>Capacidad de un sistema de IA para interactuar con interfaces de computadora mediante acciones controladas, observables y sujetas a permisos.</p>
+<h3 id="conector">Conector<a class="heading-anchor" href="#conector" aria-label="Enlace a Conector">#</a></h3><p>Componente que permite integrar una aplicación, fuente de datos o servicio con otra herramienta, conservando reglas de acceso y transferencia.</p>
+<h3 id="constitucion-fundacional-zyron">Constitución Fundacional ZYRON<a class="heading-anchor" href="#constitucion-fundacional-zyron" aria-label="Enlace a Constitución Fundacional ZYRON">#</a></h3><p>Documento institucional que establece la identidad, doctrina, propósito, principios, gobierno y bases permanentes del ecosistema ZYRON.</p>
+<h3 id="consultoria-zyron">Consultoría ZYRON<a class="heading-anchor" href="#consultoria-zyron" aria-label="Enlace a Consultoría ZYRON">#</a></h3><p>Servicio profesional que diagnostica una situación, diseña soluciones y acompaña su implementación, evaluación y mejora.</p>
+<h3 id="credencial-zyron">Credencial ZYRON<a class="heading-anchor" href="#credencial-zyron" aria-label="Enlace a Credencial ZYRON">#</a></h3><p>Constancia verificable asociada con una actividad formativa, certificación, competencia o logro emitido por el ecosistema.</p>
+<h2 id="d-2">D<a class="heading-anchor" href="#d-2" aria-label="Enlace a D">#</a></h2><h3 id="decision-inteligente">Decisión inteligente<a class="heading-anchor" href="#decision-inteligente" aria-label="Enlace a Decisión inteligente">#</a></h3><p>Elección sustentada en propósito, evidencia, contexto, ética, riesgos y aprendizaje, con posibilidad de seguimiento y corrección.</p>
+<h3 id="diagnostico-de-inteligencia-organizacional">Diagnóstico de Inteligencia Organizacional<a class="heading-anchor" href="#diagnostico-de-inteligencia-organizacional" aria-label="Enlace a Diagnóstico de Inteligencia Organizacional">#</a></h3><p>Metodología M-01 que identifica el estado de las capacidades organizacionales, sus brechas y oportunidades de evolución.</p>
+<h3 id="doctrina-zyron">Doctrina ZYRON<a class="heading-anchor" href="#doctrina-zyron" aria-label="Enlace a Doctrina ZYRON">#</a></h3><p>Conjunto coherente de ideas, principios y criterios que orienta cómo ZYRON comprende la inteligencia, la tecnología, la transformación y el impacto humano.</p>
+<h2 id="e-2">E<a class="heading-anchor" href="#e-2" aria-label="Enlace a E">#</a></h2><h3 id="ecosistema-internacional-zyron">Ecosistema Internacional ZYRON<a class="heading-anchor" href="#ecosistema-internacional-zyron" aria-label="Enlace a Ecosistema Internacional ZYRON">#</a></h3><p>Red integrada de doctrina, metodologías, academia, investigación, tecnología, servicios, certificación y capacidades especializadas que actúan de forma coordinada.</p>
+<h3 id="etica-zyron">Ética ZYRON<a class="heading-anchor" href="#etica-zyron" aria-label="Enlace a Ética ZYRON">#</a></h3><p>Marco moral permanente que exige responsabilidad, transparencia, respeto, protección de las personas y uso de la inteligencia al servicio del bienestar.</p>
+<h3 id="evidencia">Evidencia<a class="heading-anchor" href="#evidencia" aria-label="Enlace a Evidencia">#</a></h3><p>Registro verificable que sustenta una afirmación, decisión, avance, evaluación o resultado.</p>
+<h3 id="evolucion-organizacional">Evolución organizacional<a class="heading-anchor" href="#evolucion-organizacional" aria-label="Enlace a Evolución organizacional">#</a></h3><p>Proceso continuo mediante el cual una organización aprende, adapta sus capacidades, mejora decisiones y produce impacto sostenible.</p>
+<h3 id="excelencia">Excelencia<a class="heading-anchor" href="#excelencia" aria-label="Enlace a Excelencia">#</a></h3><p>Valor ZYRON que impulsa calidad, rigor, aprendizaje y mejora continua en los resultados y en la forma de alcanzarlos.</p>
+<h2 id="f-2">F<a class="heading-anchor" href="#f-2" aria-label="Enlace a F">#</a></h2><h3 id="formacion-para-empresas">Formación para empresas<a class="heading-anchor" href="#formacion-para-empresas" aria-label="Enlace a Formación para empresas">#</a></h3><p>Oferta académica adaptada a las necesidades, capacidades y objetivos de una organización específica.</p>
+<h3 id="founder-amp-ceo">Founder &amp; CEO<a class="heading-anchor" href="#founder-amp-ceo" aria-label="Enlace a Founder &amp; CEO">#</a></h3><p>Denominación institucional del fundador y principal responsable ejecutivo de ZYRON, Dr. Henry Izquierdo, PhD.</p>
+<h2 id="g-2">G<a class="heading-anchor" href="#g-2" aria-label="Enlace a G">#</a></h2><h3 id="gobernanza-de-la-inteligencia">Gobernanza de la inteligencia<a class="heading-anchor" href="#gobernanza-de-la-inteligencia" aria-label="Enlace a Gobernanza de la inteligencia">#</a></h3><p>Sistema de principios, roles, decisiones, controles y responsabilidades que dirige cómo una organización utiliza conocimiento, datos e inteligencia artificial.</p>
+<h2 id="i-2">I<a class="heading-anchor" href="#i-2" aria-label="Enlace a I">#</a></h2><h3 id="identidad-institucional">Identidad institucional<a class="heading-anchor" href="#identidad-institucional" aria-label="Enlace a Identidad institucional">#</a></h3><p>Conjunto de propósito, principios, lenguaje, símbolos, valores y comportamientos que permiten reconocer y orientar a ZYRON.</p>
+<h3 id="implementacion-zyron">Implementación ZYRON<a class="heading-anchor" href="#implementacion-zyron" aria-label="Enlace a Implementación ZYRON">#</a></h3><p>Metodología M-04 para llevar una solución diseñada a la práctica mediante planificación, responsabilidades, recursos, seguimiento y ajustes.</p>
+<h3 id="impacto-sostenible">Impacto sostenible<a class="heading-anchor" href="#impacto-sostenible" aria-label="Enlace a Impacto sostenible">#</a></h3><p>Resultado positivo que puede mantenerse en el tiempo sin comprometer la ética, las personas, los recursos o la capacidad futura de evolucionar.</p>
+<h3 id="indicador-vivo">Indicador vivo<a class="heading-anchor" href="#indicador-vivo" aria-label="Enlace a Indicador vivo">#</a></h3><p>Medida actualizable que permite observar avance, madurez o impacto y que se conecta con decisiones y acciones concretas.</p>
+<h3 id="innovacion">Innovación<a class="heading-anchor" href="#innovacion" aria-label="Enlace a Innovación">#</a></h3><p>Valor y capacidad para convertir conocimiento, creatividad y tecnología en soluciones útiles, responsables y aplicables.</p>
+<h3 id="inteligencia-artificial">Inteligencia Artificial<a class="heading-anchor" href="#inteligencia-artificial" aria-label="Enlace a Inteligencia Artificial">#</a></h3><p>Conjunto de métodos y sistemas capaces de realizar tareas asociadas con percepción, lenguaje, predicción, generación, razonamiento o apoyo a decisiones.</p>
+<h3 id="inteligencia-organizacional">Inteligencia Organizacional<a class="heading-anchor" href="#inteligencia-organizacional" aria-label="Enlace a Inteligencia Organizacional">#</a></h3><p>Capacidad de una organización para comprender, aprender, decidir, adaptarse, innovar y evolucionar de forma consciente, ética y sostenible.</p>
+<h2 id="l-2">L<a class="heading-anchor" href="#l-2" aria-label="Enlace a L">#</a></h2><h3 id="laboratorio-zyron">Laboratorio ZYRON<a class="heading-anchor" href="#laboratorio-zyron" aria-label="Enlace a Laboratorio ZYRON">#</a></h3><p>Espacio organizado de investigación y experimentación con objetivos, documentación, pruebas, resultados, versiones y aprendizaje acumulativo.</p>
+<h3 id="legado">Legado<a class="heading-anchor" href="#legado" aria-label="Enlace a Legado">#</a></h3><p>Valor duradero que una persona u organización deja mediante conocimiento, capacidades, instituciones e impacto positivo transferible.</p>
+<h2 id="m-2">M<a class="heading-anchor" href="#m-2" aria-label="Enlace a M">#</a></h2><h3 id="manifiesto-zyron">Manifiesto ZYRON<a class="heading-anchor" href="#manifiesto-zyron" aria-label="Enlace a Manifiesto ZYRON">#</a></h3><p>Declaración institucional que expresa la posición de ZYRON frente a la inteligencia, la tecnología, el progreso y la transformación humana.</p>
+<h3 id="mapa-de-conocimiento-institucional">Mapa de conocimiento institucional<a class="heading-anchor" href="#mapa-de-conocimiento-institucional" aria-label="Enlace a Mapa de conocimiento institucional">#</a></h3><p>Representación estructurada de conocimientos, fuentes, relaciones, responsables y áreas de aplicación dentro de una organización.</p>
+<h3 id="mapa-zyron">Mapa ZYRON<a class="heading-anchor" href="#mapa-zyron" aria-label="Enlace a Mapa ZYRON">#</a></h3><p>Centro de navegación inteligente de la página web que organiza las rutas hacia doctrina, capacidades, academia, AI LAB, recursos y contacto.</p>
+<h3 id="metodologias-zyron-m-01-a-m-06">Metodologías ZYRON M-01 a M-06<a class="heading-anchor" href="#metodologias-zyron-m-01-a-m-06" aria-label="Enlace a Metodologías ZYRON M-01 a M-06">#</a></h3><p>Sistema metodológico compuesto por Diagnóstico de Inteligencia Organizacional, ZIQ, MMIO-Z, Implementación ZYRON, Auditoría de Inteligencia Organizacional y Certificación Internacional ZYRON.</p>
+<h3 id="mision-zyron">Misión ZYRON<a class="heading-anchor" href="#mision-zyron" aria-label="Enlace a Misión ZYRON">#</a></h3><p>Compromiso institucional de desarrollar, integrar y transferir conocimiento para potenciar la inteligencia de personas y organizaciones.</p>
+<h3 id="mmio-z">MMIO-Z<a class="heading-anchor" href="#mmio-z" aria-label="Enlace a MMIO-Z">#</a></h3><p>Modelo de Madurez de Inteligencia Organizacional ZYRON, utilizado para comprender niveles de desarrollo y orientar rutas de evolución.</p>
+<h3 id="multiagente">Multiagente<a class="heading-anchor" href="#multiagente" aria-label="Enlace a Multiagente">#</a></h3><p>Arquitectura en la que varios agentes especializados colaboran, se coordinan o se supervisan para alcanzar un objetivo común.</p>
+<h2 id="o-2">O<a class="heading-anchor" href="#o-2" aria-label="Enlace a O">#</a></h2><h3 id="organizacion-inteligente">Organización inteligente<a class="heading-anchor" href="#organizacion-inteligente" aria-label="Enlace a Organización inteligente">#</a></h3><p>Organización que transforma información en aprendizaje, aprendizaje en decisiones y decisiones en evolución sostenible.</p>
+<h2 id="p-2">P<a class="heading-anchor" href="#p-2" aria-label="Enlace a P">#</a></h2><h3 id="proposito-zyron">Propósito ZYRON<a class="heading-anchor" href="#proposito-zyron" aria-label="Enlace a Propósito ZYRON">#</a></h3><p>Razón de ser orientada a potenciar la inteligencia de las personas y las organizaciones para construir un futuro mejor.</p>
+<h3 id="programa-ejecutivo">Programa ejecutivo<a class="heading-anchor" href="#programa-ejecutivo" aria-label="Enlace a Programa ejecutivo">#</a></h3><p>Trayecto formativo avanzado dirigido a líderes, directivos o responsables de decisiones y transformación.</p>
+<h2 id="r-2">R<a class="heading-anchor" href="#r-2" aria-label="Enlace a R">#</a></h2><h3 id="razon-de-ser">Razón de ser<a class="heading-anchor" href="#razon-de-ser" aria-label="Enlace a Razón de ser">#</a></h3><p>Fundamento que explica por qué existe ZYRON y qué contribución busca realizar en las personas, organizaciones y sociedad.</p>
+<h3 id="recurso-descargable">Recurso descargable<a class="heading-anchor" href="#recurso-descargable" aria-label="Enlace a Recurso descargable">#</a></h3><p>Documento, presentación, manual, PDF u otro activo publicado para consulta, formación o aplicación.</p>
+<h3 id="responsabilidad">Responsabilidad<a class="heading-anchor" href="#responsabilidad" aria-label="Enlace a Responsabilidad">#</a></h3><p>Valor ZYRON que exige asumir consecuencias, documentar decisiones y proteger a las personas y organizaciones involucradas.</p>
+<h3 id="ruta-de-automatizacion-con-ia">Ruta de automatización con IA<a class="heading-anchor" href="#ruta-de-automatizacion-con-ia" aria-label="Enlace a Ruta de automatización con IA">#</a></h3><p>Plan progresivo para identificar procesos, priorizar oportunidades, diseñar automatizaciones, implementar controles y medir resultados.</p>
+<h2 id="s-2">S<a class="heading-anchor" href="#s-2" aria-label="Enlace a S">#</a></h2><h3 id="sistema-de-medicion">Sistema de medición<a class="heading-anchor" href="#sistema-de-medicion" aria-label="Enlace a Sistema de medición">#</a></h3><p>Conjunto de indicadores, fuentes, reglas y frecuencias utilizado para evaluar estado, avance, madurez e impacto.</p>
+<h2 id="t-2">T<a class="heading-anchor" href="#t-2" aria-label="Enlace a T">#</a></h2><h3 id="transferencia-de-conocimiento">Transferencia de conocimiento<a class="heading-anchor" href="#transferencia-de-conocimiento" aria-label="Enlace a Transferencia de conocimiento">#</a></h3><p>Proceso de convertir experiencia y aprendizaje en capacidades reutilizables mediante formación, documentación, acompañamiento y práctica.</p>
+<h3 id="transformacion-inteligente">Transformación inteligente<a class="heading-anchor" href="#transformacion-inteligente" aria-label="Enlace a Transformación inteligente">#</a></h3><p>Cambio deliberado que integra personas, estrategia, procesos, conocimiento, datos y tecnología para producir evolución sostenible.</p>
+<h3 id="transparencia">Transparencia<a class="heading-anchor" href="#transparencia" aria-label="Enlace a Transparencia">#</a></h3><p>Valor ZYRON que exige claridad sobre criterios, decisiones, responsabilidades, limitaciones y resultados.</p>
+<h2 id="v-2">V<a class="heading-anchor" href="#v-2" aria-label="Enlace a V">#</a></h2><h3 id="valores-zyron">Valores ZYRON<a class="heading-anchor" href="#valores-zyron" aria-label="Enlace a Valores ZYRON">#</a></h3><p>Innovación, ética, excelencia, transparencia, conocimiento, responsabilidad, transformación, colaboración, aprendizaje continuo e impacto social.</p>
+<h3 id="vision-zyron">Visión ZYRON<a class="heading-anchor" href="#vision-zyron" aria-label="Enlace a Visión ZYRON">#</a></h3><p>Aspiración de ser la organización que potenció la inteligencia de millones de personas y organizaciones.</p>
+<h2 id="w">W<a class="heading-anchor" href="#w" aria-label="Enlace a W">#</a></h2><h3 id="workflow">Workflow<a class="heading-anchor" href="#workflow" aria-label="Enlace a Workflow">#</a></h3><p>Flujo de trabajo que conecta pasos, herramientas, datos, responsables y resultados de forma repetible.</p>
+<h2 id="z">Z<a class="heading-anchor" href="#z" aria-label="Enlace a Z">#</a></h2><h3 id="z-dna">Z-DNA<a class="heading-anchor" href="#z-dna" aria-label="Enlace a Z-DNA">#</a></h3><p>Marco conceptual que representa elementos esenciales de identidad, capacidades y evolución dentro de la arquitectura ZYRON.</p>
+<h3 id="zdm">ZDM<a class="heading-anchor" href="#zdm" aria-label="Enlace a ZDM">#</a></h3><p>Modelo de decisión ZYRON que organiza decisiones con propósito, evidencia, ética, contexto y responsabilidad.</p>
+<h3 id="ziq">ZIQ<a class="heading-anchor" href="#ziq" aria-label="Enlace a ZIQ">#</a></h3><p>ZYRON Intelligence Quotient o Índice ZYRON de Inteligencia Organizacional. Instrumento para medir y orientar la evolución de capacidades organizacionales.</p>
+<h3 id="zyron">ZYRON<a class="heading-anchor" href="#zyron" aria-label="Enlace a ZYRON">#</a></h3><p>Ecosistema internacional dedicado al desarrollo de la Inteligencia Organizacional y a la integración ética de conocimiento, metodologías, formación y tecnología.</p>
+<h3 id="zyron-ai">ZYRON AI<a class="heading-anchor" href="#zyron-ai" aria-label="Enlace a ZYRON AI">#</a></h3><p>Área del ecosistema que aplica inteligencia artificial al conocimiento, la decisión, la automatización y la evolución organizacional.</p>
+<h3 id="zyron-ai-lab-2">ZYRON AI LAB<a class="heading-anchor" href="#zyron-ai-lab-2" aria-label="Enlace a ZYRON AI LAB">#</a></h3><p>Espacio de investigación, experimentación, aprendizaje y documentación técnica del ecosistema ZYRON. Integra LoRAs, datasets, captions, entrenamiento, evaluación, workflows, agentes y el Centro de Investigación OpenAI.</p>
+<h3 id="zyron-primus">ZYRON PRIMUS<a class="heading-anchor" href="#zyron-primus" aria-label="Enlace a ZYRON PRIMUS">#</a></h3><p>Portal digital principal que presenta la doctrina, arquitectura, capacidades, academia, investigación, recursos y servicios del ecosistema ZYRON.</p>
+<h3 id="zyron-vivo">ZYRON Vivo<a class="heading-anchor" href="#zyron-vivo" aria-label="Enlace a ZYRON Vivo">#</a></h3><p>Concepto que representa a ZYRON como sistema dinámico, capaz de aprender, actualizarse y evolucionar mediante conocimiento, evidencia y participación.</p>
+<h2 id="a-2-reglas-de-mantenimiento-del-glosario-general">A.2 Reglas de mantenimiento del glosario general<a class="heading-anchor" href="#a-2-reglas-de-mantenimiento-del-glosario-general" aria-label="Enlace a A.2 Reglas de mantenimiento del glosario general">#</a></h2><ul>
+<li><input disabled="" type="checkbox"> Cada término debe aparecer realmente en el ecosistema o su documentación oficial.</li>
+<li><input disabled="" type="checkbox"> Las definiciones institucionales deben conservar coherencia con la Constitución Fundacional.</li>
+<li><input disabled="" type="checkbox"> Los términos técnicos deben diferenciarse de los términos doctrinales.</li>
+<li><input disabled="" type="checkbox"> Una sigla debe incluir su nombre completo cuando exista una denominación aprobada.</li>
+<li><input disabled="" type="checkbox"> Los términos nuevos se agregan en orden alfabético y con responsable de revisión.</li>
+<li><input disabled="" type="checkbox"> Las modificaciones se registran en el control de construcción del manual.</li>
+</ul>
+<hr>
+<h2 id="control-de-construccion">Control de construcción<a class="heading-anchor" href="#control-de-construccion" aria-label="Enlace a Control de construcción">#</a></h2><table>
+<thead>
+<tr>
+<th>Versión</th>
+<th>Contenido</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0.1</td>
+<td>Portada, propósito, alcance, principios e índice aprobado</td>
+<td>Completado</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>Capítulos 1 y 2, checklists y plantillas iniciales</td>
+<td>Completado</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>Capítulos 3 y 4: fundamentos y glosario</td>
+<td>Completado</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>Capítulos 5 y 6: requisitos e instalación local</td>
+<td>Completado</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>Glosario General del Ecosistema ZYRON</td>
+<td>Completado</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>Manual completo, revisado y publicado</td>
+<td>Pendiente</td>
+</tr>
+</tbody></table>
+</main>
+  </div>
+  <footer class="manual-footer">
+    <span>ZYRON AI LAB · Inteligencia para transformar el futuro</span>
+    <a href="index.html#recursos">Biblioteca ZYRON</a>
+  </footer>
+  <script src="js/site-quality.js?v=20260729-audit-4"></script>
+</body>
+</html>
