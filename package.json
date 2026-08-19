@@ -1,0 +1,12 @@
+{
+  "name": "zyron-primus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ZYRON AI - Sitio web estático oficial",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
