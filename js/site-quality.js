@@ -205,6 +205,12 @@
   });
 
   const returnKey = "zyronPageOrigin";
+  document.querySelectorAll('a[href$=".pdf"], a[href*=".pdf?"]').forEach((link) => {
+    if (link.hasAttribute("download") || (link.hasAttribute("data-pdf-title") && document.querySelector(".pdf-modal"))) return;
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+    link.setAttribute("aria-label", `${link.textContent.trim()} (abre en una pestaña nueva)`);
+  });
   document.addEventListener("click", (event) => {
     const link = event.target.closest("a[href]");
     if (
