@@ -521,7 +521,7 @@ const siteMapSearch = siteMapModal?.querySelector("[data-site-map-search]");
 const siteMapEmpty = siteMapModal?.querySelector("[data-site-map-empty]");
 const siteSearchResults = siteMapModal?.querySelector("[data-site-search-results]");
 const siteMapGrids = siteMapModal?.querySelectorAll(".site-map-grid");
-let globalSearchIndex = [];
+let globalSearchIndex = null;
 let globalSearchRequest = null;
 let globalSearchVersion = 0;
 const normalizeSiteMapText = (value) => String(value || "")
@@ -529,19 +529,49 @@ const normalizeSiteMapText = (value) => String(value || "")
   .replace(/[\u0300-\u036f]/g, "")
   .toLowerCase();
 
+const buildMapLinkSearchEntries = () => {
+  const entries = [];
+  siteMapModal?.querySelectorAll(".site-map-grid a[href]").forEach((link) => {
+    const label = link.textContent.trim();
+    if (!label) return;
+    const mapSection = link.closest("section")?.querySelector("h3")?.textContent.trim() || "Mapa ZYRON";
+    entries.push({
+      title: label,
+      section: `Mapa ZYRON · ${mapSection}`,
+      text: [label, link.dataset.searchTerms || ""].join(" ").trim(),
+      url: link.getAttribute("href") || ""
+    });
+  });
+  return entries;
+};
+
+const getGlobalSearchPool = () => {
+  if (Array.isArray(globalSearchIndex) && globalSearchIndex.length) return globalSearchIndex;
+  if (Array.isArray(window.ZYRON_SEARCH_INDEX) && window.ZYRON_SEARCH_INDEX.length) {
+    globalSearchIndex = [...buildMapLinkSearchEntries(), ...window.ZYRON_SEARCH_INDEX];
+    return globalSearchIndex;
+  }
+  return buildMapLinkSearchEntries();
+};
+
 const loadGlobalSearchIndex = () => {
   if (globalSearchRequest) return globalSearchRequest;
-  globalSearchRequest = fetch("assets/zyron-search-index.json", { cache: "no-cache" })
+  if (Array.isArray(window.ZYRON_SEARCH_INDEX) && window.ZYRON_SEARCH_INDEX.length) {
+    globalSearchIndex = [...buildMapLinkSearchEntries(), ...window.ZYRON_SEARCH_INDEX];
+    globalSearchRequest = Promise.resolve(globalSearchIndex);
+    return globalSearchRequest;
+  }
+  globalSearchRequest = fetch("assets/zyron-search-index.json")
     .then((response) => {
       if (!response.ok) throw new Error("Índice global no disponible");
       return response.json();
     })
     .then((items) => {
-      globalSearchIndex = Array.isArray(items) ? items : [];
+      globalSearchIndex = Array.isArray(items) ? [...buildMapLinkSearchEntries(), ...items] : buildMapLinkSearchEntries();
       return globalSearchIndex;
     })
     .catch(() => {
-      globalSearchIndex = [];
+      globalSearchIndex = buildMapLinkSearchEntries();
       return globalSearchIndex;
     });
   return globalSearchRequest;
@@ -568,17 +598,35 @@ const scoreSearchResult = (item, terms, phrase) => {
   return score;
 };
 
+const goToSamePageHash = (hash) => {
+  closeSiteMapModal();
+  if ((hash === "#top" || hash === "#inicio") && !document.querySelector(hash)) {
+    resetQuickNavStart();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    return;
+  }
+  const target = document.querySelector(hash);
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    history.replaceState(null, "", hash);
+  }
+};
+
 const openGlobalSearchResult = (event, item) => {
-  const targetUrl = new URL(item.url, window.location.href);
-  const currentPath = window.location.pathname.endsWith("/") ? `${window.location.pathname}index.html` : window.location.pathname;
-  if (targetUrl.origin === window.location.origin && targetUrl.pathname === currentPath && targetUrl.hash) {
+  const rawUrl = String(item.url || "");
+  if (rawUrl.startsWith("#")) {
     event.preventDefault();
-    closeSiteMapModal();
-    const target = document.querySelector(targetUrl.hash);
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      history.replaceState(null, "", targetUrl.hash);
-    }
+    goToSamePageHash(rawUrl);
+    return;
+  }
+  const targetUrl = new URL(rawUrl, window.location.href);
+  const normalizePath = (path) => path.endsWith("/") ? `${path}index.html` : path;
+  const currentPath = normalizePath(window.location.pathname);
+  const targetPath = normalizePath(targetUrl.pathname);
+  if (targetUrl.origin === window.location.origin && targetPath === currentPath && targetUrl.hash) {
+    event.preventDefault();
+    goToSamePageHash(targetUrl.hash);
   }
 };
 
@@ -597,23 +645,28 @@ const renderGlobalSearch = async () => {
     return;
   }
 
+  if (!globalSearchRequest && !Array.isArray(window.ZYRON_SEARCH_INDEX) ) {
+    siteSearchResults.innerHTML = '<p class="site-search-status">Buscando contenido de ZYRON…</p>';
+  }
   await loadGlobalSearchIndex();
   if (requestVersion !== globalSearchVersion || normalizeSiteMapText(siteMapSearch?.value || "").trim() !== query) return;
   const terms = query.split(/\s+/).filter(Boolean);
-  const results = globalSearchIndex
-    .map((item) => ({ item, score: scoreSearchResult(item, terms, query) }))
-    .filter((result) => result.score > 0 && terms.every((term) => normalizeSiteMapText(`${result.item.title} ${result.item.section} ${result.item.text}`).includes(term)))
-    .sort((a, b) => b.score - a.score)
-    .slice(0, 30);
+  const pool = getGlobalSearchPool();
+  const scored = pool
+    .map((item) => ({ item, score: scoreSearchResult(item, terms, query), haystack: normalizeSiteMapText(`${item.title} ${item.section} ${item.text}`) }))
+    .filter((result) => result.score > 0);
+  const fullMatches = scored.filter((result) => terms.every((term) => result.haystack.includes(term)));
+  const results = (fullMatches.length ? fullMatches : scored).sort((a, b) => b.score - a.score);
 
+  const visibleResults = results.slice(0, 40);
   siteSearchResults.innerHTML = "";
   siteSearchResults.dataset.query = query;
-  results.forEach(({ item }) => {
+  visibleResults.forEach(({ item }) => {
     const link = document.createElement("a");
     link.className = "site-search-result";
     link.href = item.url;
     const title = document.createElement("strong");
-    title.textContent = item.title;
+    title.textContent = item.title || item.url;
     const origin = document.createElement("span");
     origin.textContent = item.section;
     const excerpt = document.createElement("p");
@@ -622,6 +675,12 @@ const renderGlobalSearch = async () => {
     link.addEventListener("click", (event) => openGlobalSearchResult(event, item));
     siteSearchResults.appendChild(link);
   });
+  if (results.length > visibleResults.length) {
+    const more = document.createElement("p");
+    more.className = "site-search-status";
+    more.textContent = `Mostrando ${visibleResults.length} de ${results.length} coincidencias. Afina la búsqueda para mejores resultados.`;
+    siteSearchResults.appendChild(more);
+  }
   siteMapEmpty.textContent = "No se encontraron resultados en el contenido global de ZYRON.";
   siteMapEmpty?.classList.toggle("is-visible", results.length === 0);
 };

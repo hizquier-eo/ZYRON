@@ -8449,6 +8449,18 @@ body.is-reading-ai-lab .ai-lab-topbar--portal {
   line-height: 1.45;
 }
 
+.site-search-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px dashed rgba(0, 212, 255, .3);
+  border-radius: 10px;
+  color: rgba(244, 251, 255, .7);
+  background: rgba(2, 10, 27, .6);
+  font-size: .8rem;
+  line-height: 1.4;
+}
+
 @media (max-width: 768px) {
   .primary-nav .mobile-nav-map {
     min-height: 44px;
