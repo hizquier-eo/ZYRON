@@ -630,6 +630,37 @@
   }
 }
 
+/* Video circular de portada visible e integrado en móvil. */
+@media (max-width: 768px) {
+  .prototype-frame .hero-zyron-video-launch {
+    position: absolute !important;
+    left: auto !important;
+    right: clamp(14px, 4.5vw, 24px) !important;
+    top: auto !important;
+    bottom: clamp(48px, 13vw, 72px) !important;
+    z-index: 12 !important;
+    width: clamp(68px, 19vw, 84px) !important;
+    height: auto !important;
+    aspect-ratio: 1 !important;
+    display: block !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+  }
+
+  .prototype-frame .hero-zyron-video-launch img {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+  }
+
+  .prototype-frame .hero-zyron-video-launch span {
+    width: clamp(28px, 8vw, 34px) !important;
+    height: clamp(28px, 8vw, 34px) !important;
+    font-size: .72rem !important;
+  }
+}
+
 /* 2026-08-20 - Equipo institucional y responsive integral */
 html {
   overflow-x: clip;
