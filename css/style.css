@@ -439,6 +439,197 @@
   .collection-home-entry__content { grid-template-columns: 1fr; }
 }
 
+/* Portada móvil: composición propia sin alterar la portada de escritorio. */
+.mobile-hero {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  .mirror-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  .mirror-page {
+    display: block;
+  }
+
+  .prototype-frame {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  .prototype-image,
+  .hero-zyron-video-launch {
+    display: none !important;
+  }
+
+  .hotspots {
+    position: static;
+    width: 0;
+    height: 0;
+  }
+
+  .hotspots .primary-nav {
+    display: none !important;
+  }
+
+  .hotspots .primary-nav.is-open {
+    position: fixed !important;
+    display: grid !important;
+  }
+
+  .quick-nav,
+  .site-map-launch,
+  .zyron-side-orbit {
+    display: none !important;
+  }
+
+  .mobile-hero {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    align-content: start;
+    gap: 18px;
+    padding: 20px clamp(16px, 5vw, 28px) 34px;
+    overflow: hidden;
+    color: #f4fbff;
+    text-align: center;
+    background:
+      radial-gradient(circle at 50% 54%, rgba(0, 102, 255, .22), transparent 38%),
+      linear-gradient(180deg, #020b1c 0%, #061a3d 100%);
+  }
+
+  .mobile-hero-brand {
+    width: clamp(150px, 43vw, 210px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  .mobile-hero-copy {
+    width: min(100%, 620px);
+    min-width: 0;
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+  }
+
+  .mobile-hero-eyebrow {
+    margin: 0;
+    color: var(--cyan);
+    font: 900 clamp(.72rem, 2.7vw, .92rem)/1.35 var(--font-title);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .mobile-hero-copy h1 {
+    max-width: 16ch;
+    margin: 0;
+    color: #fff;
+    font: 900 clamp(2rem, 9.2vw, 3.6rem)/1.04 var(--font-title);
+    letter-spacing: -.025em;
+    overflow-wrap: normal;
+    text-transform: uppercase;
+  }
+
+  .mobile-hero-copy h1 span {
+    color: var(--gold);
+  }
+
+  .mobile-hero-copy > p:not(.mobile-hero-eyebrow) {
+    max-width: 38rem;
+    margin: 0;
+    color: rgba(244, 251, 255, .9);
+    font-size: clamp(.94rem, 3.8vw, 1.08rem);
+    line-height: 1.55;
+  }
+
+  .mobile-hero-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .mobile-hero-actions a,
+  .mobile-hero-actions button {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font: 900 clamp(.76rem, 3vw, .9rem)/1.2 var(--font-title);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .mobile-hero-actions a {
+    border: 1px solid var(--gold);
+    color: #021027;
+    background: linear-gradient(135deg, #ffb000, #ff8a00);
+  }
+
+  .mobile-hero-actions button {
+    border: 1px solid rgba(0, 212, 255, .68);
+    color: #fff;
+    background: rgba(2, 16, 39, .84);
+  }
+
+  .mobile-hero-visual {
+    width: min(100%, 540px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 16px;
+    object-fit: contain;
+  }
+
+  .floating-features {
+    box-sizing: border-box;
+    width: min(100% - 24px, 620px) !important;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px;
+    margin: 18px auto 0;
+  }
+
+  .feature-window {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 24px 18px 30px;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 768px) {
+  .mobile-hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .floating-features {
+    width: min(100% - 32px, 720px) !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
 /* 2026-08-20 - Equipo institucional y responsive integral */
 html {
   overflow-x: clip;
