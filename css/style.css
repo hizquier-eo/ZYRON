@@ -439,6 +439,281 @@
   .collection-home-entry__content { grid-template-columns: 1fr; }
 }
 
+/* 2026-08-20 - Equipo institucional y responsive integral */
+html {
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+iframe,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+.team-member-card {
+  margin-top: 28px;
+}
+
+.team-member-card .owner-photo-stack {
+  align-self: start;
+}
+
+.team-member-card .owner-photo.featured {
+  aspect-ratio: 4 / 5.15;
+}
+
+.team-member-card .owner-photo img {
+  object-position: center top;
+}
+
+.facebook {
+  color: #62a8ff;
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .section {
+    width: min(100% - 32px, 1120px) !important;
+  }
+
+  .owner-card,
+  .campaign-hero,
+  .advisory-visual,
+  .zyron-lab-detail,
+  .doctrine-detail {
+    min-width: 0;
+  }
+
+  .owner-card > *,
+  .campaign-hero > *,
+  .advisory-visual > *,
+  .zyron-lab-detail > *,
+  .doctrine-detail > * {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    position: fixed;
+    z-index: 1002;
+    top: 14px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    padding: 0;
+    border: 1px solid rgba(0, 212, 255, .55);
+    border-radius: 14px;
+    background: rgba(3, 10, 27, .96);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .42);
+  }
+
+  .mobile-menu-toggle span {
+    width: 24px;
+    height: 2px;
+    display: block;
+    border-radius: 2px;
+    background: var(--cyan);
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .primary-nav {
+    position: fixed;
+    z-index: 1001;
+    inset: 74px 16px auto auto;
+    width: min(360px, calc(100vw - 32px));
+    height: auto;
+    max-height: calc(100dvh - 92px);
+    display: none;
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid rgba(0, 212, 255, .42);
+    border-radius: 18px;
+    background: rgba(3, 10, 27, .98);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, .56);
+  }
+
+  .primary-nav.is-open {
+    display: grid;
+  }
+
+  .primary-nav a {
+    min-height: 44px;
+    padding: 10px 14px;
+    place-items: center start;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    font-size: .78rem;
+    text-align: left;
+  }
+
+  .hotspot {
+    display: none;
+  }
+
+  .quick-nav {
+    display: none !important;
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  .owner-card {
+    grid-template-columns: minmax(240px, 320px) minmax(0, 1fr) !important;
+  }
+
+  .owner-card .contact-actions,
+  .owner-card .owner-contact-strip {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    width: min(100% - 24px, 1280px) !important;
+    padding-top: 64px;
+  }
+
+  .floating-features,
+  .floating-grid,
+  .identity-grid,
+  .doctrine-window-grid,
+  .window-row,
+  .method-grid,
+  .strategy-factor-grid,
+  .timeline,
+  .timeline-detail-grid,
+  .academy-grid,
+  .download-grid,
+  .deep-grid,
+  .campaign-grid,
+  .video-grid,
+  .proof-grid,
+  .owner-card,
+  .contact-form,
+  .campaign-hero,
+  .advisory-visual,
+  .zyron-lab-detail {
+    grid-template-columns: 1fr !important;
+  }
+
+  .owner-card .contact-actions,
+  .owner-card .owner-contact-strip,
+  .doctrine-window.featured-window {
+    grid-column: auto;
+  }
+
+  .owner-card {
+    padding: 22px;
+    gap: 22px;
+  }
+
+  .owner-photo-stack {
+    width: min(100%, 430px);
+  }
+
+  .owner-contact-strip {
+    align-items: stretch;
+  }
+
+  .contact-mini {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .campaign-hero div,
+  .advisory-visual div,
+  .doctrine-detail div {
+    padding: 24px;
+  }
+
+  .campaign-hero img,
+  .advisory-visual img,
+  .zyron-lab-detail img {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .section {
+    width: min(100% - 20px, 1280px) !important;
+  }
+
+  .section-heading h1,
+  .section-heading h2,
+  .owner-card h2,
+  .campaign-hero h3,
+  .advisory-visual h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .owner-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .contact-actions {
+    gap: 9px;
+  }
+
+  .social {
+    width: 46px;
+    height: 46px;
+  }
+
+  .mobile-menu-toggle {
+    top: 10px;
+    right: 10px;
+  }
+
+  .primary-nav {
+    inset: 68px 10px auto 10px;
+    width: auto;
+  }
+
+  input,
+  select,
+  textarea,
+  button,
+  .cv-button,
+  .whatsapp-cta,
+  .mail-submit {
+    max-width: 100%;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8114,6 +8389,149 @@ body.is-reading-ai-lab .ai-lab-topbar--portal {
   font-weight: 850;
   line-height: 1.45;
   text-align: center;
+}
+
+.mobile-nav-map {
+  display: none;
+}
+
+.site-map-grid.is-searching {
+  display: none;
+}
+
+.site-search-results {
+  display: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.site-search-results.is-visible {
+  display: grid;
+}
+
+.site-search-result {
+  min-width: 0;
+  display: grid;
+  gap: 7px;
+  padding: 15px 16px;
+  border: 1px solid rgba(0, 212, 255, .22);
+  border-radius: 12px;
+  color: rgba(244, 251, 255, .92);
+  background: rgba(2, 10, 27, .72);
+  text-decoration: none;
+}
+
+.site-search-result:hover,
+.site-search-result:focus-visible {
+  border-color: rgba(0, 212, 255, .62);
+  outline: 2px solid rgba(0, 212, 255, .35);
+  outline-offset: 2px;
+}
+
+.site-search-result strong {
+  color: var(--gold);
+  font-size: .96rem;
+  line-height: 1.3;
+}
+
+.site-search-result span {
+  color: var(--cyan);
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.site-search-result p {
+  margin: 0;
+  color: rgba(244, 251, 255, .76);
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .primary-nav .mobile-nav-map {
+    min-height: 44px;
+    display: grid;
+    place-items: center start;
+    padding: 10px 14px;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-radius: 0;
+    color: #f4fbff;
+    background: transparent;
+    font-size: .78rem;
+    font-weight: 900;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  .site-search-results {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive final: prevalece sobre los estilos históricos del sitio. */
+.team-member-card { margin-top: 28px; }
+.team-member-card .owner-photo img { object-position: center top; }
+.facebook { color: #62a8ff; }
+.mobile-menu-toggle { display: none; }
+
+@media (max-width: 1180px) {
+  .section { width: min(100% - 32px, 1120px) !important; }
+  .owner-card > *, .campaign-hero > *, .advisory-visual > *, .zyron-lab-detail > *, .doctrine-detail > * { min-width: 0; }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    position: fixed; z-index: 1002; top: 14px; right: 16px;
+    width: 48px; height: 48px; display: grid; place-content: center; gap: 6px; padding: 0;
+    border: 1px solid rgba(0,212,255,.55); border-radius: 14px;
+    background: rgba(3,10,27,.96); box-shadow: 0 12px 34px rgba(0,0,0,.42);
+  }
+  .mobile-menu-toggle span { width: 24px; height: 2px; display: block; border-radius: 2px; background: var(--cyan); transition: transform .2s ease, opacity .2s ease; }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  .primary-nav {
+    position: fixed !important; z-index: 1001; inset: 74px 16px auto auto !important;
+    width: min(360px, calc(100vw - 32px)) !important; height: auto !important;
+    max-height: calc(100dvh - 92px); display: none !important; grid-template-columns: 1fr !important;
+    overflow-y: auto; padding: 10px; border: 1px solid rgba(0,212,255,.42); border-radius: 18px;
+    background: rgba(3,10,27,.98); box-shadow: 0 24px 64px rgba(0,0,0,.56);
+  }
+  .primary-nav.is-open { display: grid !important; }
+  .primary-nav a { min-height: 44px; padding: 10px 14px; place-items: center start; border-bottom: 1px solid rgba(255,255,255,.08); font-size: .78rem; text-align: left; }
+  .hotspot { display: none !important; }
+  .quick-nav { display: none !important; }
+  body.mobile-menu-open { overflow: hidden; }
+  .owner-card { grid-template-columns: minmax(240px,320px) minmax(0,1fr) !important; }
+  .owner-card .contact-actions, .owner-card .owner-contact-strip { grid-column: 1 / -1; }
+}
+
+@media (max-width: 768px) {
+  .section { width: min(100% - 24px, 1280px) !important; padding-top: 64px; }
+  .floating-features, .floating-grid, .identity-grid, .doctrine-window-grid, .window-row,
+  .method-grid, .strategy-factor-grid, .timeline, .timeline-detail-grid, .academy-grid,
+  .download-grid, .deep-grid, .campaign-grid, .video-grid, .proof-grid, .owner-card,
+  .contact-form, .campaign-hero, .advisory-visual, .zyron-lab-detail { grid-template-columns: 1fr !important; }
+  .owner-card .contact-actions, .owner-card .owner-contact-strip, .doctrine-window.featured-window { grid-column: auto; }
+  .owner-card { padding: 22px; gap: 22px; }
+  .owner-photo-stack { width: min(100%, 430px); }
+  .contact-mini { max-width: 100%; overflow-wrap: anywhere; }
+  .campaign-hero div, .advisory-visual div, .doctrine-detail div { padding: 24px; }
+  .campaign-hero img, .advisory-visual img, .zyron-lab-detail img { min-height: 0; }
+}
+
+@media (max-width: 430px) {
+  .section { width: min(100% - 20px, 1280px) !important; }
+  .section-heading h1, .section-heading h2, .owner-card h2, .campaign-hero h3, .advisory-visual h2 { overflow-wrap: anywhere; }
+  .owner-card { padding: 18px; border-radius: 18px; }
+  .contact-actions { gap: 9px; }
+  .social { width: 46px; height: 46px; }
+  .mobile-menu-toggle { top: 10px; right: 10px; }
+  .primary-nav { inset: 68px 10px auto 10px !important; width: auto !important; }
+  input, select, textarea, button, .cv-button, .whatsapp-cta, .mail-submit { max-width: 100%; }
 }
 
 @media (max-width: 1080px) {

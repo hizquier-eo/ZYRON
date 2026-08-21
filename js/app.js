@@ -1,9 +1,32 @@
 ﻿const contactForm = document.querySelector(".contact-form");
 const quickNav = document.querySelector(".quick-nav");
 const quickLinks = document.querySelectorAll(".quick-nav a");
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const primaryNavigation = document.querySelector(".primary-nav");
 let quickNavWasVisible = false;
 let pageReturnScrollY = null;
 let pageReturnButton = null;
+
+const closeMobileMenu = () => {
+  if (!mobileMenuToggle || !primaryNavigation) return;
+  mobileMenuToggle.setAttribute("aria-expanded", "false");
+  mobileMenuToggle.setAttribute("aria-label", "Abrir menú principal");
+  primaryNavigation.classList.remove("is-open");
+  document.body.classList.remove("mobile-menu-open");
+};
+
+mobileMenuToggle?.addEventListener("click", () => {
+  const willOpen = mobileMenuToggle.getAttribute("aria-expanded") !== "true";
+  mobileMenuToggle.setAttribute("aria-expanded", String(willOpen));
+  mobileMenuToggle.setAttribute("aria-label", willOpen ? "Cerrar menú principal" : "Abrir menú principal");
+  primaryNavigation?.classList.toggle("is-open", willOpen);
+  document.body.classList.toggle("mobile-menu-open", willOpen);
+});
+
+primaryNavigation?.querySelectorAll("a, button").forEach((link) => link.addEventListener("click", closeMobileMenu));
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) closeMobileMenu();
+});
 
 const resetQuickNavStart = () => {
   if (quickNav) quickNav.scrollLeft = 0;
@@ -496,37 +519,115 @@ siteMapModal?.addEventListener("click", (event) => {
 
 const siteMapSearch = siteMapModal?.querySelector("[data-site-map-search]");
 const siteMapEmpty = siteMapModal?.querySelector("[data-site-map-empty]");
+const siteSearchResults = siteMapModal?.querySelector("[data-site-search-results]");
+const siteMapGrids = siteMapModal?.querySelectorAll(".site-map-grid");
+let globalSearchIndex = [];
+let globalSearchRequest = null;
+let globalSearchVersion = 0;
 const normalizeSiteMapText = (value) => String(value || "")
   .normalize("NFD")
   .replace(/[\u0300-\u036f]/g, "")
   .toLowerCase();
 
-const filterSiteMap = () => {
-  if (!siteMapModal) return;
-  const query = normalizeSiteMapText(siteMapSearch?.value || "").trim();
-  let visibleCount = 0;
-  siteMapModal.querySelectorAll(".site-map-grid section").forEach((section) => {
-    let sectionHasVisibleLinks = false;
-    const sectionText = normalizeSiteMapText(section.querySelector("h3")?.textContent || "");
-    section.querySelectorAll("a").forEach((link) => {
-      const haystack = normalizeSiteMapText([
-        link.textContent,
-        link.dataset.searchTerms,
-        sectionText
-      ].join(" "));
-      const isVisible = !query || haystack.includes(query);
-      link.classList.toggle("is-filter-hidden", !isVisible);
-      if (isVisible) {
-        sectionHasVisibleLinks = true;
-        visibleCount += 1;
-      }
+const loadGlobalSearchIndex = () => {
+  if (globalSearchRequest) return globalSearchRequest;
+  globalSearchRequest = fetch("assets/zyron-search-index.json", { cache: "no-cache" })
+    .then((response) => {
+      if (!response.ok) throw new Error("Índice global no disponible");
+      return response.json();
+    })
+    .then((items) => {
+      globalSearchIndex = Array.isArray(items) ? items : [];
+      return globalSearchIndex;
+    })
+    .catch(() => {
+      globalSearchIndex = [];
+      return globalSearchIndex;
     });
-    section.classList.toggle("is-filter-hidden", !sectionHasVisibleLinks);
-  });
-  siteMapEmpty?.classList.toggle("is-visible", Boolean(query) && visibleCount === 0);
+  return globalSearchRequest;
 };
 
-siteMapSearch?.addEventListener("input", filterSiteMap);
+const scoreSearchResult = (item, terms, phrase) => {
+  const title = normalizeSiteMapText(item.title);
+  const section = normalizeSiteMapText(item.section);
+  const text = normalizeSiteMapText(item.text);
+  let score = 0;
+  const escapedPhrase = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const phraseBoundary = new RegExp(`(^|[^a-z0-9])${escapedPhrase}([^a-z0-9]|$)`);
+  if (phraseBoundary.test(title)) score += 140;
+  if (phraseBoundary.test(section)) score += 90;
+  if (phraseBoundary.test(text)) score += 70;
+  if (title.includes(phrase)) score += 80;
+  if (section.includes(phrase)) score += 45;
+  if (text.includes(phrase)) score += 35;
+  terms.forEach((term) => {
+    if (title.includes(term)) score += 18;
+    if (section.includes(term)) score += 10;
+    if (text.includes(term)) score += 5;
+  });
+  return score;
+};
+
+const openGlobalSearchResult = (event, item) => {
+  const targetUrl = new URL(item.url, window.location.href);
+  const currentPath = window.location.pathname.endsWith("/") ? `${window.location.pathname}index.html` : window.location.pathname;
+  if (targetUrl.origin === window.location.origin && targetUrl.pathname === currentPath && targetUrl.hash) {
+    event.preventDefault();
+    closeSiteMapModal();
+    const target = document.querySelector(targetUrl.hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.replaceState(null, "", targetUrl.hash);
+    }
+  }
+};
+
+const renderGlobalSearch = async () => {
+  if (!siteMapModal || !siteSearchResults) return;
+  const rawQuery = siteMapSearch?.value || "";
+  const query = normalizeSiteMapText(rawQuery).trim();
+  const requestVersion = ++globalSearchVersion;
+  const searching = query.length > 0;
+  siteMapGrids?.forEach((grid) => grid.classList.toggle("is-searching", searching));
+  siteSearchResults.classList.toggle("is-visible", searching);
+  siteMapEmpty?.classList.remove("is-visible");
+  if (!searching) {
+    siteSearchResults.innerHTML = "";
+    siteSearchResults.dataset.query = "";
+    return;
+  }
+
+  await loadGlobalSearchIndex();
+  if (requestVersion !== globalSearchVersion || normalizeSiteMapText(siteMapSearch?.value || "").trim() !== query) return;
+  const terms = query.split(/\s+/).filter(Boolean);
+  const results = globalSearchIndex
+    .map((item) => ({ item, score: scoreSearchResult(item, terms, query) }))
+    .filter((result) => result.score > 0 && terms.every((term) => normalizeSiteMapText(`${result.item.title} ${result.item.section} ${result.item.text}`).includes(term)))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 30);
+
+  siteSearchResults.innerHTML = "";
+  siteSearchResults.dataset.query = query;
+  results.forEach(({ item }) => {
+    const link = document.createElement("a");
+    link.className = "site-search-result";
+    link.href = item.url;
+    const title = document.createElement("strong");
+    title.textContent = item.title;
+    const origin = document.createElement("span");
+    origin.textContent = item.section;
+    const excerpt = document.createElement("p");
+    excerpt.textContent = item.text;
+    link.append(title, origin, excerpt);
+    link.addEventListener("click", (event) => openGlobalSearchResult(event, item));
+    siteSearchResults.appendChild(link);
+  });
+  siteMapEmpty.textContent = "No se encontraron resultados en el contenido global de ZYRON.";
+  siteMapEmpty?.classList.toggle("is-visible", results.length === 0);
+};
+
+siteMapSearch?.addEventListener("input", renderGlobalSearch);
+siteMapSearch?.addEventListener("focus", loadGlobalSearchIndex);
 
 if (window.location.hash === "#mapa-zyron") {
   setTimeout(() => openSiteMapModal(document.querySelector("[data-site-map-open]")), 120);
