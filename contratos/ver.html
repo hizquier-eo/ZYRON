@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Visualización de contratos institucionales ZYRON." />
+  <title>Ver contrato | ZYRON</title>
+  <link rel="stylesheet" href="../css/contratos.css" />
+</head>
+<body>
+  <header class="contract-header">
+    <a class="brand" href="../index.html#top" aria-label="Volver al inicio de ZYRON">
+      <img src="../assets/zyron-logo-preview.png" alt="ZYRON" />
+      <span>Documentación institucional</span>
+    </a>
+    <nav aria-label="Navegación del contrato">
+      <a href="index.html">Todos los contratos</a>
+      <a href="index.html">Página de contratos</a>
+    </nav>
+  </header>
+
+  <main class="contract-viewer-main">
+    <div class="contract-viewer-toolbar">
+      <h1 id="contract-title">Contrato ZYRON</h1>
+      <a class="back-request" id="back-to-origin" href="index.html">← Volver</a>
+    </div>
+    <iframe id="contract-frame" class="contract-pdf-frame" title="Contrato ZYRON en PDF"></iframe>
+  </main>
+
+  <footer>
+    <p>ZYRON · Inteligencia para transformar el futuro</p>
+    <a id="footer-back-to-origin" href="index.html">Volver a la página anterior</a>
+  </footer>
+
+  <script>
+    const contracts = {
+      general: {
+        title: "Contrato general de servicios",
+        file: "../assets/contratos/contrato-general-servicios-zyron.pdf"
+      },
+      formacion: {
+        title: "Contrato de servicios de formación",
+        file: "../assets/contratos/contrato-servicios-formacion-zyron.pdf"
+      }
+    };
+    const key = new URLSearchParams(window.location.search).get("contrato");
+    const contract = contracts[key] || contracts.general;
+    document.title = `${contract.title} | ZYRON`;
+    document.getElementById("contract-title").textContent = contract.title;
+    document.getElementById("contract-frame").src = contract.file;
+    const returnToOrigin = (event) => {
+      if (window.history.length > 1 && document.referrer) {
+        event.preventDefault();
+        window.history.back();
+      }
+    };
+    document.getElementById("back-to-origin").addEventListener("click", returnToOrigin);
+    document.getElementById("footer-back-to-origin").addEventListener("click", returnToOrigin);
+  </script>
+</body>
+</html>
