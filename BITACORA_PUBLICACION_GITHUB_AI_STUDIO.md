@@ -170,3 +170,10 @@ Servidor local (`node server.js`) verificado:
 - Se separaron los enlaces del certificado GPTZero y se retiró el botón exterior duplicado.
 - Se dejó `Curso avanzado de ChatGPT` con su diploma PDF independiente.
 - Se ajustó el nombre del CEO para mostrarse corrido en escritorio y adaptable en móvil.
+
+### Fichas directivas · 2026-09-07
+
+- Se colocaron los seis iconos de Henry en una fila horizontal debajo de su cargo.
+- Se colocaron los cinco iconos de Deisy en una fila horizontal debajo de su cargo.
+- Se mantuvo `Lic. Deisy Mundarain` completo en una sola línea, con adaptación móvil.
+- Se publicó la actualización en el mismo Site: `https://zyron-ia.weiserizquierdo.chatgpt.site`.

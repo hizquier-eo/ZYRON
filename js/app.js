@@ -1042,4 +1042,9 @@ if (aiLabSection) {
 
 
 
-
+document.querySelectorAll('.section-owner .owner-card').forEach((card) => {
+  const info = card.children[1];
+  const contacts = card.querySelector(':scope > .contact-actions');
+  const executiveTitle = info?.querySelector('.executive-title');
+  if (info && contacts && executiveTitle) executiveTitle.insertAdjacentElement('afterend', contacts);
+});
