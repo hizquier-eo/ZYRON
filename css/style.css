@@ -2987,6 +2987,20 @@ a {
   font-size: clamp(2rem, 3vw, 3.2rem);
   line-height: 1;
 }
+
+/* Mantén el nombre completo del Founder & CEO en una sola línea en escritorio. */
+.section-owner > .owner-card:first-of-type h2 {
+  font-size: clamp(1.7rem, 2.6vw, 2.8rem);
+  letter-spacing: -.03em;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .section-owner > .owner-card:first-of-type h2 {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
 .owner-card .executive-title {
   margin: -4px 0 14px;
   color: var(--cyan);
@@ -3008,6 +3022,194 @@ a {
   color: var(--gold);
   font-weight: 900;
   text-decoration: none;
+}
+
+.owner-primary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.owner-primary-actions .cv-button {
+  margin-top: 0;
+}
+
+.credential-button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 18px;
+  border: 1px solid rgba(0, 212, 255, .55);
+  border-radius: 999px;
+  background: rgba(0, 132, 255, .14);
+  color: var(--cyan);
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.credential-button:hover {
+  transform: translateY(-3px);
+  border-color: var(--cyan);
+  box-shadow: 0 14px 34px rgba(0, 212, 255, .14);
+}
+
+.credential-validator {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid rgba(0, 212, 255, .28);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(5, 20, 45, .92), rgba(2, 9, 24, .96));
+  box-shadow: inset 0 0 28px rgba(0, 122, 255, .06);
+}
+
+.credential-validator__heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.credential-validator__heading > span {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  color: var(--cyan);
+  font-weight: 900;
+  box-shadow: 0 0 16px rgba(0, 212, 255, .18);
+}
+
+.credential-validator__heading p,
+.credential-validator__heading h3 {
+  margin: 0;
+}
+
+.credential-validator__heading p {
+  color: var(--gold);
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.credential-validator__heading h3 {
+  color: var(--white);
+  font-size: 1.08rem;
+}
+
+.credential-options {
+  display: grid;
+  gap: 9px;
+}
+
+.credential-options details {
+  border: 1px solid rgba(111, 174, 255, .22);
+  border-radius: 12px;
+  background: rgba(4, 13, 34, .72);
+  overflow: hidden;
+}
+
+.credential-options summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 14px;
+  color: var(--white);
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+
+.credential-options summary::-webkit-details-marker {
+  display: none;
+}
+
+.credential-options summary::after {
+  content: "+";
+  color: var(--cyan);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.credential-options details[open] summary::after {
+  content: "−";
+}
+
+.credential-options summary span {
+  margin-left: auto;
+  color: var(--cyan);
+  font-size: .72rem;
+  text-transform: uppercase;
+}
+
+.credential-option-content {
+  padding: 0 14px 15px;
+  border-top: 1px solid rgba(111, 174, 255, .16);
+}
+
+.credential-option-content p {
+  margin: 12px 0;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+.credential-option-content > a {
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.corporate-credential-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.corporate-credential-gallery figure {
+  margin: 0;
+}
+
+.corporate-credential-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 212, 255, .38);
+  border-radius: 10px;
+  background: #020817;
+}
+
+.corporate-credential-gallery figcaption {
+  padding-top: 6px;
+  color: var(--cyan);
+  font-size: .7rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 620px) {
+  .owner-primary-actions > a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .credential-options summary {
+    flex-wrap: wrap;
+  }
+
+  .credential-options summary span {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .corporate-credential-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 .contact-actions {
@@ -7776,6 +7978,51 @@ body.is-reading-ai-lab .ai-lab-topbar--portal {
   grid-column: 1 / -1;
 }
 
+.zyron-privacy-consent {
+  display: grid;
+  grid-template-columns: 68px minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+}
+
+.contact-form .zyron-privacy-consent input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 68px;
+  min-height: 68px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, .72);
+  border-radius: 10px;
+  background: url("../assets/zyron-consent-logo.png") center / cover no-repeat;
+  cursor: pointer;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.contact-form .zyron-privacy-consent input[type="checkbox"]:checked {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, .2), 0 0 22px rgba(0, 212, 255, .35);
+  transform: scale(.96);
+}
+
+.contact-form .zyron-privacy-consent input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .zyron-privacy-consent {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .contact-form .zyron-privacy-consent input[type="checkbox"] {
+    width: 56px;
+    min-height: 56px;
+  }
+}
+
 .zyron-benchmark-transparency {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -8362,7 +8609,10 @@ body.is-reading-ai-lab .ai-lab-topbar--portal {
 .zyron-site-footer {
   width: 100%;
   box-sizing: border-box;
-  padding: 34px clamp(20px, 5vw, 72px) 38px;
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+  padding: 42px clamp(20px, 5vw, 72px) 38px;
   border-top: 1px solid rgba(91, 211, 255, .24);
   background:
     linear-gradient(135deg, rgba(19, 78, 126, .22), transparent 52%),
@@ -8378,10 +8628,93 @@ body.is-reading-ai-lab .ai-lab-topbar--portal {
   margin: 3px 0;
 }
 
+.zyron-site-footer__identity {
+  display: grid;
+  gap: 3px;
+  justify-items: center;
+}
+
+.zyron-site-footer__identity strong {
+  color: #fff;
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+  letter-spacing: .22em;
+  line-height: 1;
+}
+
+.zyron-site-footer__identity span {
+  color: #eba03d;
+  font-size: clamp(.76rem, 1.35vw, .95rem);
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.zyron-site-footer__contact {
+  display: grid;
+  gap: 4px;
+}
+
+.zyron-site-footer__contact span {
+  color: rgba(236, 248, 255, .64);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.zyron-site-footer__contact a {
+  color: #5bd3ff;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+  text-underline-offset: 4px;
+}
+
+.zyron-site-footer__contact a:hover,
+.zyron-site-footer__contact a:focus-visible {
+  color: #fff;
+}
+
+.zyron-site-footer__legal {
+  width: min(100%, 980px);
+  display: grid;
+  gap: 12px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(91, 211, 255, .16);
+}
+
 .zyron-site-footer__copyright {
   color: #ffffff;
   font-weight: 800;
   letter-spacing: .035em;
+}
+
+.zyron-site-footer__legal-text {
+  color: rgba(236, 248, 255, .62);
+  font-size: clamp(.74rem, 1vw, .84rem);
+  line-height: 1.7;
+}
+
+@media (min-width: 769px) {
+  .zyron-site-footer {
+    padding-bottom: 128px;
+  }
+}
+
+@media (max-width: 480px) {
+  .zyron-site-footer {
+    gap: 20px;
+    padding: 34px 18px 30px;
+  }
+
+  .zyron-site-footer__identity span {
+    max-width: 290px;
+    line-height: 1.5;
+  }
+
+  .zyron-site-footer__legal {
+    gap: 10px;
+    padding-top: 18px;
+  }
 }
 
 /* 2026-07-26 - Integración y orquestación inteligente multimodelo */

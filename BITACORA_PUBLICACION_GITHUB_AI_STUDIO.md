@@ -94,3 +94,79 @@ Servidor local (`node server.js`) verificado:
 - [x] Sin rutas privadas innecesarias
 - [x] Navegación y recursos funcionando
 - [x] Sin 404 críticos
+
+---
+
+## Actualización institucional — 2026-08-30
+
+### Validación de credenciales
+
+- Se incorporó en el bloque **Founder & CEO** el nuevo centro de **Validación de credenciales**.
+- Se añadió acceso al validador externo de la credencial GPTZero:
+  `https://certificado-henry-izquierdo.weiserizquierdo.chatgpt.site`.
+- Se agregó una subventana para consultar la credencial corporativa ZYRON, ID interno `ZYR-001`.
+- Se integraron las dos caras de la credencial como recursos permanentes:
+  - `assets/credencial-corporativa-henry-frente.png`
+  - `assets/credencial-corporativa-henry-reverso.png`
+- Se verificó la carga correcta de ambas imágenes y el funcionamiento del desplegable.
+
+### Corrección de contacto
+
+- El correo electrónico de Deisy Mundarain fue actualizado en la página y en los índices de búsqueda.
+- Dirección vigente: `deisymundarain3@gmail.com`.
+- Se comprobó que no quedaran enlaces activos con la dirección anterior.
+
+### Centro de contratos ZYRON
+
+- Se creó la página institucional `contratos/index.html`.
+- Se creó su hoja de estilos adaptable `css/contratos.css`.
+- La página presenta dos documentos diferenciados:
+  1. Contrato general de servicios profesionales.
+  2. Contrato de servicios educativos y de formación.
+- Cada contrato dispone de acciones para **ver** y **descargar** su PDF.
+- Los documentos DOCX originales no fueron modificados; únicamente se convirtieron a PDF mediante Microsoft Word para conservar membrete, estructura y formato.
+
+### Documentos PDF incorporados
+
+| Documento | Páginas | Ruta pública |
+|---|---:|---|
+| Contrato general de servicios ZYRON | 12 | `assets/contratos/contrato-general-servicios-zyron.pdf` |
+| Contrato de servicios de formación ZYRON | 14 | `assets/contratos/contrato-servicios-formacion-zyron.pdf` |
+
+- También se conservaron copias de salida en `output/pdf/`.
+- Ambos documentos usan tamaño Carta y fueron renderizados a imágenes para revisión visual.
+- La revisión confirmó membretes, textos, pies de página y transiciones sin defectos visibles.
+
+### Mapa ZYRON y búsqueda global
+
+- Se añadió **Contratos institucionales ZYRON** a la biblioteca de recursos.
+- Se incorporaron al Mapa ZYRON enlaces independientes para:
+  - Página de contratos ZYRON.
+  - Contrato general de servicios.
+  - Contrato educativo y de formación.
+- Se agregaron términos relacionados con contratos, cláusulas, servicios, educación, formación, capacitación, cursos, talleres, conferencias, laboratorios y entrenamiento.
+- Se verificó que las búsquedas `contrato general servicios` y `contrato educativo` devuelvan el resultado correspondiente y abran directamente el PDF correcto.
+
+### Verificación técnica
+
+- [x] Nueva página de contratos accesible mediante HTTP local.
+- [x] Ambos PDF disponibles desde la web.
+- [x] Logo y recursos visuales sin enlaces rotos.
+- [x] Sin errores de consola en la página de contratos.
+- [x] Resultados nuevos disponibles desde el buscador del Mapa ZYRON.
+- [x] Diseño adaptable para escritorio y dispositivos móviles.
+
+### Certificaciones y credenciales profesionales · 2026-09-07
+
+- Se integró el diploma de Henry Izquierdo en el bloque institucional del CEO.
+- Nombre exacto: **Accredited Expert in Strategic Communication and Responsible AI for Organizations and Education**.
+- Botón público: `VER DIPLOMA PDF` → `assets/GPTZero_Certificado_Henry_Izquierdo_Validado.pdf`.
+- Se eliminó únicamente la copia idéntica de `output/pdf/` tras verificar SHA-256.
+
+### Ajuste de presentación y enlaces · 2026-09-07
+
+- Se restauró el encabezado principal `FOUNDER & CEO`.
+- Se mantuvo `Certificaciones y credenciales profesionales` como encabezado interno.
+- Se separaron los enlaces del certificado GPTZero y se retiró el botón exterior duplicado.
+- Se dejó `Curso avanzado de ChatGPT` con su diploma PDF independiente.
+- Se ajustó el nombre del CEO para mostrarse corrido en escritorio y adaptable en móvil.
