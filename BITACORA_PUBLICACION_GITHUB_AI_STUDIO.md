@@ -177,3 +177,12 @@ Servidor local (`node server.js`) verificado:
 - Se colocaron los cinco iconos de Deisy en una fila horizontal debajo de su cargo.
 - Se mantuvo `Lic. Deisy Mundarain` completo en una sola línea, con adaptación móvil.
 - Se publicó la actualización en el mismo Site: `https://zyron-ia.weiserizquierdo.chatgpt.site`.
+
+### Piloto Sistema de Gestión y Validación de Diplomas · 2026-09-08
+
+- Se preparó Worker+D1 con registro TEST `0001-TEST` y consulta pública por identificador aleatorio.
+- Cédula y código privado quedan representados únicamente por hashes SHA-256 en el esquema D1.
+- Se generó `assets/diploma-0001.pdf` con QR dirigido a la validación pública prevista.
+- Se generó `outputs/diplomas/PLANTILLA_CARGA_DIPLOMAS_ZYRON.xlsx` con validación de condición.
+- Se creó respaldo `outputs/diplomas/ZYRON_PRIMUS_respaldo_20260908.zip`.
+- Despliegue pendiente de autenticación Cloudflare.

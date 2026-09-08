@@ -803,18 +803,22 @@ document.querySelector(".credential-form")?.addEventListener("submit", async (ev
   event.preventDefault();
   const form = event.currentTarget;
   const data = new FormData(form);
-  const identity = data.get("identidad") || "";
-  const eventName = data.get("evento") || "";
-  const code = await createCredentialCode(identity, eventName);
-  issuedCredential = { identity: String(identity).trim(), eventName: String(eventName).trim(), code };
-
   const result = document.querySelector(".credential-result");
-  result.querySelector("h4").textContent = "Simulación generada correctamente";
-  result.querySelector("p").textContent = `Código visual de demostración: ${code}. No constituye una verificación ni una credencial oficial.`;
-  renderQr(result.querySelector(".credential-qr"), code);
-  document.querySelector(".print-credential").disabled = false;
-  document.querySelector(".view-issued-credential").disabled = false;
-  updateIssuedDiploma(issuedCredential);
+  const accessCode = String(data.get("evento") || "").trim();
+  const response = await fetch("/api/diplomas/access", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ accessCode }) });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) {
+    result.querySelector("h4").textContent = "Código no válido";
+    result.querySelector("p").textContent = payload.error || "No fue posible validar el acceso.";
+    return;
+  }
+  result.querySelector("h4").textContent = "Diploma validado";
+  result.querySelector("p").textContent = "Acceso autorizado. Descarga el diploma registrado.";
+  result.querySelector(".credential-qr").innerHTML = "";
+  const view = document.querySelector(".view-issued-credential");
+  view.disabled = false;
+  view.onclick = () => { window.open(payload.diplomaUrl, "_blank", "noopener"); };
+  document.querySelector(".print-credential").disabled = true;
 });
 
 document.querySelector(".print-credential")?.addEventListener("click", () => {

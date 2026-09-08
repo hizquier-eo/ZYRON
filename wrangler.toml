@@ -1,0 +1,8 @@
+name = "zyron-diplomas"
+main = "worker/index.js"
+compatibility_date = "2026-09-08"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zyron-diplomas"
+database_id = "REPLACE_AFTER_CREATE"

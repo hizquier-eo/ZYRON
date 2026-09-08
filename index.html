@@ -623,24 +623,23 @@
         <div>
           <span>Demostración institucional</span>
           <h3>Simulador de diploma ZYRON</h3>
-          <p>Esta herramienta es una demostración visual. No constituye un sistema oficial de verificación de credenciales.</p>
+          <p>Consulta segura del diploma piloto ZYRON.</p>
         </div>
         <form class="credential-form">
-          <input name="identidad" placeholder="Correo electrónico o cédula de identidad" required />
-          <input name="evento" placeholder="Nombre o código del evento" required />
-          <button type="submit">Generar simulación</button>
+          <input name="evento" placeholder="Código privado de acceso" autocomplete="one-time-code" required />
+          <button type="submit">Consultar diploma</button>
         </form>
         <article class="credential-result" aria-live="polite">
           <div>
             <span>Resultado de la demostración</span>
-            <h4>Simulación preparada</h4>
-            <p>Ingrese datos de demostración para visualizar el formato. El resultado no constituye una credencial oficial.</p>
+            <h4>Consulta de diploma</h4>
+            <p>Introduce el código privado para consultar el diploma registrado.</p>
           </div>
           <img class="credential-result__preview" src="assets/diploma-zyron-credencial.png?v=diploma-pdf" alt="Vista previa del diploma electrónico ZYRON" />
           <div class="credential-qr" aria-label="Patrón visual de demostración"></div>
           <div class="credential-actions">
-            <button type="button" class="print-credential" disabled>Imprimir simulación</button>
-            <button type="button" class="view-issued-credential" disabled>Ver simulación</button>
+            <button type="button" class="print-credential" disabled>Imprimir diploma</button>
+            <button type="button" class="view-issued-credential" disabled>Descargar diploma PDF</button>
           </div>
         </article>
       </section>
