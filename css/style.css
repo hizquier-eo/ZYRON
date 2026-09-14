@@ -13,6 +13,23 @@
   --site-bg-top: #1E1E1E;
 }
 
+/* Diplomas y credenciales de Dr. Henry Izquierdo, PhD */
+.credentials-section{padding-top:76px}
+.credentials-owner{margin:10px 0 0!important;color:var(--gold)!important;font-size:clamp(1.15rem,2vw,1.55rem)!important;font-weight:700}
+.credentials-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;max-width:1120px;margin:0 auto}
+.credential-card{overflow:hidden;border:1px solid rgba(103,214,255,.24);border-radius:22px;background:linear-gradient(145deg,rgba(9,35,72,.96),rgba(4,17,42,.98));box-shadow:0 18px 48px rgba(0,0,0,.24)}
+.credential-image-wrap{display:grid;place-items:center;min-height:310px;padding:20px;background:#07152d;border-bottom:1px solid rgba(103,214,255,.18)}
+.credential-image-wrap img{display:block;width:100%;height:310px;object-fit:contain;object-position:center}
+.credential-card-body{display:grid;gap:10px;padding:22px 24px 24px}
+.credential-kicker{margin:0;color:var(--cyan);font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.credential-card h3{margin:0;color:var(--white);font-size:1.25rem}
+.credential-button,.credential-pdf-link{width:max-content;max-width:100%;border-radius:999px;padding:11px 16px;font-weight:800;text-decoration:none}
+.credential-button{background:var(--gold);color:#08172f}
+.credential-pdf-link{border:1px solid rgba(255,255,255,.28);color:var(--white)}
+.credential-button:hover,.credential-button:focus-visible,.credential-pdf-link:hover,.credential-pdf-link:focus-visible{transform:translateY(-1px);outline:2px solid var(--cyan);outline-offset:3px}
+.contact-actions{flex-wrap:nowrap;align-items:center;gap:12px}
+@media(max-width:760px){.credentials-grid{grid-template-columns:1fr}.credential-image-wrap,.credential-image-wrap img{height:260px;min-height:260px}.contact-actions{gap:8px}.social{width:46px;height:46px}}
+
 /* Laboratorio Sites: índice interno legible y sin desbordamiento móvil. */
 :is(.sites-lab-page, .work-lab-page, .live-lab-page, .computer-use-lab-page, .connectors-lab-page, .api-center-page) .ai-lab-local-index {
   display: flex;
@@ -9147,4 +9164,119 @@ body.is-reading-ai-lab .ai-lab-topbar--portal {
   .zyron-intervention-flow small {
     font-size: .82rem;
   }
+}
+
+/* Mantener los canales sociales en una fila continua y adaptable. */
+.contact-actions {
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.contact-actions a {
+  flex: 0 0 auto;
+}
+
+/* Equipo ZYRON: perfiles horizontales, distinguibles y responsive. */
+.team-section { padding-top: 76px; }
+.team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; max-width: 1120px; margin: 0 auto; }
+.team-card { display: grid; grid-template-columns: minmax(175px, 42%) 1fr; min-height: 300px; overflow: hidden; border-radius: 22px; background: linear-gradient(145deg, rgba(9,35,72,.96), rgba(4,17,42,.98)); box-shadow: 0 18px 48px rgba(0,0,0,.24); }
+.team-avatar { min-height: 100%; }
+.team-avatar-initials { display: grid; place-items: center; color: var(--gold); background: radial-gradient(circle at 50% 35%, rgba(0,194,255,.32), transparent 42%), linear-gradient(155deg, #082957, #06152d); font-family: var(--font-title); font-size: clamp(2.4rem, 5vw, 4.8rem); font-weight: 900; letter-spacing: .04em; }
+.team-avatar-photo { background: #06152d; }
+.team-avatar-photo img { display: block; width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: 63% center; background: #020b18; }
+.team-card-content { display: grid; align-content: center; gap: 11px; min-width: 0; padding: 28px 24px; }
+.team-role { margin: 0; color: var(--cyan); font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.team-card h3 { margin: 0; color: var(--white); font-family: var(--font-title); font-size: clamp(1.35rem, 2.2vw, 1.9rem); line-height: 1.15; }
+.team-contact-list { display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; margin-top: 5px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+.team-contact { display: grid; place-items: center; flex: 0 0 42px; width: 42px; height: 42px; border-radius: 12px; color: var(--cyan); background: rgba(0,102,255,.20); box-shadow: 0 0 18px rgba(0,212,255,.13); font-size: 0; line-height: 1; text-decoration: none; }
+.team-contact span:last-child { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.team-contact:hover, .team-contact:focus-visible { color: var(--gold); }
+.team-contact svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.team-pending { color: rgba(238,248,255,.52); }
+.team-pending svg { color: var(--cyan); }
+.team-description { margin: 0; color: rgba(255,255,255,.90); line-height: 1.55; font-size: .95rem; }
+@media (max-width: 900px) { .team-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .team-card { grid-template-columns: 106px 1fr; } .team-avatar-photo img { min-height: 250px; } .team-card-content { padding: 22px 17px; } .team-contact { font-size: .86rem; } }
+
+/* The three team profiles use one consistent horizontal card system. */
+.team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.team-name { white-space: nowrap; font-size: clamp(1.08rem, 1.65vw, 1.45rem) !important; }
+.credentials-grid { gap: 40px; }
+.credential-card { border: 0; border-radius: 0; background: transparent; box-shadow: none; overflow: visible; }
+.credential-card-body { padding: 0; }
+.credential-card h3 { min-width: 0; overflow-wrap: anywhere; word-break: break-word; font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.25; }
+@media (max-width: 1100px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .team-grid { grid-template-columns: 1fr; } .team-name { white-space: normal; } }
+
+/* Ajustes puntuales del perfil original de Henry. */
+.owner-card h2 { white-space: nowrap; font-size: clamp(1.75rem, 2.65vw, 2.65rem); }
+.owner-card .contact-actions { flex-wrap: nowrap !important; justify-content: flex-start; gap: 8px; max-width: none; overflow-x: visible; }
+.owner-card .social { width: 44px; height: 44px; flex: 0 0 44px; }
+@media (min-width: 921px) {
+  .owner-card { position: relative; }
+  .owner-card .contact-actions {
+    position: absolute;
+    top: 132px;
+    left: 390px;
+    right: 32px;
+    width: auto;
+  }
+  .owner-card > div:nth-child(2) > p:not(.role):not(.executive-title) { margin-top: 76px; }
+}
+@media (max-width: 920px) {
+  .owner-card .contact-actions { position: static; width: 100%; }
+}
+@media (max-width: 760px) { .owner-card h2 { white-space: normal; } .owner-card .contact-actions { overflow-x: auto; } }
+
+/* Equipo ZYRON: cada perfil ocupa una ficha horizontal independiente. */
+.team-grid { grid-template-columns: 1fr; max-width: 1120px; }
+.team-card { grid-template-columns: minmax(260px, 330px) 1fr; min-height: 300px; }
+.team-avatar-photo img { min-height: 300px; }
+
+/* Trayectoria y certificaciones junto a la segunda imagen de Henry. */
+.owner-secondary-credentials {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(280px, 330px) minmax(0, 1fr);
+  gap: 26px;
+  align-items: stretch;
+  margin-top: 8px;
+}
+.owner-secondary-credentials .owner-photo.secondary {
+  width: 100%;
+  aspect-ratio: 16 / 10.5;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #061124;
+  box-shadow: 0 22px 56px rgba(0, 0, 0, .42), 0 0 30px rgba(0, 212, 255, .18);
+}
+.owner-secondary-credentials .owner-photo.secondary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.trajectory-panel {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid rgba(103, 214, 255, .24);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(9, 35, 72, .96), rgba(4, 17, 42, .98));
+  box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+}
+.trajectory-kicker { margin: 0; color: var(--gold); font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.trajectory-panel h3 { margin: 0; color: var(--white); font-size: clamp(1.35rem, 2vw, 2rem); }
+.trajectory-panel .credentials-owner { margin: 0 !important; }
+.trajectory-credentials { display: grid; gap: 18px; margin-top: 4px; }
+.trajectory-credential { display: grid; gap: 8px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .12); }
+.trajectory-credential h4 { margin: 0; color: var(--white); font-size: 1rem; line-height: 1.3; overflow-wrap: anywhere; }
+.trajectory-credential .credential-button { justify-self: start; }
+@media (max-width: 760px) {
+  .owner-secondary-credentials { grid-template-columns: 1fr; }
+  .owner-secondary-credentials .owner-photo.secondary { max-width: 520px; justify-self: center; }
 }

@@ -1,5 +1,9 @@
 # SESSION_LOG - ZYRON PRIMUS
 
+## 2026-09-14 - Trayectoria y certificaciones junto a la segunda imagen de Henry
+
+Se reorganizó exclusivamente el bloque institucional de Dr. Henry Izquierdo para colocar la segunda fotografía junto a una ventana independiente de trayectoria y certificaciones. La ventana contiene el subtítulo “Diplomas y credenciales”, el nombre de GPTZero con el botón “Validar diploma GPTZero” y el nombre del segundo diploma con su botón de apertura. No se muestran imágenes completas de diplomas, no se modificó la ficha principal de Henry ni se publicó el sitio. La vista previa local confirmó la estructura y los enlaces; `js/app.js` superó la comprobación de sintaxis.
+
 ## 2026-07-26 - Corrección editorial del Ecosistema OpenAI
 
 La revisión visual del usuario identificó lenguaje propio de una nota de implementación en `#capacidades-openai`. Se sustituyeron “activos existentes sin duplicarlos”, “rutas existentes” y “páginas ya creadas / no se replica” por una comunicación institucional sobre investigación, evaluación, formación, automatización y capacidades aplicadas. Se mantuvieron dos tarjetas, 13 laboratorios, botones y rutas. La prueba móvil detectó que la barra fija cubría el encabezado al navegar por ancla; se corrigió con `scroll-margin-top: 110px` en `.openai-research-band`. No hubo overflow ni errores de consola.

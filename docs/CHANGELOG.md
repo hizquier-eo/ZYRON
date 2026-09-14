@@ -1,5 +1,24 @@
 # CHANGELOG - ZYRON PRIMUS
 
+## Versión 0.19.0 — Trayectoria y certificaciones
+
+### Fecha
+
+2026-09-14
+
+### Descripción
+
+Se reubicó la ventana de credenciales de Dr. Henry Izquierdo junto a su segunda fotografía institucional.
+
+### Resultado
+
+- Se conserva intacta la ficha principal de Henry.
+- La ventana muestra “Trayectoria y certificaciones” y “Diplomas y credenciales”.
+- Se mantienen los nombres reales de los dos diplomas, sin mostrar sus imágenes completas.
+- Se mantienen los botones de validación GPTZero y apertura del segundo diploma.
+- Se verificó la vista previa local y la sintaxis de `js/app.js`.
+- No se publicó el sitio.
+
 ## Versión 0.10.3
 
 ### Fecha
