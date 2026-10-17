@@ -186,3 +186,12 @@ Servidor local (`node server.js`) verificado:
 - Se generó `outputs/diplomas/PLANTILLA_CARGA_DIPLOMAS_ZYRON.xlsx` con validación de condición.
 - Se creó respaldo `outputs/diplomas/ZYRON_PRIMUS_respaldo_20260908.zip`.
 - Despliegue pendiente de autenticación Cloudflare.
+
+## 2026-10-17 — Video integrado en VIDEOS ZYRON
+
+- Añadido «Gato y perro explorando Marte» debajo del encabezado de VIDEOS ZYRON, antes de las nueve tarjetas existentes. Todo el contenido previo se conservó.
+- Reproductor adaptable con controles y pantalla completa nativa, sin reproducción automática.
+- Ruta relativa: `assets/videos/Cat_and_dog_exploring_Mars_202607111726.mp4`.
+- Archivos: index.html y assets/videos/Cat_and_dog_exploring_Mars_202607111726.mp4 en ZYRON PRIMUS y ZYRON GITHUB; site-source/index.html, public/index.html y public/assets/videos/Cat_and_dog_exploring_Mars_202607111726.mp4 en ZYRON SITES FINAL.
+- Se conservaron los cambios previos de cada copia. Verificación y publicación en curso: se registrará su resultado real al finalizar.
+- Verificación 2026-10-17: MP4 idéntico al original por SHA-256, H.264/AAC 1280x720 y duración 10,005 s; decodificación completa sin errores. Navegador Edge: reproducción real confirmada, nueve tarjetas previas conservadas, modal y mapa operativos, sin errores JavaScript y sin desbordamiento a 390 px. Compilación Sites completada.
