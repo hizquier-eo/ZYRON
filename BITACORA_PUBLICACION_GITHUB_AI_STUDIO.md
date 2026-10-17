@@ -206,3 +206,5 @@ Servidor local (`node server.js`) verificado:
 - Archivos: index.html, css/himno.css y assets/videos/Video1_Himno_ZYRON_voz_mejorada.mp4 en GitHub; site-source/index.html, public/index.html y public/css/himno.css en Sites. MP4 original destinado al almacenamiento MEDIA ya configurado, servido mediante ruta relativa existente.
 - Sin reproducción automática. Se mantiene eliminada la frase bajo el título según solicitud previa.
 - Publicación y verificación pública en curso.
+
+- Cierre del himno 2026-10-17: publicado y reproducido en GitHub Pages https://hizquier-eo.github.io/ZYRON/ (commit b6de60862d83a6fe3a95d84a320fb16dae685797) y ChatGPT Sites https://zyron-ia.weiserizquierdo.chatgpt.site/ (versión 14, fuente 274a8b8e8276c5d9f325dc715b0661df434d6fd5). Edge confirmó reproducción real, duración 168 s, controles, autoplay false, cinco pilares y video de Marte conservados, sin desbordamiento móvil a 390 px y sin errores JavaScript. Sites usa la ruta relativa del himno con redirección al MP4 original de GitHub Pages; cargas a MEDIA y Azure fallaron/cortaron, se utilizó compilación remota oficial para publicar. MP4 original conservado sin compresión ni cambios.
