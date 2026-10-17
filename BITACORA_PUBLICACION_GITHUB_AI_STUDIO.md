@@ -195,3 +195,5 @@ Servidor local (`node server.js`) verificado:
 - Archivos: index.html y assets/videos/Cat_and_dog_exploring_Mars_202607111726.mp4 en ZYRON PRIMUS y ZYRON GITHUB; site-source/index.html, public/index.html y public/assets/videos/Cat_and_dog_exploring_Mars_202607111726.mp4 en ZYRON SITES FINAL.
 - Se conservaron los cambios previos de cada copia. Verificación y publicación en curso: se registrará su resultado real al finalizar.
 - Verificación 2026-10-17: MP4 idéntico al original por SHA-256, H.264/AAC 1280x720 y duración 10,005 s; decodificación completa sin errores. Navegador Edge: reproducción real confirmada, nueve tarjetas previas conservadas, modal y mapa operativos, sin errores JavaScript y sin desbordamiento a 390 px. Compilación Sites completada.
+
+- Resultado GitHub: cambio publicado en https://github.com/hizquier-eo/ZYRON/commit/2a2dba4bb529c95638cd24a6134b7c5def056219; remoto main confirmado. Sites: paquete compilado de copia limpia sincronizada, commit 8cb39ff9abd069cf45cbdb569fe17893452bc25d; guardado de versión solicitado, pendiente de respuesta. Primer envío interrumpido tras quedar sin completar; se conservó todo el trabajo previo.
