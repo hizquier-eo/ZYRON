@@ -199,3 +199,10 @@ Servidor local (`node server.js`) verificado:
 - Resultado GitHub: cambio publicado en https://github.com/hizquier-eo/ZYRON/commit/2a2dba4bb529c95638cd24a6134b7c5def056219; remoto main confirmado. Sites: paquete compilado de copia limpia sincronizada, commit 8cb39ff9abd069cf45cbdb569fe17893452bc25d; guardado de versión solicitado, pendiente de respuesta. Primer envío interrumpido tras quedar sin completar; se conservó todo el trabajo previo.
 
 - Cierre 2026-10-17: ChatGPT Sites versión 12 publicada correctamente en https://zyron-ia.weiserizquierdo.chatgpt.site (commit fuente 8cb39ff9abd069cf45cbdb569fe17893452bc25d). Verificación pública en Edge: video reproduciéndose, controles activos, autoplay false, nueve tarjetas conservadas, mapa y modal funcionales, móvil 390 px sin desbordamiento y cero errores JavaScript. MP4 público HTTP 200 con Content-Type video/mp4. Las incidencias de sincronización y empaquetado Windows quedaron resueltas mediante copia limpia y TAR_OPTIONS; no se modificaron archivos previos ajenos al bloque solicitado.
+
+## 2026-10-17 — Sincronización del Himno de ZYRON
+
+- Incorporada la sección local del himno a las publicaciones GitHub y Sites, antes de los cinco pilares. Se conservan el título, el reproductor, el botón institucional, el video de Marte y el resto de contenido.
+- Archivos: index.html, css/himno.css y assets/videos/Video1_Himno_ZYRON_voz_mejorada.mp4 en GitHub; site-source/index.html, public/index.html y public/css/himno.css en Sites. MP4 original destinado al almacenamiento MEDIA ya configurado, servido mediante ruta relativa existente.
+- Sin reproducción automática. Se mantiene eliminada la frase bajo el título según solicitud previa.
+- Publicación y verificación pública en curso.

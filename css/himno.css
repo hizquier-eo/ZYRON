@@ -1,0 +1,44 @@
+/* Himno de ZYRON: estilos limitados a esta sección. */
+.zyron-himno {
+  box-sizing: border-box;
+  width: min(1100px, calc(100% - 32px));
+  margin: 40px auto 12px;
+  padding: clamp(18px, 3vw, 36px);
+  border-top: 2px solid var(--gold, #EBA03D);
+  border-bottom: 1px solid var(--electric, #0066FF);
+  background: #07152b;
+  color: var(--white, #fff);
+}
+.zyron-himno__heading { margin-bottom: 22px; }
+.zyron-himno__heading h2 {
+  margin: 0 0 12px;
+  color: var(--gold, #EBA03D);
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  line-height: 1.15;
+}
+.zyron-himno__heading p, .zyron-himno__help {
+  max-width: 70ch;
+  margin: 0;
+  color: #c9e7ff;
+  line-height: 1.6;
+}
+.zyron-himno__video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #000;
+  border-radius: 12px;
+}
+.zyron-himno__video:focus-visible {
+  outline: 3px solid var(--cyan, #00D4FF);
+  outline-offset: 5px;
+}
+.zyron-himno__video a { color: var(--gold, #EBA03D); }
+.zyron-himno__help { margin-top: 14px; font-size: .9rem; }
+@media (max-width: 600px) {
+  .zyron-himno { margin-top: 24px; padding: 18px 12px; }
+  .zyron-himno__heading { margin-bottom: 16px; }
+}
