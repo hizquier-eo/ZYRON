@@ -208,3 +208,9 @@ Servidor local (`node server.js`) verificado:
 - Publicación y verificación pública en curso.
 
 - Cierre del himno 2026-10-17: publicado y reproducido en GitHub Pages https://hizquier-eo.github.io/ZYRON/ (commit b6de60862d83a6fe3a95d84a320fb16dae685797) y ChatGPT Sites https://zyron-ia.weiserizquierdo.chatgpt.site/ (versión 14, fuente 274a8b8e8276c5d9f325dc715b0661df434d6fd5). Edge confirmó reproducción real, duración 168 s, controles, autoplay false, cinco pilares y video de Marte conservados, sin desbordamiento móvil a 390 px y sin errores JavaScript. Sites usa la ruta relativa del himno con redirección al MP4 original de GitHub Pages; cargas a MEDIA y Azure fallaron/cortaron, se utilizó compilación remota oficial para publicar. MP4 original conservado sin compresión ni cambios.
+
+## 2026-11-12 — Objeto institucional de ZYRON
+
+- Se incorporó el texto íntegro del Objeto de ZYRON en la página principal, después de «Quién es ZYRON» y antes del Centro de doctrina.
+- Se añadieron accesos desde la navegación rápida y el Mapa ZYRON, con estilos adaptables en `css/style.css`.
+- Origen: sección aprobada en la copia local ZYRON PRIMUS. Publicación de GitHub en curso.
