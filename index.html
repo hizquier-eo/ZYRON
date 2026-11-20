@@ -27,6 +27,10 @@
   .zyron-preview-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:1rem;margin-top:1.6rem}
   .zyron-preview-grid article {border:1px solid #426184;background:#102a4b;border-radius:1rem;padding:1.2rem}
   .zyron-preview-grid h2 {font-size:1.2rem;margin:.75rem 0 .4rem;color:white}
+  .zyron-preview-grid .zyron-base-card {grid-column:1/-1;border-color:#EBA03D;background:#132b49}
+  .zyron-base-card .zyron-preview-status {color:#ffd580;border-color:#EBA03D}
+  #zyron-start-local label {margin:.6rem 0}
+
   .zyron-preview-status {display:inline-block;border:1px solid #6694b0;padding:.23rem .6rem;border-radius:1rem;color:#b4edff;font-size:.8rem;font-weight:700}
 #zyron-services-callout{margin:.8rem auto;padding:.9rem 1.3rem}#zyron-services-callout p{margin:.2rem 0}#zyron-services-callout h2{font-size:clamp(1.12rem,2.4vw,1.55rem)}
 
@@ -106,8 +110,9 @@
       </ul>
       <div id="zyron-start-local" hidden>
         <h3>Instalación en Windows</h3>
+        <label><input type="checkbox" id="zyron-base-installed"> Ya tengo instalada la Base común ZYRON 0.8 en este equipo</label>
         <ol>
-          <li>Instala primero la <strong>Base común ZYRON 0.8</strong>. Este paso se hace una vez por equipo.</li>
+          <li id="zyron-base-install-step">Si es tu primera instalación en este equipo, instala primero la <strong>Base común ZYRON 0.8</strong>.</li>
           <li>Instala únicamente los módulos recomendados que quieras usar.</li>
           <li>Inicia el módulo desde su acceso directo de Windows. También puedes usar «Abrir en Windows» en su ficha una vez iniciado el servicio.</li>
         </ol>
@@ -121,19 +126,25 @@
   </section>
   
   <div class="zyron-preview-grid">
+    <article class="zyron-base-card" aria-labelledby="zyron-base-card-title">
+      <span class="zyron-preview-status">Primer paso en Windows</span>
+      <h2 id="zyron-base-card-title">Base común ZYRON 0.8</h2>
+      <p>Es el componente que comparten Indicadores, Financiero y Salud. Se instala una sola vez en cada equipo Windows.</p>
+      <p>Si ya tienes instalada una base compatible en ese equipo, al contratar otro módulo solo necesitas instalar el módulo nuevo. La modalidad web no requiere la base de Windows.</p>
+    </article>
 
 
     <article id="zyron-map-indicadores"><span class="zyron-preview-status">Piloto local</span><h2>Indicadores 0.1</h2><p>Organiza indicadores de gestión y apoya su seguimiento.</p><p>Pendiente de validar la instalación en otro equipo.</p>
       <a class="zyron-preview-cta zyron-module-card-link" href="#zyron-map-indicadores" aria-label="Ver ficha de Indicadores">Ver ficha</a>
       <div class="zyron-module-details">
-        <p>Para abrir este piloto, instala en tu equipo Windows la Base común 0.8 y el módulo, e inicia su servicio.</p>
+        <p>Instala la Base común ZYRON 0.8 solo si aún no la tienes en ese equipo. Después instala este módulo e inicia su servicio.</p>
         <a class="zyron-preview-cta" href="http://127.0.0.1:4174/" target="_blank" rel="noopener noreferrer">Abrir Indicadores en Windows</a>
       </div>
     </article>
     <article id="zyron-map-financiero"><span class="zyron-preview-status">Piloto local</span><h2>Financiero 0.4</h2><p>Revisa datos financieros y prepara informes con aprobación del usuario.</p><p>Pendiente de validar la instalación en otro equipo.</p>
       <a class="zyron-preview-cta zyron-module-card-link" href="#zyron-map-financiero" aria-label="Ver ficha de Financiero">Ver ficha</a>
       <div class="zyron-module-details">
-        <p>Para abrir este piloto, instala en tu equipo Windows la Base común 0.8 y el módulo, e inicia su servicio.</p>
+        <p>Instala la Base común ZYRON 0.8 solo si aún no la tienes en ese equipo. Después instala este módulo e inicia su servicio.</p>
         <a class="zyron-preview-cta" href="http://127.0.0.1:4179/" target="_blank" rel="noopener noreferrer">Abrir Financiero en Windows</a>
       </div>
     </article>
@@ -144,7 +155,7 @@
       <p>Uso de demostración con datos ficticios.</p>
       <a class="zyron-preview-cta zyron-module-card-link" href="#zyron-map-salud" aria-label="Ver ficha de ZYRON Salud">Ver ficha</a>
       <div class="zyron-module-details">
-        <p>Para abrir este piloto, instala en tu equipo Windows la Base común 0.8 y el módulo, e inicia su servicio.</p>
+        <p>Instala la Base común ZYRON 0.8 solo si aún no la tienes en ese equipo. Después instala este módulo e inicia su servicio.</p>
         <a class="zyron-preview-cta" href="http://127.0.0.1:4180/" target="_blank" rel="noopener noreferrer">Abrir ZYRON Salud en Windows</a>
       </div>
     </article>
@@ -1388,6 +1399,11 @@
       const error = document.getElementById("zyron-start-error");
       const local = document.getElementById("zyron-start-local");
       const web = document.getElementById("zyron-start-web");
+      const baseInstalled = document.getElementById("zyron-base-installed");
+      const baseInstallStep = document.getElementById("zyron-base-install-step");
+      baseInstalled.addEventListener("change", () => {
+        baseInstallStep.hidden = baseInstalled.checked;
+      });
       form.addEventListener("change", () => {
         result.hidden = true;
         error.hidden = true;
