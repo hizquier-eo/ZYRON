@@ -42,6 +42,17 @@
   #zyron-services-preview article:target .zyron-module-card-link,
   #zyron-services-preview:has(article:target) article:not(:target) {display:none}
   .zyron-module-card-link {display:inline-block;margin-top:.5rem}
+  #zyron-start-guide {background:#102a4b;border:1px solid #426184;border-radius:1rem;margin-top:1rem;padding:clamp(1rem,3vw,1.5rem)}
+  #zyron-start-guide h2, #zyron-start-guide h3 {color:#fff;margin:.2rem 0 .6rem}
+  #zyron-start-guide form {display:grid;gap:.9rem}
+  #zyron-start-guide fieldset {border:0;margin:0;padding:0;min-width:0}
+  #zyron-start-guide legend {font-weight:700;margin-bottom:.3rem}
+  #zyron-start-guide label {display:flex;align-items:baseline;gap:.55rem;padding:.22rem 0}
+  #zyron-start-guide input {accent-color:#EBA03D;flex:none}
+  #zyron-start-guide button {justify-self:start;border:0;cursor:pointer;font:inherit;font-weight:700}
+  #zyron-start-guide a:not(.zyron-preview-cta) {color:#b4edff;text-decoration:underline}
+  #zyron-start-guide li {margin:.35rem 0}
+  #zyron-start-guide [hidden], #zyron-services-preview:has(article:target) #zyron-start-guide {display:none!important}
 
   #zyron-services-callout #zyron-services-callout-title,
   #zyron-services-preview #zyron-services-title,
@@ -56,6 +67,46 @@
   <a class="zyron-preview-back zyron-preview-catalog-back" href="#zyron-services-preview">← Volver al catálogo</a>
   <span id="zyron-map-catalog"></span>
   <h1 id="zyron-services-title">Servicios y módulos de ZYRON</h1>
+  <section id="zyron-start-guide" aria-labelledby="zyron-start-title">
+    <h2 id="zyron-start-title">Empieza aquí</h2>
+    <p>Elige qué necesitas y dónde quieres trabajar. Te mostraremos los módulos y los pasos para empezar.</p>
+    <form id="zyron-start-form">
+      <fieldset>
+        <legend>¿Qué necesitas gestionar?</legend>
+        <label><input type="checkbox" name="necesidad" value="indicadores"> Indicadores y metas de gestión</label>
+        <label><input type="checkbox" name="necesidad" value="financiero"> Datos e informes financieros</label>
+        <label><input type="checkbox" name="necesidad" value="salud"> Citas y expedientes de salud</label>
+      </fieldset>
+      <fieldset>
+        <legend>¿Dónde quieres trabajar?</legend>
+        <label><input type="radio" name="modalidad" value="local" required> En mi equipo Windows</label>
+        <label><input type="radio" name="modalidad" value="web"> En el navegador, por internet</label>
+      </fieldset>
+      <button type="submit" class="zyron-preview-cta">Ver mi guía</button>
+      <p id="zyron-start-error" role="alert" hidden>Selecciona al menos una necesidad.</p>
+    </form>
+    <div id="zyron-start-result" hidden>
+      <h3 id="zyron-start-result-title" tabindex="-1">Módulos recomendados</h3>
+      <ul>
+        <li data-zyron-need="indicadores" hidden><a href="#zyron-map-indicadores">Indicadores 0.1</a></li>
+        <li data-zyron-need="financiero" hidden><a href="#zyron-map-financiero">Financiero 0.4</a></li>
+        <li data-zyron-need="salud" hidden><a href="#zyron-map-salud">ZYRON Salud 0.2</a></li>
+      </ul>
+      <div id="zyron-start-local" hidden>
+        <h3>Instalación en Windows</h3>
+        <ol>
+          <li>Instala primero la <strong>Base común ZYRON 0.8</strong>. Este paso se hace una vez por equipo.</li>
+          <li>Instala únicamente los módulos recomendados que quieras usar.</li>
+          <li>Inicia el módulo desde su acceso directo de Windows. También puedes usar «Abrir en Windows» en su ficha una vez iniciado el servicio.</li>
+        </ol>
+        <p>Los instaladores se entregan para el piloto. <a href="#contacto">Consultar cómo obtenerlos</a>.</p>
+      </div>
+      <div id="zyron-start-web" hidden>
+        <h3>Acceso por internet</h3>
+        <p>En esta modalidad se entra desde un navegador con un enlace y una cuenta habilitada. Los módulos piloto todavía están disponibles solo en Windows. <a href="#contacto">Consultar disponibilidad web</a>.</p>
+      </div>
+    </div>
+  </section>
   
   <div class="zyron-preview-grid">
 
@@ -1317,6 +1368,38 @@
       });
       window.location.assign(gmailContactForm.action + "?" + params.toString());
     }, true);
+  </script>
+  <script>
+    {
+      const form = document.getElementById("zyron-start-form");
+      const result = document.getElementById("zyron-start-result");
+      const error = document.getElementById("zyron-start-error");
+      const local = document.getElementById("zyron-start-local");
+      const web = document.getElementById("zyron-start-web");
+      form.addEventListener("change", () => {
+        result.hidden = true;
+        error.hidden = true;
+      });
+      form.addEventListener("submit", event => {
+        event.preventDefault();
+        const input = new FormData(form);
+        const needs = input.getAll("necesidad");
+        if (!needs.length) {
+          error.hidden = false;
+          form.querySelector('[name="necesidad"]').focus();
+          return;
+        }
+        error.hidden = true;
+        for (const item of result.querySelectorAll("[data-zyron-need]")) {
+          item.hidden = !needs.includes(item.dataset.zyronNeed);
+        }
+        const isLocal = input.get("modalidad") === "local";
+        local.hidden = !isLocal;
+        web.hidden = isLocal;
+        result.hidden = false;
+        document.getElementById("zyron-start-result-title").focus();
+      });
+    }
   </script>
   <script src="js/app.js?v=20260821-global-search"></script>
   <script src="js/site-quality.js?v=20260729-audit-4"></script>
