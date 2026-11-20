@@ -67,6 +67,62 @@
   #zyron-services-preview #zyron-services-title,
   #zyron-services-callout .zyron-keyword {color:#ffd75e}
 #zyron-services-preview {width:min(1180px,100%)}
+
+  /* Evita que las columnas de escritorio desborden las pantallas estrechas. */
+  @media (max-width: 768px) {
+    main.mirror-page { grid-template-columns: minmax(0, 1fr); }
+    main.mirror-page > * { min-width: 0; max-width: 100%; }
+    main.mirror-page .prototype-frame { width: 100%; height: auto; min-height: 0; }
+    .mobile-hero-copy h1 { max-width: min(100%, 16ch); overflow-wrap: anywhere; }
+    .mobile-hero-actions { grid-template-columns: minmax(0, 1fr); }
+    .mobile-hero-actions > * { min-width: 0; white-space: normal; }
+
+    #zyron-services-callout { align-items: stretch; flex-direction: column; gap: .65rem; }
+    #zyron-services-preview, #zyron-services-callout,
+    .site-map-modal__box { overflow-wrap: anywhere; }
+    #zyron-services-preview .zyron-preview-cta,
+    #zyron-services-callout .zyron-preview-cta {
+      max-width: 100%;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .team-grid, .team-card { grid-template-columns: minmax(0, 1fr); }
+    .team-card .team-avatar-photo { min-height: 0; padding: 1rem; }
+    .team-card .team-avatar-photo img {
+      width: min(100%, 144px);
+      height: auto;
+      min-height: 0;
+      margin: auto;
+      border-radius: .75rem;
+      object-fit: contain;
+    }
+    .team-card-content { overflow-wrap: anywhere; }
+    .team-contact-list { display: grid; grid-template-columns: minmax(0, 1fr); overflow: visible; }
+    .team-contact {
+      display: flex;
+      justify-content: flex-start;
+      gap: .5rem;
+      width: 100%;
+      min-width: 0;
+      min-height: 44px;
+      height: auto;
+      padding: .55rem .75rem;
+      font-size: .85rem;
+      line-height: 1.35;
+    }
+    .team-contact svg { flex: none; }
+    .team-contact span:last-child {
+      position: static;
+      width: auto;
+      height: auto;
+      min-width: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+    }
+    .owner-card .contact-actions { flex-wrap: wrap !important; overflow: visible; }
+  }
   </style>
 </head>
 <body>
