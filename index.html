@@ -36,6 +36,12 @@
   .zyron-preview-map-back {display:none}
   #zyron-services-preview:has([id^="zyron-map-"]:target) .zyron-preview-map-back {display:inline-block}
   #zyron-services-preview article:target {outline:2px solid #00d4ff;scroll-margin-top:1rem}
+  .zyron-module-details, .zyron-preview-catalog-back {display:none}
+  #zyron-services-preview article:target .zyron-module-details,
+  #zyron-services-preview:has(article:target) .zyron-preview-catalog-back {display:block}
+  #zyron-services-preview article:target .zyron-module-card-link,
+  #zyron-services-preview:has(article:target) article:not(:target) {display:none}
+  .zyron-module-card-link {display:inline-block;margin-top:.5rem}
 
   #zyron-services-callout #zyron-services-callout-title,
   #zyron-services-preview #zyron-services-title,
@@ -47,19 +53,37 @@
 <section id="zyron-services-preview" aria-labelledby="zyron-services-title" tabindex="-1">
   <a class="zyron-preview-back zyron-preview-service-back" href="#zyron-services-callout">← Volver a servicios y módulos</a>
   <a class="zyron-preview-back zyron-preview-map-back" href="#mapa-zyron" data-site-map-open>← Volver a Mapa ZYRON</a>
+  <a class="zyron-preview-back zyron-preview-catalog-back" href="#zyron-services-preview">← Volver al catálogo</a>
   <span id="zyron-map-catalog"></span>
   <h1 id="zyron-services-title">Servicios y módulos de ZYRON</h1>
   
   <div class="zyron-preview-grid">
 
 
-    <article id="zyron-map-indicadores"><span class="zyron-preview-status">Piloto local</span><h2>Indicadores 0.1</h2><p>Organiza indicadores de gestión y apoya su seguimiento.</p><p>Pendiente de validar la instalación en otro equipo.</p></article>
-    <article id="zyron-map-financiero"><span class="zyron-preview-status">Piloto local</span><h2>Financiero 0.4</h2><p>Revisa datos financieros y prepara informes con aprobación del usuario.</p><p>Pendiente de validar la instalación en otro equipo.</p></article>
+    <article id="zyron-map-indicadores"><span class="zyron-preview-status">Piloto local</span><h2>Indicadores 0.1</h2><p>Organiza indicadores de gestión y apoya su seguimiento.</p><p>Pendiente de validar la instalación en otro equipo.</p>
+      <a class="zyron-preview-cta zyron-module-card-link" href="#zyron-map-indicadores" aria-label="Ver ficha de Indicadores">Ver ficha</a>
+      <div class="zyron-module-details">
+        <p>Para abrir este piloto, instala en tu equipo Windows la Base común 0.8 y el módulo, e inicia su servicio.</p>
+        <a class="zyron-preview-cta" href="http://127.0.0.1:4174/" target="_blank" rel="noopener noreferrer">Abrir Indicadores en Windows</a>
+      </div>
+    </article>
+    <article id="zyron-map-financiero"><span class="zyron-preview-status">Piloto local</span><h2>Financiero 0.4</h2><p>Revisa datos financieros y prepara informes con aprobación del usuario.</p><p>Pendiente de validar la instalación en otro equipo.</p>
+      <a class="zyron-preview-cta zyron-module-card-link" href="#zyron-map-financiero" aria-label="Ver ficha de Financiero">Ver ficha</a>
+      <div class="zyron-module-details">
+        <p>Para abrir este piloto, instala en tu equipo Windows la Base común 0.8 y el módulo, e inicia su servicio.</p>
+        <a class="zyron-preview-cta" href="http://127.0.0.1:4179/" target="_blank" rel="noopener noreferrer">Abrir Financiero en Windows</a>
+      </div>
+    </article>
     <article id="zyron-map-salud">
       <span class="zyron-preview-status">Piloto listo para pruebas con datos ficticios</span>
       <h2>ZYRON Salud 0.2</h2>
       <p>Gestiona citas, expedientes, adjuntos y seguimiento en el entorno de pruebas.</p>
       <p>Uso de demostración con datos ficticios.</p>
+      <a class="zyron-preview-cta zyron-module-card-link" href="#zyron-map-salud" aria-label="Ver ficha de ZYRON Salud">Ver ficha</a>
+      <div class="zyron-module-details">
+        <p>Para abrir este piloto, instala en tu equipo Windows la Base común 0.8 y el módulo, e inicia su servicio.</p>
+        <a class="zyron-preview-cta" href="http://127.0.0.1:4180/" target="_blank" rel="noopener noreferrer">Abrir ZYRON Salud en Windows</a>
+      </div>
     </article>
     <article id="zyron-map-licencias"><span class="zyron-preview-status">Diseño registrado</span><h2>Portal de clientes y licencias</h2><p>El diseño contempla accesos por empresa y gestión de licencias locales y web. El portal está pendiente de desarrollo.</p></article>
 
@@ -1258,7 +1282,7 @@
       if (hash.startsWith("#zyron-map-")) {
         event.preventDefault();
         event.stopPropagation();
-        document.querySelector(".site-map-modal__close")?.click();
+        if (link.matches("[data-site-map-link]")) document.querySelector(".site-map-modal__close")?.click();
         window.location.hash = hash;
         return;
       }
