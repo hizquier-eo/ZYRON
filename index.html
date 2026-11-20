@@ -42,6 +42,11 @@
   #zyron-services-preview article:target .zyron-module-card-link,
   #zyron-services-preview:has(article:target) article:not(:target) {display:none}
   .zyron-module-card-link {display:inline-block;margin-top:.5rem}
+  .zyron-catalog-manuals {margin:1rem 0}
+  .zyron-catalog-manuals h2 {font-size:1.15rem;margin:0 0 .45rem}
+  .zyron-catalog-manuals ul {display:flex;flex-wrap:wrap;gap:.65rem 1.5rem;margin:0;padding:0;list-style:none}
+  .zyron-catalog-manuals a {color:#b4edff;text-decoration:underline;text-underline-offset:.2em}
+
   #zyron-start-guide {background:#102a4b;border:1px solid #426184;border-radius:1rem;margin-top:1rem;padding:clamp(1rem,3vw,1.5rem)}
   #zyron-start-guide h2, #zyron-start-guide h3 {color:#fff;margin:.2rem 0 .6rem}
   #zyron-start-guide form {display:grid;gap:.9rem}
@@ -67,6 +72,13 @@
   <a class="zyron-preview-back zyron-preview-catalog-back" href="#zyron-services-preview">← Volver al catálogo</a>
   <span id="zyron-map-catalog"></span>
   <h1 id="zyron-services-title">Servicios y módulos de ZYRON</h1>
+  <section aria-labelledby="zyron-manuals-title" class="zyron-catalog-manuals">
+    <h2 id="zyron-manuals-title">Manuales de usuario</h2>
+    <ul>
+      <li><a href="recursos/manuales-zyron/manual-zyron-windows.pdf" target="_blank" rel="noopener">Manual para Windows (PDF)</a></li>
+      <li><a href="recursos/manuales-zyron/manual-zyron-web.pdf" target="_blank" rel="noopener">Manual para web (PDF)</a></li>
+    </ul>
+  </section>
   <section id="zyron-start-guide" aria-labelledby="zyron-start-title">
     <h2 id="zyron-start-title">Guía de requisitos y módulos</h2>
     <p>Cuando el portal esté habilitado, un administrador de ZYRON activará tu contratación y te enviará el código y la licencia por correo. Usa esta guía para revisar los requisitos de la modalidad que prefieras.</p>
