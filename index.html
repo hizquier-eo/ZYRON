@@ -40,6 +40,9 @@
   #zyron-services-preview:has([id^="zyron-map-"]:target) .zyron-preview-map-back {display:inline-block}
   #zyron-services-preview article:target {outline:2px solid #00d4ff;scroll-margin-top:1rem}
   .zyron-module-details, .zyron-preview-catalog-back {display:none}
+  .zyron-module-proposals {margin-top:2rem}
+  .zyron-module-proposals h3 {margin:.75rem 0 .4rem;font-size:1.2rem}
+  #zyron-services-preview:has(article:target) .zyron-module-proposals {display:none}
   #zyron-services-preview article:target .zyron-module-details,
   #zyron-services-preview:has(article:target) .zyron-preview-catalog-back {display:block}
   #zyron-services-preview article:target .zyron-module-card-link,
@@ -217,6 +220,37 @@
     <article id="zyron-map-licencias"><span class="zyron-preview-status">Solo para administradores de ZYRON</span><h2>Portal de clientes y licencias</h2><p>El administrador registrará la contratación y enviará al cliente su acceso por correo. El portal con acceso por clave está pendiente de implementación.</p></article>
 
   </div>
+  <section class="zyron-module-proposals" aria-labelledby="zyron-module-proposals-title">
+    <h2 id="zyron-module-proposals-title">Propuestas de módulos</h2>
+    <p>Estas fichas describen las funciones previstas. Su desarrollo y sus pruebas están pendientes.</p>
+    <div class="zyron-preview-grid">
+      <article>
+        <span class="zyron-preview-status">Propuesta de módulo</span>
+        <h3>ZYRON Innovación y Tecnología</h3>
+        <p>Registro y evaluación de ideas, priorización de proyectos por impacto y viabilidad, seguimiento de prototipos y pilotos, gestión del portafolio tecnológico e indicadores de resultados.</p>
+      </article>
+      <article>
+        <span class="zyron-preview-status">Propuesta de módulo</span>
+        <h3>ZYRON Robótica</h3>
+        <p>Inventario de robots y componentes, registro de proyectos, simulación de tareas, seguimiento de pruebas y puesta en marcha, y planificación del mantenimiento.</p>
+      </article>
+      <article>
+        <span class="zyron-preview-status">Propuesta de módulo</span>
+        <h3>ZYRON Automatización</h3>
+        <p>Mapeo de procesos, identificación de tareas repetitivas, diseño de flujos con aprobaciones, integración de sistemas, alertas de fallos y medición del tiempo ahorrado.</p>
+      </article>
+      <article>
+        <span class="zyron-preview-status">Propuesta de módulo</span>
+        <h3>ZYRON Electrónica</h3>
+        <p>Inventario de componentes, documentación de circuitos, registro de prototipos y pruebas de banco, seguimiento de fallas y control de versiones de hardware.</p>
+      </article>
+      <article>
+        <span class="zyron-preview-status">Propuesta de módulo</span>
+        <h3>ZYRON Resiliencia y Gestión Estratégica</h3>
+        <p>Identificación y evaluación de riesgos, priorización de medidas, planes de continuidad, seguimiento de incidentes y simulacros, e indicadores para la toma de decisiones.</p>
+      </article>
+    </div>
+  </section>
 </section>
   <main id="top" class="mirror-page" aria-label="Página principal ZYRON">
     <section class="prototype-frame" aria-label="Portada principal ZYRON">
